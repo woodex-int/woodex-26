@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # WOODEX-26
 
 Woodex Interior static frontend — **HTML5 + Tailwind CDN + `css/theme.css` + `js/app.js`**.
@@ -36,3 +37,7 @@ WhatsApp: +92 322 4000768 · Call: +92 336 2259477
 ## Docs
 
 `docs/DESIGN.md` · `PAGE_MAP.md` · `CONTENT_BRAND.md` · `SEO_PLAN.md` · `ESTIMATE.md` · `AGENT_HANDOFF.md`
+=======
+# woodex-26
+agemt lmaria woodex-26 project 
+>>>>>>> ad96331da514ea406f4aafcb5646e841f2f30d70
