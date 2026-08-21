@@ -1,0 +1,4 @@
+ErrorDocument 404 /404.html
+DirectoryIndex index.html
+Options -Indexes
+AddDefaultCharset UTF-8

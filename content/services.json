@@ -1,0 +1,22 @@
+{
+  "note": "CMS source of truth. Pages already rendered. Approval lines must stay unique — never the 3D Studio sentence.",
+  "studio_line": "You are not approving a plan. You are approving a room.",
+  "pages": [
+    {"slug": "residential", "layout": "A", "approving": "The house as one instrument"},
+    {"slug": "office", "layout": "B", "approving": "The floor, not a mural"},
+    {"slug": "retail", "layout": "C", "approving": "The path"},
+    {"slug": "restaurant", "layout": "D", "approving": "The night room"},
+    {"slug": "cafe", "layout": "E", "approving": "The counter"},
+    {"slug": "renovation", "layout": "F", "approving": "The replan"},
+    {"slug": "fit-out", "layout": "E", "approving": "The scope"},
+    {"slug": "architecture", "layout": "H", "approving": "The volume"},
+    {"slug": "drawings", "layout": "G", "approving": "The sheet set"},
+    {"slug": "joinery", "layout": "A", "approving": "The piece"},
+    {"slug": "lighting", "layout": "D", "approving": "The night scene"},
+    {"slug": "pharmacy", "layout": "F", "approving": "A Saturday that works"},
+    {"slug": "shops", "layout": "C", "approving": "The walk"},
+    {"slug": "software-house", "layout": "B", "approving": "Focus, then culture"},
+    {"slug": "space-planning", "layout": "G", "approving": "The test-fit"},
+    {"slug": "visualization", "layout": "H", "approving": "Which views — then 3D Studio"}
+  ]
+}

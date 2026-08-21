@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Woodex Interior — Master Brand &amp; Systems Audit · 7 Benchmarks</title>
+  <style>
+    :root {
+      --navy: #0c1628;
+      --navy-2: #121e34;
+      --card: #152033;
+      --cream: #f4efe7;
+      --ink: #12151c;
+      --muted: #6a6560;
+      --wood: #b8956a;
+      --line: rgba(18,21,28,.1);
+      --ok: #2d6a4f;
+      --warn: #9a6b2f;
+      --bad: #8b2e2e;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+      color: var(--ink);
+      background: #fff;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .cover {
+      background: var(--navy);
+      color: #fff;
+      padding: 72px 48px 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::after {
+      content: "WOODEX";
+      position: absolute;
+      right: -20px; bottom: -28px;
+      font-size: clamp(4rem, 18vw, 12rem);
+      font-weight: 700;
+      letter-spacing: -.06em;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,.08);
+      line-height: .8;
+      pointer-events: none;
+    }
+    .kicker {
+      font-size: .72rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: var(--wood);
+      margin: 0 0 18px;
+    }
+    .cover h1 {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 500;
+      letter-spacing: -.04em;
+      line-height: 1.05;
+      max-width: 16ch;
+      margin: 0 0 18px;
+    }
+    .cover p.lead { max-width: 58ch; color: rgba(255,255,255,.72); font-weight: 300; margin: 0 0 36px; }
+    .meta {
+      display: flex; flex-wrap: wrap; gap: 28px;
+      font-size: .82rem; color: rgba(255,255,255,.55);
+    }
+    .meta b { color: #fff; font-weight: 560; display: block; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 4px; }
+    .wrap { width: min(1080px, calc(100% - 48px)); margin: 0 auto; }
+    .band { padding: 64px 0; border-bottom: 1px solid var(--line); }
+    .band h2 {
+      font-size: clamp(1.7rem, 3.2vw, 2.4rem);
+      font-weight: 500;
+      letter-spacing: -.035em;
+      margin: 0 0 12px;
+    }
+    .band h3 { font-size: 1.15rem; font-weight: 560; letter-spacing: -.02em; margin: 28px 0 8px; }
+    .muted { color: var(--muted); }
+    .verdict {
+      background: var(--cream);
+      border-radius: 24px;
+      padding: 32px 36px;
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+    .score-ring {
+      width: 140px; height: 140px; border-radius: 50%;
+      background: conic-gradient(var(--navy) 0 65%, rgba(12,22,40,.12) 65% 100%);
+      display: grid; place-items: center;
+      position: relative;
+    }
+    .score-ring::after {
+      content: "";
+      width: 104px; height: 104px; border-radius: 50%; background: var(--cream);
+      position: absolute;
+    }
+    .score-ring span {
+      position: relative; z-index: 1;
+      font-size: 2rem; font-weight: 600; letter-spacing: -.04em;
+    }
+    .board {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      margin-top: 28px;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 48px 1fr 72px 160px;
+      gap: 16px;
+      align-items: center;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fff;
+    }
+    .row b.n { color: var(--wood); font-size: .82rem; letter-spacing: .08em; }
+    .bar { height: 8px; background: rgba(12,22,40,.08); border-radius: 99px; overflow: hidden; }
+    .bar i { display: block; height: 100%; background: var(--navy); border-radius: 99px; }
+    .tag {
+      display: inline-block;
+      font-size: .68rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 4px 8px;
+      border-radius: 99px;
+      font-weight: 600;
+    }
+    .tag.strong { background: #e7f2ec; color: var(--ok); }
+    .tag.mid { background: #f4ead8; color: var(--warn); }
+    .tag.weak { background: #f3e0e0; color: var(--bad); }
+    table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+    th { font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .navy-band {
+      background: var(--navy);
+      color: #fff;
+      padding: 72px 0;
+    }
+    .navy-band h2 { color: #fff; }
+    .navy-band p { color: rgba(255,255,255,.7); }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .card {
+      background: #fff;
+      color: var(--ink);
+      border-radius: 18px;
+      padding: 22px 22px 20px;
+    }
+    .navy-band .card { background: var(--card); color: #fff; }
+    .navy-band .card p { color: rgba(255,255,255,.68); margin: 8px 0 0; font-size: .92rem; }
+    .navy-band .card h3 { margin: 0; color: #fff; }
+    .pill { color: var(--wood); font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; }
+    ul.tight { margin: 8px 0 0; padding: 0 0 0 18px; }
+    ul.tight li { margin: 6px 0; }
+    .callout {
+      border-left: 3px solid var(--wood);
+      padding: 4px 0 4px 16px;
+      margin: 18px 0;
+      color: var(--muted);
+    }
+    .fix {
+      background: var(--cream);
+      border-radius: 16px;
+      padding: 18px 20px;
+      margin-top: 16px;
+    }
+    .fix strong { display: block; margin-bottom: 6px; }
+    .prio { display: grid; grid-template-columns: 80px 1fr; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .prio .lv { font-size: .72rem; letter-spacing: .16em; text-transform: uppercase; font-weight: 700; color: var(--wood); padding-top: 4px; }
+    footer.rep {
+      background: #070d18;
+      color: rgba(255,255,255,.5);
+      padding: 36px 48px;
+      font-size: .82rem;
+    }
+    @media (max-width: 820px) {
+      .cover { padding: 48px 24px; }
+      .wrap { width: calc(100% - 32px); }
+      .verdict, .row, .grid-3, .grid-2, .prio { grid-template-columns: 1fr; }
+      .row { gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="cover">
+    <div class="wrap">
+      <p class="kicker">Brand · Architecture · Conversion · Trust</p>
+      <h1>Master brand &amp; systems audit</h1>
+      <p class="lead">Seven elite benchmarks run against the live Woodex Interior site in <em>WOODEX-26</em> — 66 HTML pages, HTML5 + Tailwind CDN + custom CSS. This is not a moodboard review. It is a diagnosis of whether the brand can win a brief, hold a visitor, and convert a space into a job.</p>
+      <div class="meta">
+        <div><b>Subject</b>Woodex Interior · Pakistan</div>
+        <div><b>Corpus</b>66 HTML · 20 services · 8 CSS · 14 images</div>
+        <div><b>Date</b>20 August 2026</div>
+        <div><b>Method</b>Full-site markup, copy, CRO, SEO, identity</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="band">
+    <div class="wrap">
+      <p class="kicker">00 — Verdict</p>
+      <h2>A prestige skin on an incomplete commercial system</h2>
+      <div class="verdict" style="margin-top:28px">
+        <div class="score-ring"><span>65</span></div>
+        <div>
+          <p style="margin:0 0 10px"><strong>Overall brand-system score: 65 / 100.</strong> The idea is elite. The chrome is Linoxa-grade. The commercial engine is not finished.</p>
+          <p class="muted" style="margin:0">Woodex already owns a rare sentence in this market: <em>Drawn. Then built.</em> Design is not decoration. One partner from concept to completion. That is a brand. The site currently spends more energy looking like an international architecture template than closing a Lahore / Karachi / Islamabad brief.</p>
+        </div>
+      </div>
+
+      <div class="board">
+        <div class="row"><b class="n">01</b><div>Elite HTML Architect — semantic skeleton &amp; CLS</div><div class="bar"><i style="width:61%"></i></div><span class="tag mid">61 · Mid</span></div>
+        <div class="row"><b class="n">02</b><div>Prestige-Identity Fluid Visual Engine</div><div class="bar"><i style="width:76%"></i></div><span class="tag strong">76 · Strong</span></div>
+        <div class="row"><b class="n">03</b><div>Conversion Systems — 3-second hero SOP</div><div class="bar"><i style="width:68%"></i></div><span class="tag mid">68 · Mid</span></div>
+        <div class="row"><b class="n">04</b><div>Direct-response copy &amp; value proposition</div><div class="bar"><i style="width:82%"></i></div><span class="tag strong">82 · Strong</span></div>
+        <div class="row"><b class="n">05</b><div>Organic lead-generation architecture</div><div class="bar"><i style="width:54%"></i></div><span class="tag weak">54 · Weak</span></div>
+        <div class="row"><b class="n">06</b><div>Consumer trust &amp; proof matrix</div><div class="bar"><i style="width:63%"></i></div><span class="tag mid">63 · Mid</span></div>
+        <div class="row"><b class="n">07</b><div>Data-driven systems auditor (friction loops)</div><div class="bar"><i style="width:52%"></i></div><span class="tag weak">52 · Weak</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="navy-band">
+    <div class="wrap">
+      <p class="kicker">Brand DNA — what Woodex actually is</p>
+      <h2>Do not sell interiors. Sell a path.</h2>
+      <p>Most Pakistani interior sites sell rooms, catalogues and “luxury.” Woodex’s locked master is a process brand:</p>
+      <div class="grid-3" style="margin-top:28px">
+        <article class="card"><p class="pill">Master idea</p><h3>Drawn. Then built.</h3><p>The still is not the product. The still is the decision. The mill and the site are the product — if the brief includes them.</p></article>
+        <article class="card"><p class="pill">Promise</p><h3>We turn ideas into spaces.</h3><p>One partner. Concept to completion. Designers, in-house 3D, execution, Woodex Furniture — one studio, not a moodboard plus a contractor hunt.</p></article>
+        <article class="card"><p class="pill">Path</p><h3>Design → Visualize → Plan → Budget → BOQ → Execute → Deliver</h3><p>Stop at the gate you choose. 3D-only is a complete job. Client drawings are reviewed before they are built.</p></article>
+      </div>
+      <div class="grid-2" style="margin-top:16px">
+        <article class="card">
+          <p class="pill">Proof that may be published</p>
+          <h3>Honesty is the brand asset</h3>
+          <p>500+ projects · founder ~20 years commercial interiors · execution 10+ years · ISO 9001 · three studios (Gulberg III, Clifton, F-7) · desk LG 90 Link Road, Model Town · named client only: Wellstar Pharmacy → Cosmetics → Mini Hospital, DHA Lahore. Studies stay labelled studies. No awards. No 95%. No industrial claim.</p>
+        </article>
+        <article class="card">
+          <p class="pill">The identity risk</p>
+          <h3>Linoxa skin, Woodex job</h3>
+          <p>LAYOUT / DESIGN / CREATE, giant INTERIORS footer, cream cards, sticky splits — this is a European architecture template speaking for a Lahore mill-connected fit-out practice. Prestige is useful. Borrowed language is not. Every leftover “Get started”, “Contact us”, “Learn more”, “Submit now” is Linoxa talking, not Woodex.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1 -->
+  <section class="band" id="b1">
+    <div class="wrap">
+      <p class="kicker">Benchmark 01 — Elite HTML Architect · 61/100</p>
+      <h2>Semantic skeleton exists. Div factory underneath.</h2>
+      <p class="muted">The brief asked for header, nav, main, section, footer — and the complete avoidance of generic div wrappers, with premium value loading without layout shift.</p>
+
+      <h3>What is already elite</h3>
+      <table>
+        <tr><th>Gate</th><th>Evidence</th></tr>
+        <tr><td>Document shell</td><td>66/66 pages have <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;footer&gt;</code>. 0 missing H1. 0 missing title. 0 missing canonical. 0 missing OG.</td></tr>
+        <tr><td>Well-formed</td><td>0 unclosed tags. 0 broken internal hrefs. 0 missing image files. JSON-LD on all 66 (BreadcrumbList on inner pages; InteriorDesignStudio on Home / About / Contact; FAQPage on Home; Article on 7 insights).</td></tr>
+        <tr><td>Landmarks</td><td>132 <code>nav</code> (primary + mobile). 291 <code>section</code>. 351 <code>article</code>. 68 H1 (Home is allowed 3 — one per hero slide).</td></tr>
+        <tr><td>ARIA</td><td>Primary / mobile labels, mega <code>role="menu"</code>, hero pips as tablist, WhatsApp float labelled, reduced-motion kills Ken Burns and lx-pin.</td></tr>
+      </table>
+
+      <h3>The architectural flaw</h3>
+      <p>The site is a <strong>div-first composition</strong> wearing semantic clothes. Counted across 66 pages:</p>
+      <ul class="tight">
+        <li><strong>4,389 <code>div</code></strong> vs 291 <code>section</code> — ratio <strong>15.1 : 1</strong>.</li>
+        <li>Home alone: 134 divs, 12 sections. 3D Studio: 122 divs. About: 100 divs.</li>
+        <li>Zero <code>&lt;picture&gt;</code>, zero <code>&lt;source&gt;</code>, zero <code>&lt;address&gt;</code>, zero <code>&lt;time&gt;</code>, zero <code>&lt;aside&gt;</code>.</li>
+        <li>Zero skip-to-content link.</li>
+        <li>Header + mega + footer are copy-pasted into every file (~8.7 KB of chrome per page × 66 ≈ 560 KB of duplicate DOM). There is no include, no component, no SSI.</li>
+        <li><strong>511 images, 0 with width + height.</strong> 221 empty <code>alt=""</code>. <code>loading="lazy"</code> on 1 iframe only. <code>fetchpriority</code> nowhere. LCP hero images are 1408×768 JPEGs without dimensions — classic CLS.</li>
+      </ul>
+      <p class="callout">A visitor on 4G in Lahore pays for Tailwind’s runtime CDN, Google Fonts, six CSS files on Home, then a full-viewport image that shoves the H1 after decode. Premium value is not instant. The first paint is a navy bar and a hole.</p>
+
+      <div class="fix">
+        <strong>Architect SOP — do this, do not rebuild</strong>
+        Keep the visual. Change the skeleton: (1) width/height or aspect-ratio on every img; (2) <code>fetchpriority="high"</code> on LCP; (3) skip link; (4) wrap the desk block in <code>&lt;address&gt;</code>; (5) stop duplicating 8 KB of mega nav — one include when the stack allows; (6) self-host Plus Jakarta + drop Tailwind CDN for a built CSS. Do not chase “zero divs.” Linoxa-grade layout needs wrappers. Chase zero <em>anonymous</em> wrappers: give the remaining divs roles or replace them with <code>article</code> / <code>figure</code> / <code>ul</code>.
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="band" id="b2">
+    <div class="wrap">
+      <p class="kicker">Benchmark 02 — Prestige-Identity Fluid Visual Engine · 76/100</p>
+      <h2>Visual authority is real. Identity is not fully owned.</h2>
+      <p class="muted">The brief asked for Grid/Flex on semantic tags, custom properties, dark-mode variables, fluid type — elite market positioning without nested div soup.</p>
+
+      <h3>Locked tokens — these are correct. Do not invent a third accent.</h3>
+      <table>
+        <tr><th>Token</th><th>Value</th><th>Role</th></tr>
+        <tr><td>Type</td><td>Plus Jakarta Sans 300–700</td><td>One face. No display serif. Correct for a studio that builds, not a magazine that poses.</td></tr>
+        <tr><td>Navy</td><td>#0c1628 / #121e34 / #152033</td><td>Authority, night rooms, chrome.</td></tr>
+        <tr><td>Cream</td><td>#f4efe7</td><td>Third colour <em>inside</em> sections only — cards, forms, split panels. Page fills stay white + navy.</td></tr>
+        <tr><td>Ink / muted</td><td>#12151c / #6a6560</td><td>Body and secondary.</td></tr>
+        <tr><td>Wood</td><td>#b8956a</td><td>Accent line, kicker, ticker dots. Never a page fill.</td></tr>
+        <tr><td>Type scale</td><td><code>clamp()</code> on H1/H2/footer giant</td><td>Fluid. Home H1 and cine H1 already command the viewport.</td></tr>
+        <tr><td>Ease</td><td>cubic-bezier(0.22, 1, 0.36, 1)</td><td>Linoxa motion. Reduced-motion respected in theme.css + app.js.</td></tr>
+      </table>
+
+      <h3>Where the engine leaks identity</h3>
+      <ul class="tight">
+        <li><strong>No dark-mode variables.</strong> <code>prefers-color-scheme</code> is absent from all 8 CSS files. Navy pages are “always dark sections,” not a system.</li>
+        <li><strong>CSS is a federation, not an engine.</strong> 130 KB across 8 files. Home loads six: home → chrome → theme → studio → mega → lx. Inner pages skip <code>chrome.css</code> (Home only) and skip <code>home.css</code>. About/Services load <code>lx.css</code>; 3D Studio does not. Duplicate <code>.mega</code> rules live in both <code>chrome.css</code> and <code>mega.css</code>.</li>
+        <li><strong>Header contrast.</strong> Cine pages: transparent white type over photography, then <code>.scrolled</code> navy. <code>body.light-page</code> navy bar exists only on Insights (12 files). About, Projects, Contact, Start, Process sit on white with a transparent header until scroll — logo can vanish on a white band.</li>
+        <li><strong>14 images, 66 pages.</strong> Almost every JPEG is 1408×768. <code>project-retreat.jpg</code> is 1024×1024. Ken Burns fakes cinema. A prestige brand cannot recycle one walnut living room as residential, 3D studio, contact hero and CTA.</li>
+        <li>Buttons are excellent (pill + circular arrow + dual-label hover). That is owned UI. Keep it.</li>
+      </ul>
+      <div class="fix">
+        <strong>Identity SOP</strong>
+        Own the tokens harder: add <code>--bg --fg --line</code> pairs for white-page and navy-page, not a consumer dark-mode toggle. Unify CSS load (theme + mega + one page sheet). Put <code>light-page</code> on every non-cine inner page. Commission or shoot 30 real stills before any restyle. Do not restyle the Home 3-slide composition or 3D Studio page — lock holds.
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="band" id="b3">
+    <div class="wrap">
+      <p class="kicker">Benchmark 03 — Conversion Systems Designer · 68/100</p>
+      <h2>The hero is unmissable. The offer is split.</h2>
+      <p class="muted">The brief asked for a 3-second pattern-interrupt heading, all-caps unbeatable value, zero layout confusion.</p>
+
+      <h3>3-second test — Home</h3>
+      <table>
+        <tr><th>Second</th><th>What the visitor actually gets</th></tr>
+        <tr><td>0.0</td><td>Full-bleed photograph. Transparent header. Giant ghost word <strong>LAYOUT</strong> (then DESIGN, CREATE on a 6.8s cycle).</td></tr>
+        <tr><td>0.8</td><td>Kicker: <em>Drawn. Then built.</em> H1: <em>We turn ideas into spaces.</em></td></tr>
+        <tr><td>1.5</td><td>CTA pill: <strong>Get started</strong> — plus a paragraph: “Start with what you have. Plan, 3D, then budget and BOQ if you want it built.”</td></tr>
+        <tr><td>3.0</td><td>They have a feeling (prestige) and a generic verb (Get started). They do not yet have a door: empty space / existing design / 3D-only. Those doors are two scrolls down.</td></tr>
+      </table>
+
+      <h3>Hierarchy diagnosis</h3>
+      <ul class="tight">
+        <li>The giant LAYOUT/DESIGN/CREATE words are a pattern interrupt. They are also <strong>Linoxa’s words</strong>, not Woodex’s. Woodex’s interrupt is already in the kicker: DRAWN. THEN BUILT.</li>
+        <li>All-caps “UNBEATABLE VALUE” would cheapen this brand. Do not add it. Prestige interiors convert on certainty, not discount language.</li>
+        <li>Three H1s rotate. Slide 2 CTA goes to <code>services.html</code>. Slide 3 CTA goes to <code>projects.html</code>. All three pills still say Get started. <strong>Same label, three destinations</strong> = layout confusion.</li>
+        <li>Home then repeats “six services” twice: <code>#disciplines</code> partner cards (Interior / Commercial / Residential / Office / Retail / Brand shop) and <code>#six-services</code> st-spaces (Residential / Office / Restaurant / Café / Retail / Craft). Two taxonomies. One scroll. Bounce fuel.</li>
+        <li>Header CTA is the correct verb: <strong>Start your project</strong>. Hero disagrees. Featured band also says Get started. Final CTA H2 is correct (“Tell us about your space”) but the button says <strong>Contact us</strong>.</li>
+      </ul>
+      <div class="fix">
+        <strong>Hero SOP for Woodex (keep the 3-slide machine)</strong>
+        Slide label may stay LAYOUT / DESIGN / CREATE as a visual device. Button labels must tell the truth: Slide 1 → Start your project. Slide 2 → Explore interiors. Slide 3 → Open 3D Studio (or View studies). One primary verb per slide. Kill one of the two “six services” blocks — keep st-spaces (it matches 3D Studio section style) or keep partners, not both. Pattern interrupt copy stays Woodex: DRAWN. THEN BUILT. / SEE IT. UNDERSTAND IT. BUILD IT.
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="band" id="b4">
+    <div class="wrap">
+      <p class="kicker">Benchmark 04 — Elite Direct-Response Copy · 82/100</p>
+      <h2>The voice is the strongest asset on the domain.</h2>
+      <p class="muted">The brief asked for zero-fluff, non-robotic, high-value narrative that bypasses corporate sludge and builds trust instantly.</p>
+
+      <h3>What is already working — do not flatten this</h3>
+      <ul class="tight">
+        <li>“Design is not decoration. We start from what you have — survey, brief, rooms — then draw a plan you can approve in 3D before anyone touches a wall.”</li>
+        <li>“We do not invent a layout in 3D and call it design.”</li>
+        <li>“We do not execute an external design we have not read against the site.”</li>
+        <li>“We do not publish a fake square-foot rate.”</li>
+        <li>“3D-only is a complete engagement.”</li>
+        <li>Residential H1: “A home considered, personal and complete.” Problem: “You know what you like. The hard part is making layout, storage, light and furniture work as one house.”</li>
+        <li>Fit-out H1: “You have the design. We finish the space.” Two routes. That is a commercial differentiator written in English a client can use.</li>
+      </ul>
+
+      <h3>Copy that still sounds like a template</h3>
+      <table>
+        <tr><th>Location</th><th>Line</th><th>Why it fails</th></tr>
+        <tr><td>Home hero ×3 + featured</td><td>Get started</td><td>SaaS. Woodex’s verb is Start your project / Open 3D Studio / Tell us about your space.</td></tr>
+        <tr><td>Home approach</td><td>Learn more</td><td>Dead adverb. Should be About the practice / The Wellstar path.</td></tr>
+        <tr><td>Home final CTA button</td><td>Contact us</td><td>H2 is already the brief. Button should match: Send the brief / WhatsApp Woodex.</td></tr>
+        <tr><td>Contact H1 + H2</td><td>Contact us</td><td>Twice. No offer. Should be: Tell us what you have. Desk, hours, WhatsApp as proof of a real studio.</td></tr>
+        <tr><td>Contact form intro</td><td>“timeless spaces blending function, beauty…”</td><td>Generic interior sludge. Conflicts with the anti-fluff lock.</td></tr>
+        <tr><td>About closing H2</td><td>“Ready for a space that feels as refined as it feels lived-in?”</td><td>Magazine. Not Woodex.</td></tr>
+        <tr><td>Contact submit</td><td>Submit now</td><td>Form panic. Use Send message / Send the brief.</td></tr>
+      </table>
+      <p class="callout">The master content agent is already the copy system. The remaining work is <em>hygiene</em>, not a rewrite. Do not add “high-value digital economy” language from the benchmark prompt — Woodex is rooms, mill, site.</p>
+      <div class="fix">
+        <strong>Narrative template (keep using)</strong>
+        Kicker (process) → H1 (outcome in the room) → one sentence (what they have / what is hard) → CTA (next gate) → proof nearby (500+ / ISO / Wellstar or a labelled study). Every service page already follows a version of this. Specialist pages are unique on purpose — do not clone a 10-block system onto joinery.
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="band" id="b5">
+    <div class="wrap">
+      <p class="kicker">Benchmark 05 — Organic Lead Generation Architect · 54/100</p>
+      <h2>The brief is designed. The pipe is fake.</h2>
+      <p class="muted">The brief asked for a two-step framework: low-friction micro-offer, then an availability script. Semantic HTML5 contact component.</p>
+
+      <h3>What exists</h3>
+      <ul class="tight">
+        <li>Three forms: Contact (<code>#contact-form</code>), Start (<code>#project-form</code>), 3D Studio brief. All <code>preventDefault</code>. Success note: “Frontend only.” <code>content/brief.json</code> points at <code>/api/brief</code> which does not exist.</li>
+        <li>Start form is commercially intelligent: have / need / area / stage / timeline / optional budget. That <em>is</em> the brief Woodex needs. Fields are right. Capture is not.</li>
+        <li>WhatsApp float on 66/66 pages, number locked <code>923224000768</code>. This is the real lead channel today.</li>
+        <li>Call <code>tel:+923362259477</code> only on About, Contact, Projects (+ case pages). Not in the global footer.</li>
+        <li>Hours 10:00–8:30 printed. OpeningHours schema Mon–Sat. No Sunday. No live “studio is in” indicator.</li>
+        <li>Contact form: HTML requires name, email, phone, message. JS only checks name, email, message. <code>novalidate</code> on the form. Friction loop: user thinks phone is required; JS lets them through without it — or native required is ignored.</li>
+        <li>Socials in every footer: Instagram / LinkedIn / Facebook all <code>href="#"</code>. 66 pages of fake proof.</li>
+        <li><code>content/site.json</code> still stores the old WhatsApp <code>9242111800800</code>. HTML is correct. The CMS stub is a landmine.</li>
+      </ul>
+
+      <h3>Two-step — current vs required</h3>
+      <table>
+        <tr><th>Step</th><th>Now</th><th>Should be</th></tr>
+        <tr><td>1. Micro-offer</td><td>Full brief or “Contact us.” No consultation product. No “send a plan, get a next-gate reply.”</td><td>Low friction: WhatsApp with prefilled “I have [empty space / drawings / 3D-only] in [city].” Or a 4-field strip: name, city, have, need — then the long form.</td></tr>
+        <tr><td>2. Availability</td><td>“One working day” on Start only. Contact is silent. No green pulse, no “Gulberg desk is open.”</td><td>Script: “Desk open 10:00–8:30 PKT · A studio lead replies within one working day · WhatsApp is read during hours.” Show hours as a live clock, not a caption.</td></tr>
+      </table>
+      <div class="fix">
+        <strong>Lead SOP</strong>
+        Until <code>/api/brief</code> exists, every form submit should also open WhatsApp with the field string, or mailto. Add Call under footer Get in touch. Kill <code>href="#"</code> socials (hide until URLs exist). Align JS validation with HTML. Contact H1 becomes “Tell us what you have.” Do not add chatbots.
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="band" id="b6">
+    <div class="wrap">
+      <p class="kicker">Benchmark 06 — Consumer Trust &amp; Conversion · 63/100</p>
+      <h2>Honesty is high. Evidence is thin. Skepticism is not dissolved.</h2>
+      <p class="muted">The brief asked for a high-contrast validation matrix: case studies, transactional proof, operational savings, forcing a booking.</p>
+
+      <h3>Validation matrix — as the site stands</h3>
+      <table>
+        <tr><th>Claim</th><th>On-site proof</th><th>Visitor test</th></tr>
+        <tr><td>500+ projects</td><td>Animated stat. Repeated in FAQ / About / JSON-LD.</td><td>Number without a list feels like every interior site in DHA. Need 8–12 named rooms even if clients stay anonymous: “Pharmacy, DHA · 2023 · design + fit-out.”</td></tr>
+        <tr><td>~20 founder years / 10+ execution</td><td>Copy + counters.</td><td>Credible if tied to Wellstar as origin, which About does. Keep.</td></tr>
+        <tr><td>ISO 9001</td><td>Text only. No certificate, no body, no year.</td><td>Upload the mark + certificate number or stop repeating it in every band.</td></tr>
+        <tr><td>Wellstar path</td><td>Named. Pharmacy → Cosmetics → Mini Hospital, DHA Lahore. Client-stories page exists.</td><td>This is the only transactional story. It must be a full case: requirement → 3D → BOQ → site → result. If photography is missing, say so and show drawings/stills labelled as stills.</td></tr>
+        <tr><td>Studies (6)</td><td>Correctly labelled studies. Dates “March 2026.” Mosaic on Home.</td><td>Good integrity. Weak conversion. A study cannot force checkout. They are mood, not proof.</td></tr>
+        <tr><td>Operational savings</td><td>Absent. No “BOQ stopped a 12% over-spec.” No before/after cost. No time-to-open.</td><td>The benchmark’s “savings matrix” is not Woodex’s language. Translate it: <em>fewer unknowns when the still becomes a BOQ</em>. One anonymised number beats 500+.</td></tr>
+        <tr><td>Social proof</td><td>Dead Ig/In/Fb. No reviews (correct — do not invent).</td><td>Empty socials are worse than none.</td></tr>
+        <tr><td>Photography</td><td>14 recycled JPEGs, several look like generic stock/AI architecture.</td><td>Trust dies if a “500+ studio” cannot show its own mill or a finished Wellstar room.</td></tr>
+      </table>
+      <p class="callout">Do not install fake reviews, 95% satisfaction, or award shelves. The brand’s trust strategy is scarcity of claims. The missing piece is <em>density of evidence behind the few claims</em>.</p>
+      <div class="fix">
+        <strong>Trust SOP</strong>
+        One Wellstar case with real photos. One mill/craft sequence (Woodex Furniture). ISO mark. Hide socials. Replace animated 0→500 with the number static (animation looks like a SaaS landing page). Add a 4-cell matrix on Home/About: Projects 500+ · ISO 9001 · 3 cities · 1 named path. Same cells everywhere. No extra metrics.
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="band" id="b7">
+    <div class="wrap">
+      <p class="kicker">Benchmark 07 — Data-Driven Web Systems Auditor · 52/100</p>
+      <h2>No 14-day metrics. The friction loops are still visible in the markup.</h2>
+      <p class="muted">The brief supplied placeholders for Unique Visitors, Bounce, Session Duration, Conversion Rate. None are instrumented on WOODEX-26. Inventing numbers would violate the same honesty lock as fake awards. Below is the technical diagnosis of what those numbers <em>will</em> say until the loops are cut.</p>
+
+      <h3>Instrumentation gap</h3>
+      <ul class="tight">
+        <li>No Google Analytics / Plausible / GTM in any of 66 heads.</li>
+        <li>No conversion events (WhatsApp click, form submit, 3D CTA).</li>
+        <li>Forms cannot convert: they reset in the browser.</li>
+        <li>Therefore bounce/session/CVR over 14 days = <strong>unknown</strong>. Do not brief an agency with fiction.</li>
+      </ul>
+
+      <h3>Predicted friction loops (markup-level)</h3>
+      <table>
+        <tr><th>Loop</th><th>Flaw</th><th>Likely metric damage</th></tr>
+        <tr><td>LCP / CLS</td><td>Hero 1408×768 JPEG, no width/height, no fetchpriority. Google Fonts + Tailwind CDN render-blocking on every page. Home HTML 51 KB + 6 CSS + runtime Tailwind.</td><td>High bounce on 4G. Layout shift as images pop under the H1.</td></tr>
+        <tr><td>Semantic / hierarchy mismatch</td><td>Giant LAYOUT word (aria-hidden) competes with H1. Two “six services” taxonomies. Get started → three URLs.</td><td>Short session, confused next-click, low scroll depth past fold.</td></tr>
+        <tr><td>Header hide-on-scroll</td><td>Desktop header translates away after 280px. High-intent CTA leaves the viewport.</td><td>Drop in Start-your-project clicks mid-page. WhatsApp float saves some of this.</td></tr>
+        <tr><td>Lead pipe</td><td>Submit does not persist. Phone required vs JS mismatch. Footer without tel. Fake socials.</td><td>Conversion rate near-zero except WhatsApp (unmeasured).</td></tr>
+        <tr><td>SEO hygiene</td><td><code>404.html</code> listed in sitemap (66 URLs). Page itself is <code>noindex, follow</code>. Canonical host <code>https://woodex.interior/</code> may not be the live domain. Keywords meta still present on Home.</td><td>Crawl waste. Brand SERP risk if 404 is fetched as a URL.</td></tr>
+        <tr><td>Image sameness</td><td>511 <code>&lt;img&gt;</code> tags, 14 files. Inner cine heroes Ken Burns the same three photos.</td><td>Session duration looks fine (motion) while trust and recall stay low.</td></tr>
+        <tr><td>Motion cost</td><td>lx-pin 280vh sticky, counters, tilt, Ken Burns, marquee, partner auto-rotate, hero 6.8s. Reduced-motion is coded. Average users get a theatre.</td><td>Main-thread jank on mobile; lx-pin already disabled &lt;1100px (good).</td></tr>
+        <tr><td>Duplicate chrome</td><td>~1.4 MB of HTML across 66 files, much of it identical mega nav.</td><td>Maintainability, not just bytes — one mega bug ships 66 times (already happened with CTA pill colour).</td></tr>
+      </table>
+
+      <h3>What is <em>not</em> the problem</h3>
+      <ul class="tight">
+        <li>Broken links, missing assets, unclosed tags — clean.</li>
+        <li>WhatsApp number — consistent 66/66.</li>
+        <li>Exclusive 3D H2 — only on <code>3d-studio.html</code>.</li>
+        <li>Awards / 320+ / 15 years / ISO 45001 / 95% — absent. “Unlimited free design” only as a denial (FAQ, process, one insight).</li>
+        <li>Industrial / institutional — not claimed.</li>
+      </ul>
+      <div class="fix">
+        <strong>Auditor SOP</strong>
+        Add privacy-respecting analytics + four events: WhatsApp, Start click, form submit, 3D Studio. Drop 404 from sitemap. Image dimensions. Self-host font. Replace Tailwind CDN before any “performance brand” claim. Then read 14 real days. Do not optimise copy against imaginary bounce.
+      </div>
+    </div>
+  </section>
+
+  <section class="navy-band">
+    <div class="wrap">
+      <p class="kicker">Brand build — what to become</p>
+      <h2>Woodex is not Linoxa in Lahore. Stop auditioning.</h2>
+      <div class="grid-3" style="margin-top:28px">
+        <article class="card">
+          <p class="pill">Positioning</p>
+          <h3>The buildable design studio</h3>
+          <p>Category: interior design + in-house 3D + execution + mill. Not a decorator. Not a contractor. Not an architecture magazine. Competitors sell looks. Woodex sells an approved room that can be priced and built.</p>
+        </article>
+        <article class="card">
+          <p class="pill">Enemy</p>
+          <h3>The split job</h3>
+          <p>Moodboard from one firm, render farm from another, BOQ from a quantity surveyor, site from the cheapest crew. Woodex’s fight is fragmentation — said calmly, never as a smear of former partners.</p>
+        </article>
+        <article class="card">
+          <p class="pill">Voice</p>
+          <h3>Short. Specific. Unsentimental.</h3>
+          <p>Rooms, gates, stills, mill, site. No “timeless blending.” No “unbeatable value.” No fake warmth. If a sentence could run on a Dubai catalogue, cut it.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <p class="kicker">Priority — start here</p>
+      <h2>Commercial patches, not another restyle</h2>
+
+      <div class="prio">
+        <div class="lv">P0</div>
+        <div>
+          <strong>Pipe and hygiene (conversion is zero without this)</strong>
+          <ul class="tight">
+            <li>Remove <code>404.html</code> from <code>sitemap.xml</code>.</li>
+            <li>Form: POST somewhere real, or WhatsApp-fallback with field string. Align phone required between HTML and JS.</li>
+            <li>Footer Call <code>tel:+923362259477</code> on all 66. Hide Ig/In/Fb until URLs exist.</li>
+            <li>Fix <code>content/site.json</code> WhatsApp to <code>923224000768</code>.</li>
+            <li>Home CTA labels: Get started / Contact us / Learn more → Woodex verbs. Keep 3-slide layout.</li>
+            <li>Contact H1 + form intro rewrite. About leftover “refined / lived-in” H2 rewrite.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="prio">
+        <div class="lv">P1</div>
+        <div>
+          <strong>Trust density + CLS</strong>
+          <ul class="tight">
+            <li>Width/height or aspect-ratio on 511 images. <code>fetchpriority="high"</code> on Home/3D LCP.</li>
+            <li><code>light-page</code> on About, Projects, Contact, Start, Process, FAQ, Careers, Locations.</li>
+            <li>ISO mark. Wellstar case with real photos. Mill sequence.</li>
+            <li>Collapse Home’s two six-service modules into one.</li>
+            <li>Skip link. <code>&lt;address&gt;</code> on contact/footer desk.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="prio">
+        <div class="lv">P2</div>
+        <div>
+          <strong>Identity ownership</strong>
+          <ul class="tight">
+            <li>Self-host Plus Jakarta. Build CSS; drop Tailwind CDN.</li>
+            <li>Unify CSS load order. Retire duplicate <code>.mega</code> in chrome.css.</li>
+            <li>Analytics + four events. Then a real 14-day report.</li>
+            <li>30 original photographs. Until then, fewer images used more honestly.</li>
+            <li>Do not redesign 3D Studio. Do not restyle Home 3-slide composition. Do not delete pages or theme plans.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <p class="kicker">Score recap</p>
+      <h2>Where Woodex already outclasses the market</h2>
+      <table>
+        <tr><th>Market default</th><th>Woodex today</th><th>Hold or fix</th></tr>
+        <tr><td>Award walls, 15 years, 95%</td><td>Refused. Proof list is short and named.</td><td>Hold.</td></tr>
+        <tr><td>Unlimited free design</td><td>Denied in FAQ/process.</td><td>Hold.</td></tr>
+        <tr><td>One undifferentiated “interior design” page</td><td>20 service pages with unique approval lines + rooms + outputs.</td><td>Hold uniqueness. Do not 10-block clone.</td></tr>
+        <tr><td>Render farm as “design”</td><td>3D Studio: stills first; 3D-only is complete; exclusive H2 once.</td><td>Hold.</td></tr>
+        <tr><td>No execution path for client drawings</td><td>Two-route fit-out.</td><td>Hold.</td></tr>
+        <tr><td>Pretty template, no voice</td><td>Voice is the lead. Template leftovers are the drag.</td><td>Fix leftovers.</td></tr>
+        <tr><td>Contact form to nowhere</td><td>Same, plus a working WhatsApp.</td><td>Fix pipe. Keep WhatsApp.</td></tr>
+      </table>
+      <p style="margin-top:28px">Woodex does not need a new brand idea. It needs the site to stop auditioning as Linoxa and start operating as the studio that draws a room, lets the client approve it, and can build it in Lahore, Karachi or Islamabad.</p>
+    </div>
+  </section>
+
+  <footer class="rep">
+    <div class="wrap">
+      Woodex Interior · Master Brand &amp; Systems Audit · 7 Benchmarks · 20 August 2026 · Corpus: /home/user/WOODEX-26/ · 66 HTML · This report does not replace DESIGN.md, CONTENT_BRAND.md, or PENDING_TODO_LIVE.md — it sits on top of them.
+    </div>
+  </footer>
+</body>
+</html>

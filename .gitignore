@@ -1,0 +1,13 @@
+.DS_Store
+*.log
+.venv/
+node_modules/
+.arena/
+.cache/
+.env
+.env.*
+*.pem
+id_ed25519
+id_rsa
+*.pub
+.ssh/

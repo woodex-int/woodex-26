@@ -1,0 +1,13 @@
+{
+  "endpoint": "/api/brief",
+  "method": "POST",
+  "status": "frontend-only",
+  "fields": ["name", "email", "message", "city", "have"],
+  "studio": {
+    "address": "LG 90 Link Road, Model Town, Lahore, Pakistan",
+    "hours": "10:00 – 8:30",
+    "whatsapp": "+923224000768",
+    "call": "+923362259477",
+    "email": "studio@woodex.interior"
+  }
+}
