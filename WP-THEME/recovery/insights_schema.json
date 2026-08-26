@@ -1,0 +1,15 @@
+{
+  "layout_name": "Insights — Blog Two list + native posts",
+  "archive": "date · title · Discover more (no image grid)",
+  "categories": ["3D", "Cost & BOQ", "Rooms", "Process"],
+  "posts": [
+    "what-is-3d-visualization",
+    "interior-design-cost-pakistan",
+    "design-vs-turnkey",
+    "home-renovation-checklist",
+    "office-interior-guide",
+    "restaurant-planning",
+    "retail-shop-interior"
+  ],
+  "author": "Woodex studio"
+}

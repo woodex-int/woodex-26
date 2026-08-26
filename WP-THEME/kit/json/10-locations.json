@@ -1,0 +1,90 @@
+{
+  "version": "0.4",
+  "title": "Woodex Locations",
+  "type": "page",
+  "page_settings": [],
+  "content": [
+    {
+      "id": "f4b4eb8",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "0",
+          "left": "0",
+          "isLinked": true
+        }
+      },
+      "elements": [
+        {
+          "id": "583f663",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "woodex-cine",
+          "settings": {
+            "mode": "short",
+            "crumbs": "Home \u00b7 We work where the site is",
+            "title": "We work where the site is",
+            "copy": "Studios: Gulberg III Lahore, Clifton Karachi, F-7 Islamabad.",
+            "cta": "Start your project",
+            "url": {
+              "url": "/start-your-project/"
+            }
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "21e05d8",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "flex_direction": "column",
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "32",
+          "bottom": "96",
+          "left": "32",
+          "isLinked": false
+        },
+        "boxed_width": {
+          "unit": "px",
+          "size": 1320
+        }
+      },
+      "elements": [
+        {
+          "id": "6f59591",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p>Studios: Gulberg III Lahore, Clifton Karachi, F-7 Islamabad.</p><p>500+ projects \u00b7 founder ~20 years \u00b7 execution 10+ years \u00b7 ISO 9001.</p>"
+          },
+          "elements": []
+        },
+        {
+          "id": "8386e75",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "button",
+          "settings": {
+            "text": "Start your project",
+            "link": {
+              "url": "/start-your-project/"
+            }
+          },
+          "elements": []
+        }
+      ]
+    }
+  ]
+}

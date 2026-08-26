@@ -1,0 +1,224 @@
+/* Linoxa Blog Two — typographic index. Tokens locked. */
+.b2 {
+  background: #fff;
+  padding: 148px 0 72px;
+}
+.b2-head {
+  text-align: center;
+  margin: 0 auto 56px;
+  max-width: 28ch;
+}
+.b2-head h1 {
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+  color: var(--ink);
+  margin: 0 0 16px;
+}
+.b2-head p {
+  color: var(--muted);
+  font-weight: 300;
+  line-height: 1.65;
+  margin: 0 auto;
+  max-width: 46ch;
+}
+.b2-list {
+  width: min(var(--container), calc(100% - 64px));
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+.b2-item {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr) auto;
+  gap: 20px 32px;
+  align-items: center;
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+}
+.b2-item article { display: contents; }
+.b2-item:last-child { border-bottom: 1px solid var(--line); }
+.b2-item time {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+.b2-item h2 {
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  line-height: 1.18;
+  margin: 0;
+  max-width: 22ch;
+}
+.b2-item h2 a:hover { color: var(--wood); }
+.b2-item .gate {
+  display: block;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--wood);
+  margin-bottom: 6px;
+}
+@media (max-width: 820px) {
+  .b2 { padding: 120px 0 40px; }
+  .b2-list { width: calc(100% - 36px); }
+  .b2-item {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 28px 0;
+  }
+  .b2-item .btn { margin-top: 8px; }
+}
+
+/* AEO / GEO / E-E-A-T blocks — semantic, unique per page */
+.wx-have, .wx-out, .wx-ask, .wx-geo, .wx-note, .wx-eeat {
+  padding: 96px 0;
+  background: #fff;
+  scroll-margin-top: 96px;
+}
+.wx-have header, .wx-out header, .wx-ask header,
+.wx-geo header, .wx-note header, .wx-eeat header {
+  width: min(var(--container), calc(100% - 64px));
+  margin: 0 auto 28px;
+}
+.wx-have h2, .wx-out h2, .wx-ask h2,
+.wx-geo h2, .wx-note h2, .wx-eeat h2 {
+  font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+  max-width: 16ch;
+  margin: 8px 0 0;
+}
+.wx-have-list, .wx-out-list {
+  width: min(var(--container), calc(100% - 64px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+}
+.wx-have-list li, .wx-out-list li {
+  padding: 22px 28px 22px 0;
+  border-top: 1px solid var(--line);
+}
+.wx-have-list li:nth-child(odd), .wx-out-list li:nth-child(odd) { padding-right: 36px; }
+.wx-have-list h3, .wx-out-list h3 { font-size: 1.12rem; margin: 0 0 6px; }
+.wx-have-list p, .wx-out-list p { color: var(--muted); margin: 0; font-size: 0.94rem; }
+
+.wx-ask { background: var(--navy); color: #fff; }
+.wx-ask h2 { color: #fff; }
+.wx-ask .eyebrow { color: rgba(255,255,255,.5); }
+.wx-ask-list {
+  width: min(var(--container), calc(100% - 64px));
+  margin: 0 auto;
+}
+.wx-ask-list dt {
+  font-size: 1.15rem;
+  font-weight: 560;
+  padding: 22px 0 8px;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+.wx-ask-list dd {
+  margin: 0 0 18px;
+  color: rgba(255,255,255,.68);
+  max-width: 62ch;
+  line-height: 1.65;
+}
+
+.wx-geo { background: #fff; }
+.wx-geo address {
+  width: min(var(--container), calc(100% - 64px));
+  margin: 0 auto 22px;
+  font-style: normal;
+  color: var(--ink);
+}
+.wx-geo-cities {
+  width: min(var(--container), calc(100% - 64px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+}
+.wx-geo-cities li {
+  background: var(--cream);
+  border-radius: 18px;
+  padding: 22px 20px;
+}
+.wx-geo-cities small {
+  display: block;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.68rem;
+  color: var(--wood);
+  margin-bottom: 6px;
+}
+.wx-geo-cities a:hover { color: var(--wood); }
+
+.wx-note { background: #fff; padding-top: 40px; padding-bottom: 40px; }
+.wx-note-row {
+  width: min(var(--container), calc(100% - 64px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.wx-note-row header { min-width: 0; }
+.wx-note .gate {
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--wood);
+  margin: 0 0 8px;
+}
+.wx-note-row h2 { max-width: 20ch; margin: 0; font-size: clamp(1.4rem, 2.4vw, 2rem); }
+
+.wx-eeat { background: var(--navy); color: #fff; }
+.wx-eeat h2 { color: #fff; }
+.wx-eeat .eyebrow { color: rgba(255,255,255,.5); }
+.wx-eeat-list {
+  width: min(var(--container), calc(100% - 64px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+}
+.wx-eeat-list li {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 24px 20px;
+  min-height: 140px;
+}
+.wx-eeat-list b {
+  display: block;
+  font-size: 1.35rem;
+  font-weight: 560;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+.wx-eeat-list span { color: rgba(255,255,255,.62); font-size: 0.88rem; }
+
+@media (max-width: 1100px) {
+  .wx-have-list, .wx-out-list, .wx-geo-cities { grid-template-columns: 1fr 1fr; }
+  .wx-eeat-list { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 820px) {
+  .wx-have, .wx-out, .wx-ask, .wx-geo, .wx-eeat { padding: 72px 0; }
+  .wx-have-list, .wx-out-list, .wx-geo-cities, .wx-eeat-list { grid-template-columns: 1fr; }
+  .wx-note-row { grid-template-columns: 1fr; }
+  .wx-have header, .wx-out header, .wx-ask header,
+  .wx-geo header, .wx-note header, .wx-eeat header,
+  .wx-have-list, .wx-out-list, .wx-ask-list,
+  .wx-geo address, .wx-geo-cities, .wx-eeat-list, .wx-note-row {
+    width: calc(100% - 36px);
+  }
+}

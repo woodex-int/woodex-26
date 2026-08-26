@@ -1,0 +1,18 @@
+/*
+Theme Name: WX Theme
+Theme URI: https://woodex.interior
+Author: Woodex Interior
+Author URI: https://woodex.interior
+Description: First-party parent for Woodex Interior. Elementor canvas. Impreza is a reference only — this theme does not require us-core, WPBakery, or Slider Revolution. Do not restyle Home 3-slide or 3D Studio cine.
+Version: 1.0.0
+Requires at least: 6.4
+Tested up to: 6.8
+Requires PHP: 8.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: wx-theme
+Tags: interior-design, elementor, custom-menu, featured-images, translation-ready
+
+WX Theme — parent. Pair with plugin woodex-core + Elementor Free + Xpro.
+*/
+/* Tokens and chrome live in assets/css/. */

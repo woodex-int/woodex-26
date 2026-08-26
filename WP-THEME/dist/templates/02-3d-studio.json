@@ -1,0 +1,122 @@
+{
+  "version": "0.4",
+  "title": "Woodex 3D Studio",
+  "type": "page",
+  "page_settings": [],
+  "content": [
+    {
+      "id": "e73778b",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "0",
+          "left": "0",
+          "isLinked": true
+        }
+      },
+      "elements": [
+        {
+          "id": "32fe52e",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "woodex-cine",
+          "settings": {
+            "mode": "full",
+            "crumbs": "Home \u00b7 3D Studio",
+            "eye": "In-house 3D",
+            "title": "See it. Understand it. Build it.",
+            "copy": "Stills first. Then a walkthrough if the still is not enough.",
+            "cta": "Start your project",
+            "url": {
+              "url": "/start-your-project/"
+            }
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "8253b44",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "flex_direction": "column",
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "32",
+          "bottom": "96",
+          "left": "32",
+          "isLinked": false
+        },
+        "boxed_width": {
+          "unit": "px",
+          "size": 1320
+        }
+      },
+      "elements": [
+        {
+          "id": "d1d6caf",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "heading",
+          "settings": {
+            "title": "You are not approving a plan. You are approving a room.",
+            "header_size": "h2"
+          },
+          "elements": []
+        },
+        {
+          "id": "b80199f",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p>This line lives on 3D Studio only.</p>"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "d19ee07",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "flex_direction": "column",
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "32",
+          "bottom": "96",
+          "left": "32",
+          "isLinked": false
+        },
+        "boxed_width": {
+          "unit": "px",
+          "size": 1320
+        }
+      },
+      "elements": [
+        {
+          "id": "e103563",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "woodex-brief-form",
+          "settings": {
+            "heading": "Brief the 3D studio"
+          },
+          "elements": []
+        }
+      ]
+    }
+  ]
+}

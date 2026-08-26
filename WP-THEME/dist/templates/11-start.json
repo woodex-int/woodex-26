@@ -1,0 +1,124 @@
+{
+  "version": "0.4",
+  "title": "Woodex Start",
+  "type": "page",
+  "page_settings": [],
+  "content": [
+    {
+      "id": "4f73644",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "0",
+          "left": "0",
+          "isLinked": true
+        }
+      },
+      "elements": [
+        {
+          "id": "119cd1e",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "woodex-cine",
+          "settings": {
+            "mode": "short",
+            "crumbs": "Home \u00b7 Tell us about your space",
+            "title": "Tell us about your space",
+            "copy": "What you have. What you need. City.",
+            "cta": "Start your project",
+            "url": {
+              "url": "/start-your-project/"
+            }
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "dc5aa24",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "flex_direction": "column",
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "32",
+          "bottom": "96",
+          "left": "32",
+          "isLinked": false
+        },
+        "boxed_width": {
+          "unit": "px",
+          "size": 1320
+        }
+      },
+      "elements": [
+        {
+          "id": "4f08783",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p>What you have. What you need. City.</p><p>500+ projects \u00b7 founder ~20 years \u00b7 execution 10+ years \u00b7 ISO 9001.</p>"
+          },
+          "elements": []
+        },
+        {
+          "id": "e3d7e24",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "button",
+          "settings": {
+            "text": "Start your project",
+            "link": {
+              "url": "/start-your-project/"
+            }
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "59af670",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "flex_direction": "column",
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "32",
+          "bottom": "96",
+          "left": "32",
+          "isLinked": false
+        },
+        "boxed_width": {
+          "unit": "px",
+          "size": 1320
+        }
+      },
+      "elements": [
+        {
+          "id": "ec83c83",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "woodex-brief-form",
+          "settings": {
+            "heading": "Tell us about your space",
+            "require_phone": "yes"
+          },
+          "elements": []
+        }
+      ]
+    }
+  ]
+}

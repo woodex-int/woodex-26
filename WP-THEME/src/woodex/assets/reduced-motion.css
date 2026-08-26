@@ -1,0 +1,24 @@
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide img,
+  .cine-slide img,
+  .wx-ticker-track,
+  .hero-pip .track i,
+  .site-header .mega-media img {
+    animation: none !important;
+    transition: none !important;
+  }
+  .hero-slide,
+  .hero-slide.is-leave {
+    clip-path: none !important;
+  }
+  .hero-slide:not(.is-active) { display: none; }
+  .hero-cta { opacity: 1 !important; transform: none !important; }
+  .hero h1 .line > span { transform: none !important; }
+  .site-header { transition: none !important; }
+  [data-anim], .st-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+    animation: none !important;
+  }
+}

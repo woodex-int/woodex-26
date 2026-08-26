@@ -1,0 +1,124 @@
+{
+  "version": "0.4",
+  "title": "Woodex Contact",
+  "type": "page",
+  "page_settings": [],
+  "content": [
+    {
+      "id": "246d880",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "0",
+          "left": "0",
+          "isLinked": true
+        }
+      },
+      "elements": [
+        {
+          "id": "bb5010f",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "woodex-cine",
+          "settings": {
+            "mode": "short",
+            "crumbs": "Home \u00b7 Tell us what you have",
+            "title": "Tell us what you have",
+            "copy": "WhatsApp +92 322 4000768. Call +92 336 2259477.",
+            "cta": "Start your project",
+            "url": {
+              "url": "/start-your-project/"
+            }
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "b73897c",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "flex_direction": "column",
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "32",
+          "bottom": "96",
+          "left": "32",
+          "isLinked": false
+        },
+        "boxed_width": {
+          "unit": "px",
+          "size": 1320
+        }
+      },
+      "elements": [
+        {
+          "id": "c585f8e",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p>WhatsApp +92 322 4000768. Call +92 336 2259477.</p><p>500+ projects \u00b7 founder ~20 years \u00b7 execution 10+ years \u00b7 ISO 9001.</p>"
+          },
+          "elements": []
+        },
+        {
+          "id": "71c9b24",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "button",
+          "settings": {
+            "text": "Start your project",
+            "link": {
+              "url": "/start-your-project/"
+            }
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "925ec08",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "flex_direction": "column",
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "32",
+          "bottom": "96",
+          "left": "32",
+          "isLinked": false
+        },
+        "boxed_width": {
+          "unit": "px",
+          "size": 1320
+        }
+      },
+      "elements": [
+        {
+          "id": "6b5824d",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "woodex-brief-form",
+          "settings": {
+            "heading": "Tell us about your space",
+            "require_phone": "yes"
+          },
+          "elements": []
+        }
+      ]
+    }
+  ]
+}

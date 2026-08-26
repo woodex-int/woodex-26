@@ -1,0 +1,90 @@
+{
+  "version": "0.4",
+  "title": "Woodex Process",
+  "type": "page",
+  "page_settings": [],
+  "content": [
+    {
+      "id": "6535f8f",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "full",
+        "flex_direction": "column",
+        "padding": {
+          "unit": "px",
+          "top": "0",
+          "right": "0",
+          "bottom": "0",
+          "left": "0",
+          "isLinked": true
+        }
+      },
+      "elements": [
+        {
+          "id": "9b5ea46",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "woodex-cine",
+          "settings": {
+            "mode": "short",
+            "crumbs": "Home \u00b7 Drawn. Then built.",
+            "title": "Drawn. Then built.",
+            "copy": "Discover \u2192 Design \u2192 Visualize \u2192 Plan (budget + BOQ) \u2192 Build \u2192 Install \u2192 Deliver.",
+            "cta": "Start your project",
+            "url": {
+              "url": "/start-your-project/"
+            }
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "6996574",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "content_width": "boxed",
+        "flex_direction": "column",
+        "padding": {
+          "unit": "px",
+          "top": "96",
+          "right": "32",
+          "bottom": "96",
+          "left": "32",
+          "isLinked": false
+        },
+        "boxed_width": {
+          "unit": "px",
+          "size": 1320
+        }
+      },
+      "elements": [
+        {
+          "id": "8b3a0d3",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "<p>Discover \u2192 Design \u2192 Visualize \u2192 Plan (budget + BOQ) \u2192 Build \u2192 Install \u2192 Deliver.</p><p>500+ projects \u00b7 founder ~20 years \u00b7 execution 10+ years \u00b7 ISO 9001.</p>"
+          },
+          "elements": []
+        },
+        {
+          "id": "ccd78c6",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "button",
+          "settings": {
+            "text": "Start your project",
+            "link": {
+              "url": "/start-your-project/"
+            }
+          },
+          "elements": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+/* Woodex Hero Slider — composition locked to WOODEX-26 Home 3-slide */
+.wx-hero.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 740px;
+  overflow: hidden;
+  background: var(--navy, #0c1628);
+  color: #fff;
+}
+.wx-hero .hero-slides { position: absolute; inset: 0; }
+.wx-hero .hero-slide {
+  position: absolute; inset: 0; z-index: 1;
+  clip-path: inset(0 0 0 100%);
+  transition: clip-path 1.15s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.wx-hero .hero-slide.is-active { z-index: 2; clip-path: inset(0 0 0 0); }
+.wx-hero .hero-slide.is-leave { z-index: 1; clip-path: inset(0 100% 0 0); }
+.wx-hero .hero-slide .media { position: absolute; inset: 0; overflow: hidden; }
+.wx-hero .hero-slide img {
+  width: 100%; height: 100%; object-fit: cover;
+  transform: scale(1.12); transition: transform 8.5s linear;
+}
+.wx-hero .hero-slide.is-active img { transform: scale(1); }
+.wx-hero .hero-overlay {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(12,22,40,.5) 0%, rgba(12,22,40,.22) 38%, rgba(12,22,40,.68) 100%);
+}
+.wx-hero .hero-lines {
+  position: absolute; inset: 0; z-index: 2; display: grid;
+  grid-template-columns: repeat(4, 1fr); pointer-events: none;
+}
+.wx-hero .hero-lines i { border-right: 1px solid rgba(255,255,255,.12); }
+.wx-hero .hero-lines i:last-child { border-right: 0; }
+.wx-hero .hero-content {
+  position: relative; z-index: 2; height: 100%;
+  display: flex; flex-direction: column; justify-content: center; padding-top: 48px;
+}
+.wx-hero .hero-label {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: .78rem; letter-spacing: .28em; text-transform: uppercase;
+  color: rgba(255,255,255,.7); margin-bottom: 22px;
+}
+.wx-hero .hero-label i { width: 28px; height: 1px; background: #fff; }
+.wx-hero h1 {
+  color: #fff; font-size: clamp(2.8rem, 6.6vw, 5.8rem);
+  max-width: 13ch; font-weight: 500; letter-spacing: -.042em; line-height: 1.02; margin: 0;
+}
+.wx-hero h1 .line { display: block; overflow: hidden; }
+.wx-hero h1 .line > span { display: block; transform: translateY(118%); transition: transform 1s cubic-bezier(0.22,1,0.36,1); }
+.wx-hero .hero-slide.is-active h1 .line:nth-child(1) > span { transition-delay: .28s; transform: none; }
+.wx-hero .hero-slide.is-active h1 .line:nth-child(2) > span { transition-delay: .4s; transform: none; }
+.wx-hero .hero-copy { max-width: 38ch; margin: 0; color: rgba(255,255,255,.82); font-size: .98rem; line-height: 1.65; font-weight: 300; }
+.wx-hero .hero-cta {
+  display: flex; align-items: center; flex-wrap: wrap; gap: 22px 32px; margin-top: 32px;
+  opacity: 0; transform: translateY(18px);
+  transition: opacity .8s cubic-bezier(0.22,1,0.36,1) .5s, transform .8s cubic-bezier(0.22,1,0.36,1) .5s;
+}
+.wx-hero .hero-slide.is-active .hero-cta { opacity: 1; transform: none; }
+.wx-hero .hero-index {
+  position: absolute; left: 0; right: 0; bottom: -6%; z-index: 3;
+  font-size: clamp(4.8rem, 18vw, 13.5rem); font-weight: 700; letter-spacing: -.06em;
+  color: #fff; pointer-events: none; line-height: .78; text-align: center; text-transform: uppercase;
+  mask-image: linear-gradient(180deg, #000 38%, transparent 92%);
+  -webkit-mask-image: linear-gradient(180deg, #000 38%, transparent 92%);
+}
+.wx-hero .hero-side {
+  position: absolute; left: 28px; top: 50%; transform: translateY(-50%) rotate(-90deg);
+  z-index: 4; display: none; gap: 22px; font-size: .68rem; letter-spacing: .28em;
+  text-transform: uppercase; color: rgba(255,255,255,.45);
+}
+@media (min-width: 1100px) { .wx-hero .hero-side { display: flex; } }
+.wx-hero .hero-side span.is-on { color: #fff; }
+.wx-hero .hero-nav { position: absolute; left: 0; right: 0; bottom: 40px; z-index: 5; }
+.wx-hero .hero-nav-inner {
+  width: min(1512px, calc(100% - 64px)); margin-inline: auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
+.wx-hero .hero-pips { display: flex; align-items: center; gap: 22px; }
+.wx-hero .hero-pip {
+  display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.4);
+  font-size: .78rem; letter-spacing: .14em; font-weight: 500; background: none; border: 0; cursor: pointer;
+}
+.wx-hero .hero-pip.is-active { color: #fff; }
+.wx-hero .hero-pip .track { width: 56px; height: 1px; background: rgba(255,255,255,.2); overflow: hidden; }
+.wx-hero .hero-pip .track i { display: block; height: 100%; width: 0; background: #fff; }
+.wx-hero .hero-pip.is-active .track i { animation: wx-pip 6.8s linear forwards; }
+@keyframes wx-pip { to { width: 100%; } }
+.wx-hero .hero-arrows { display: flex; gap: 10px; }
+.wx-hero .hero-arrow {
+  width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(255,255,255,.22);
+  color: #fff; display: grid; place-items: center; background: none; cursor: pointer;
+}
+.wx-hero .hero-arrow:hover { background: #fff; color: #0c1628; }
+.wx-hero .container { width: min(1320px, calc(100% - 64px)); margin-inline: auto; }
