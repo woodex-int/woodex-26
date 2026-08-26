@@ -105,6 +105,22 @@
     });
   }
 
+  /* Auto-mark gallery images for tilt + lightbox */
+  $$(".folio-card, .found-card, .case-gallery, .case-feat, .lx-doc-main").forEach((el) => {
+    if (!el.hasAttribute("data-tilt")) el.setAttribute("data-tilt", "");
+    $$("img", el).forEach((img) => img.classList.add("lb-src"));
+  });
+  $$(".folio-card img, .found-card img, .case-gallery img").forEach((img) => img.classList.add("lb-src"));
+
+  if (!$("#lightbox") && $$(".lb-src").length) {
+    const box = document.createElement("div");
+    box.id = "lightbox";
+    box.className = "lb";
+    box.hidden = true;
+    box.innerHTML = '<button class="lb-x" type="button" aria-label="Close">×</button><img alt="" />';
+    document.body.appendChild(box);
+  }
+
   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     $$("[data-tilt]").forEach((el) => {
       const face = el.querySelector("img");

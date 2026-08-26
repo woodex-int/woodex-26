@@ -1,0 +1,55 @@
+/* P4 QA — 1440 / 1024 / 768 / 375. Does not restyle Home 3-slide composition. */
+
+@media (max-width: 1440px) {
+  .header-inner,
+  .hero-nav-inner { width: min(1320px, calc(100% - 48px)); }
+}
+
+@media (max-width: 1024px) {
+  .lx-doc-grid { grid-template-columns: 1fr; }
+  .lx-doc-main,
+  .lx-doc-main img { min-height: 320px; }
+  .st-spaces-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .btn { white-space: normal; height: auto; min-height: 48px; padding: 8px 8px 8px 16px; }
+  .hero-copy { max-width: 34ch; }
+  .wx-map-frame { height: 240px; }
+  .c2-top h1,
+  .folio-head h1 { font-size: clamp(2.2rem, 10vw, 3.2rem); }
+}
+
+@media (max-width: 375px) {
+  .container { width: calc(100% - 28px); }
+  .header-inner { width: calc(100% - 24px); }
+  .hero { min-height: 580px; }
+  .hero-nav-inner { width: calc(100% - 24px); }
+  .hero-arrows { display: none; }
+  .stat-num { font-size: 2rem; }
+  .wa-float { right: 14px; bottom: 14px; width: 50px; height: 50px; }
+}
+
+@media (min-width: 1100px) {
+  .hero-side { display: flex; }
+}
+
+/* Tilt + lightbox cursor */
+[data-tilt] img,
+.folio-card img,
+.found-card img,
+.case-gallery img,
+.lb-src { cursor: zoom-in; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee-track,
+  .st-ticker-track,
+  .wx-ticker-track,
+  .hero-slide img,
+  .cine-slide img,
+  .site-header .mega-media img {
+    animation: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}

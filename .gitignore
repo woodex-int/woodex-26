@@ -11,3 +11,8 @@ id_ed25519
 id_rsa
 *.pub
 .ssh/
+DEPLOY_KEY.txt
+.ssh/woodex-26-deploy
+.ssh/woodex-26-deploy.pub
+# root copy of the kit — canonical is WP-THEME/dist/
+/WOODEX-WP-MASTER.zip

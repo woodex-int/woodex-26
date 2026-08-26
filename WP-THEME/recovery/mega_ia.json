@@ -1,0 +1,32 @@
+{
+  "module": "Services mega — five groups",
+  "trigger": "hover desktop / accordion mobile",
+  "cta": { "label": "Open 3D Studio", "url": "/3d-studio/" },
+  "groups": [
+    {
+      "id": "interior",
+      "heading": "Interior Design",
+      "items": ["All interiors", "Residential", "Office & Corporate", "Retail & Shop", "Brand Shop & Outlet"]
+    },
+    {
+      "id": "fitout",
+      "heading": "Fit-Out",
+      "items": ["Fit-Out", "Office Fit-Out", "Commercial Fit-Out", "Residential Fit-Out"]
+    },
+    {
+      "id": "industries",
+      "heading": "Industries",
+      "items": ["Hospitality", "Restaurant Interior", "Café Interior"]
+    },
+    {
+      "id": "specialist",
+      "heading": "Specialist",
+      "items": ["Custom Furniture", "Joinery", "Interior Renovation", "Turnkey Interiors", "Architecture", "Space planning", "Lighting", "Drawings", "Pharmacy", "Software house"]
+    },
+    {
+      "id": "studio",
+      "heading": "Studio",
+      "items": ["3D Visualization", "Rendering & walkthrough"]
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "layout_name": "CPT service — unique fields, not a 3-card luxury clone",
+  "engine": "woodex-core CPT + Theme Builder single",
+  "do_not_use": ["Luxury Villas", "Penthouse Structural Mapping", "Modular Kitchens as a fake product line"],
+  "items": [
+    "residential", "office", "retail", "shops", "restaurant", "cafe",
+    "renovation", "fit-out", "architecture", "drawings", "joinery",
+    "lighting", "pharmacy", "software-house", "space-planning",
+    "visualization", "office-fit-out", "commercial-fit-out",
+    "residential-fit-out", "turnkey"
+  ],
+  "fields": [
+    "cine_h1", "cine_eye", "cine_copy", "approval_h2",
+    "have[]", "outputs[]", "faq[]", "geo_line",
+    "related_insight", "related_study"
+  ]
+}

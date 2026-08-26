@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # WOODEX-26
 
 Woodex Interior static frontend — **HTML5 + Tailwind CDN + `css/theme.css` + `js/app.js`**.
@@ -34,10 +33,12 @@ Named client: **Wellstar only** · Studies stay labelled studies
 Studio: LG 90 Link Road, Model Town, Lahore · 10:00–8:30  
 WhatsApp: +92 322 4000768 · Call: +92 336 2259477
 
+## WordPress kit
+
+Upload-ready: `WP-THEME/dist/WOODEX-WP-MASTER.zip`  
+(`theme.zip` Hello · `child.zip` Woodex · `woodex-core.zip` · `templates/`)  
+Install order: `WP-THEME/dist/INSTALL.md` · map: `docs/PROJECT_MAP.md`
+
 ## Docs
 
-`docs/DESIGN.md` · `PAGE_MAP.md` · `CONTENT_BRAND.md` · `SEO_PLAN.md` · `ESTIMATE.md` · `AGENT_HANDOFF.md`
-=======
-# woodex-26
-agemt lmaria woodex-26 project 
->>>>>>> ad96331da514ea406f4aafcb5646e841f2f30d70
+`docs/DESIGN.md` · `PAGE_MAP.md` · `CONTENT_BRAND.md` · `SEO_PLAN.md` · `ESTIMATE.md` · `AGENT_HANDOFF.md` · `PROJECT_MAP.md` · `NEXT_PLAN.md`

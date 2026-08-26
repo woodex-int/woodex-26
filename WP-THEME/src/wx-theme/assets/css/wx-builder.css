@@ -1,0 +1,20 @@
+/* Elementor canvas — do not impose Impreza / gold / full-page cream. */
+.elementor-page .site-main,
+.elementor-page #content {
+  background: #fff;
+}
+.elementor-location-header,
+.elementor-location-footer {
+  width: 100%;
+}
+.elementor-widget-heading .elementor-heading-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  letter-spacing: -0.03em;
+}
+.elementor-button {
+  border-radius: 999px;
+}
+/* Never let a builder kit paint cream or wood as the page. */
+body.wx-theme {
+  background: #fff;
+}

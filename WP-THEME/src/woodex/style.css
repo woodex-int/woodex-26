@@ -1,0 +1,19 @@
+/*
+Theme Name: Woodex
+Theme URI: https://woodex.interior
+Author: Woodex Interior
+Author URI: https://woodex.interior
+Description: Hello Elementor child for Woodex Interior. Tokens, chrome, mega, skip-link. Header/footer work without Theme Builder. Do not restyle Home 3-slide or 3D Studio cine.
+Template: hello-elementor
+Version: 1.1.0
+Requires at least: 6.4
+Tested up to: 6.8
+Requires PHP: 8.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: woodex
+Tags: interior-design, elementor, custom-menu, featured-images, translation-ready
+
+Woodex Interior — child of Hello Elementor.
+*/
+/* Tokens and chrome live in assets/. This file stays thin. */
