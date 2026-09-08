@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { insights, getInsight, slugifyCategory } from "@/lib/content/insights";
+import { insights, getInsight, slugifyCategory, readingTime } from "@/lib/content/insights";
+import { formatDate } from "@/lib/utils";
 import { getService } from "@/lib/content/services";
 import { getProject } from "@/lib/content/projects";
 import { site } from "@/lib/site";
@@ -80,7 +81,7 @@ export default async function InsightPage({
             <h1 className="display max-w-3xl text-4xl md:text-5xl">{insight.title}</h1>
             <p className="mt-5 max-w-2xl text-lg text-white/80">{insight.excerpt}</p>
             <p className="mt-6 text-xs text-white/50">
-              Published {insight.date} · Reviewed by {site.name}
+              {formatDate(insight.date)} · {readingTime(insight)} min read · Reviewed by {site.name}
             </p>
           </Reveal>
         </div>

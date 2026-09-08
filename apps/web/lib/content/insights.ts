@@ -336,6 +336,18 @@ export function getInsight(slug: string) {
   return insights.find((i) => i.slug === slug);
 }
 
+export function readingTime(insight: Insight): number {
+  const words = [
+    insight.excerpt,
+    ...insight.takeaways,
+    ...insight.sections.flatMap((s) => [s.heading, ...s.body]),
+  ]
+    .join(" ")
+    .split(/\s+/)
+    .filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
+}
+
 export type InsightCategory = { name: string; slug: string };
 
 export function slugifyCategory(name: string): string {

@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { insights, insightCategories } from "@/lib/content/insights";
+import { insights, insightCategories, readingTime } from "@/lib/content/insights";
+import { formatDate } from "@/lib/utils";
 import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
 import CTASection from "@/components/CTASection";
 import { ArticleCard } from "@/components/cards";
+import { ArrowRightIcon } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "Insights",
@@ -43,9 +45,19 @@ export default function InsightsPage() {
             <Reveal delay={100}>
               <p className="eyebrow mb-3">Featured</p>
               <h2 className="display text-3xl md:text-4xl">{featured.title}</h2>
-              <p className="mt-4 text-lg text-navy/75">{featured.excerpt}</p>
+              <div className="mt-4 flex flex-wrap items-center gap-2 text-sm text-navy/50">
+                <span className="rounded-full bg-cream px-3 py-1 text-xs font-semibold text-navy/70">
+                  {featured.category}
+                </span>
+                <span aria-hidden="true">·</span>
+                <span>{formatDate(featured.date)}</span>
+                <span aria-hidden="true">·</span>
+                <span>{readingTime(featured)} min read</span>
+              </div>
+              <p className="mt-4 text-lg leading-relaxed text-navy/75">{featured.excerpt}</p>
               <Link href={`/insights/${featured.slug}`} className="btn btn-primary mt-7">
                 Read the article
+                <ArrowRightIcon className="arrow h-4 w-4" />
               </Link>
             </Reveal>
           </div>
@@ -59,15 +71,21 @@ export default function InsightsPage() {
           <h2 className="display mb-8 text-3xl md:text-4xl">Browse by topic.</h2>
         </Reveal>
         <div className="flex flex-wrap gap-3">
-          {insightCategories.map((c) => (
-            <Link
-              key={c.slug}
-              href={`/insights/category/${c.slug}`}
-              className="inline-flex rounded-full border border-navy/15 px-5 py-3 text-sm font-semibold text-navy transition-colors hover:border-wood hover:text-wood"
-            >
-              {c.name}
-            </Link>
-          ))}
+          {insightCategories.map((c) => {
+            const count = insights.filter((i) => i.category === c.name).length;
+            return (
+              <Link
+                key={c.slug}
+                href={`/insights/category/${c.slug}`}
+                className="group inline-flex items-center gap-2.5 rounded-full border border-navy/15 bg-white px-5 py-3 text-sm font-semibold text-navy transition-colors hover:border-wood hover:text-wood"
+              >
+                {c.name}
+                <span className="rounded-full bg-cream px-2.5 py-0.5 text-xs font-bold text-navy/60 transition-colors group-hover:bg-wood/15 group-hover:text-wood">
+                  {count}
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </Section>
 
