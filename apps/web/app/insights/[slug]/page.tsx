@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { insights, getInsight } from "@/lib/content/insights";
+import { insights, getInsight, slugifyCategory } from "@/lib/content/insights";
 import { getService } from "@/lib/content/services";
 import { getProject } from "@/lib/content/projects";
 import { site } from "@/lib/site";
@@ -69,7 +69,12 @@ export default async function InsightPage({
               <span>/</span>
               <Link href="/insights" className="hover:text-white">Insights</Link>
               <span>/</span>
-              <span className="text-white/90">{insight.category}</span>
+              <Link
+                href={`/insights/category/${slugifyCategory(insight.category)}`}
+                className="hover:text-white"
+              >
+                {insight.category}
+              </Link>
             </nav>
             <p className="eyebrow mb-4 !text-white/70">{insight.category}</p>
             <h1 className="display max-w-3xl text-4xl md:text-5xl">{insight.title}</h1>

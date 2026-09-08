@@ -60,12 +60,13 @@ export default function InsightsPage() {
         </Reveal>
         <div className="flex flex-wrap gap-3">
           {insightCategories.map((c) => (
-            <span
-              key={c}
-              className="inline-flex rounded-full border border-navy/15 px-5 py-3 text-sm font-semibold text-navy"
+            <Link
+              key={c.slug}
+              href={`/insights/category/${c.slug}`}
+              className="inline-flex rounded-full border border-navy/15 px-5 py-3 text-sm font-semibold text-navy transition-colors hover:border-wood hover:text-wood"
             >
-              {c}
-            </span>
+              {c.name}
+            </Link>
           ))}
         </div>
       </Section>

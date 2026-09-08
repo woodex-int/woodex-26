@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { standardServices } from "@/lib/content/services";
 import { projects } from "@/lib/content/projects";
-import { insights } from "@/lib/content/insights";
+import { insights, insightCategories } from "@/lib/content/insights";
 import { sectors } from "@/lib/content/sectors";
 import { locations } from "@/lib/content/locations";
 
@@ -37,6 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...standardServices.map((s) => map(`/services/${s.slug}`)),
     ...projects.map((p) => map(`/projects/${p.slug}`)),
     ...insights.map((i) => map(`/insights/${i.slug}`)),
+    ...insightCategories.map((c) => map(`/insights/category/${c.slug}`)),
     ...sectors.map((s) => map(`/sectors/${s.slug}`)),
     ...locations.map((l) => map(`/locations/${l.slug}`)),
   ];

@@ -336,6 +336,24 @@ export function getInsight(slug: string) {
   return insights.find((i) => i.slug === slug);
 }
 
-export const insightCategories = Array.from(
+export type InsightCategory = { name: string; slug: string };
+
+export function slugifyCategory(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
+export const insightCategories: InsightCategory[] = Array.from(
   new Set(insights.map((i) => i.category)),
-);
+).map((name) => ({ name, slug: slugifyCategory(name) }));
+
+export function getCategoryBySlug(slug: string): InsightCategory | undefined {
+  return insightCategories.find((c) => c.slug === slug);
+}
+
+export function getInsightsByCategory(categoryName: string) {
+  return insights.filter((i) => i.category === categoryName);
+}
