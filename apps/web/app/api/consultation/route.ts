@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
-import { parseContact, rateLimit, clientIp, deliverLead } from "@/lib/lead";
+import { parseConsultation, rateLimit, clientIp, deliverLead } from "@/lib/lead";
 
+// Booking-intent fallback: used when the Cal.com scheduler is not configured
+// or the visitor prefers to request a slot directly. Feeds the same lead
+// delivery pipeline as /api/brief and /api/contact.
 export async function POST(request: Request) {
   let body: unknown;
   try {
@@ -14,7 +17,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: true });
   }
 
-  const parsed = parseContact(body);
+  const parsed = parseConsultation(body);
   if (!parsed.ok) {
     return NextResponse.json({ ok: false, error: parsed.error }, { status: 422 });
   }
@@ -27,7 +30,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const report = await deliverLead("contact", parsed.data, {
+  const report = await deliverLead("consultation-request", parsed.data, {
     source: request.headers.get("referer"),
     ip,
   });

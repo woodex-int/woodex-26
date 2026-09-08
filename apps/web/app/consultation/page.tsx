@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import { site } from "@/lib/site";
-import { waLink } from "@/lib/whatsapp";
 import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
 import ProjectForm from "@/components/ProjectForm";
-import CTA from "@/components/CTA";
-import { WhatsAppIcon } from "@/components/Icons";
+import Scheduler from "@/components/Scheduler";
 
 export const metadata: Metadata = {
   title: "Book a Consultation",
@@ -75,25 +72,7 @@ export default function ConsultationPage() {
           <Reveal>
             <p className="eyebrow mb-4">Schedule</p>
             <h2 className="display mb-6 text-3xl md:text-4xl">Pick a time, or send the brief.</h2>
-            <p className="mb-6 text-navy/75">
-              Scheduling is handled through a booking tool. Open the scheduler to choose a
-              time, or send the brief below and we'll confirm a slot with you.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {/* Scheduler embed (Cal.com / Calendly) is connected in Phase 0.
-                  Until then, the form and WhatsApp are the booking routes. */}
-              <CTA href="#brief" variant="primary">
-                Send the brief below
-              </CTA>
-              <CTA href={waLink()} variant="wa" external>
-                <WhatsAppIcon className="h-4 w-4" />
-                WhatsApp instead
-              </CTA>
-            </div>
-            <p className="mt-6 text-sm text-navy/60">
-              Prefer not to schedule? Start on WhatsApp — a designer will respond within one
-              working day.
-            </p>
+            <Scheduler />
           </Reveal>
 
           <Reveal delay={100}>

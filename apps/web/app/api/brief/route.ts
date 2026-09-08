@@ -1,49 +1,37 @@
 import { NextResponse } from "next/server";
-
-// Lead intake endpoint. Currently validates and acknowledges; email/CRM wiring
-// (Resend + HubSpot/Zoho/Pipedrive) is enabled when the env vars are present.
-// See docs/FULLSTACK_MASTER_PLAN.md §9.
-
-type Body = {
-  name?: string;
-  phone?: string;
-  email?: string;
-  city?: string;
-  service?: string;
-  stage?: string;
-  area?: string;
-  budget?: string;
-  preferred?: string;
-  message?: string;
-  company?: string;
-};
+import { parseBrief, rateLimit, clientIp, deliverLead } from "@/lib/lead";
 
 export async function POST(request: Request) {
-  let body: Body;
+  let body: unknown;
   try {
-    body = (await request.json()) as Body;
+    body = await request.json();
   } catch {
     return NextResponse.json({ ok: false, error: "Invalid request" }, { status: 400 });
   }
 
   // Honeypot: bots fill the hidden field. Acknowledge silently.
-  if (body.company) {
+  const raw = body as Record<string, unknown> | null;
+  if (raw && typeof raw.company === "string" && raw.company.trim()) {
     return NextResponse.json({ ok: true });
   }
 
-  // Server-side validation.
-  const required = [body.name, body.phone, body.city, body.service];
-  if (required.some((v) => !v || !String(v).trim())) {
+  const parsed = parseBrief(body);
+  if (!parsed.ok) {
+    return NextResponse.json({ ok: false, error: parsed.error }, { status: 422 });
+  }
+
+  const ip = clientIp(request);
+  if (!rateLimit(ip)) {
     return NextResponse.json(
-      { ok: false, error: "Name, phone, city and service are required." },
-      { status: 422 },
+      { ok: false, error: "Too many requests. Please try again shortly." },
+      { status: 429 },
     );
   }
-  if (body.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) {
-    return NextResponse.json({ ok: false, error: "Invalid email." }, { status: 422 });
-  }
 
-  // TODO (Phase 4): send lead via Resend + CRM webhook using server env vars.
+  const report = await deliverLead("project-brief", parsed.data, {
+    source: request.headers.get("referer"),
+    ip,
+  });
 
-  return NextResponse.json({ ok: true });
+  return NextResponse.json({ ok: true, delivered: report });
 }
