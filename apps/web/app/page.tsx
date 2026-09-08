@@ -8,6 +8,7 @@ import { featuredProjects } from "@/lib/content/projects";
 import { insights } from "@/lib/content/insights";
 import HeroSlides from "@/components/HeroSlides";
 import SixServices from "@/components/SixServices";
+import CountUp from "@/components/CountUp";
 import Reveal from "@/components/Reveal";
 import Section from "@/components/Section";
 import ServiceSelector from "@/components/ServiceSelector";
@@ -284,18 +285,37 @@ export default function HomePage() {
         </Reveal>
         <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
           {[
-            { value: site.proof.projects, label: "Projects completed" },
-            { value: site.proof.founderYears, label: "Founder's experience" },
-            { value: site.proof.executionYears, label: "Execution team" },
-            { value: site.proof.iso, label: "Certified process" },
+            {
+              to: Number(site.proof.projects.replace(/\D/g, "")),
+              suffix: "+",
+              label: "Projects completed",
+            },
+            {
+              to: Number(site.proof.founderYears.replace(/\D/g, "")),
+              prefix: "~",
+              label: "Founder's experience",
+            },
+            {
+              to: Number(site.proof.executionYears.replace(/\D/g, "")),
+              suffix: "+",
+              label: "Execution team",
+            },
           ].map((stat, i) => (
             <Reveal key={stat.label} delay={i * 70}>
               <div className="rounded-2xl border border-navy/10 bg-white p-6">
-                <p className="display text-4xl text-navy md:text-5xl">{stat.value}</p>
+                <p className="display text-4xl text-navy md:text-5xl">
+                  <CountUp to={stat.to} prefix={stat.prefix} suffix={stat.suffix} />
+                </p>
                 <p className="mt-2 text-sm text-navy/60">{stat.label}</p>
               </div>
             </Reveal>
           ))}
+          <Reveal delay={210}>
+            <div className="rounded-2xl border border-navy/10 bg-white p-6">
+              <p className="display text-4xl text-navy md:text-5xl">{site.proof.iso}</p>
+              <p className="mt-2 text-sm text-navy/60">Certified process</p>
+            </div>
+          </Reveal>
         </div>
         <Reveal>
           <p className="mt-6 text-sm text-navy/60">
