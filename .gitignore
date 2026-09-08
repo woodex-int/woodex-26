@@ -16,3 +16,4 @@ DEPLOY_KEY.txt
 .ssh/woodex-26-deploy.pub
 # root copy of the kit — canonical is WP-THEME/dist/
 /WOODEX-WP-MASTER.zip
+/screenshots/
