@@ -191,9 +191,9 @@ export default async function LocationPage({
       </Section>
 
       <CTASection
+        variant="compact"
         title={`Contact the ${loc.city} studio.`}
         subtitle="Book a consultation or start on WhatsApp — the studio responds within one working day."
-        image={loc.image}
       />
 
       <JsonLd data={businessSchema} />

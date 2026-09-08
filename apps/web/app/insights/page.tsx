@@ -70,19 +70,36 @@ export default function InsightsPage() {
           <p className="eyebrow mb-4">Topics</p>
           <h2 className="display mb-8 text-3xl md:text-4xl">Browse by topic.</h2>
         </Reveal>
-        <div className="flex flex-wrap gap-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <Link
+            href="/insights"
+            className="group flex items-center justify-between rounded-2xl border border-navy/10 bg-navy p-6 text-white transition-colors hover:border-wood"
+          >
+            <div>
+              <h3 className="text-lg font-bold">All topics</h3>
+              <p className="mt-1 text-sm text-white/60">
+                {insights.length} {insights.length === 1 ? "article" : "articles"}
+              </p>
+            </div>
+            <ArrowRightIcon className="arrow h-5 w-5 text-wood" />
+          </Link>
           {insightCategories.map((c) => {
             const count = insights.filter((i) => i.category === c.name).length;
             return (
               <Link
                 key={c.slug}
                 href={`/insights/category/${c.slug}`}
-                className="group inline-flex items-center gap-2.5 rounded-full border border-navy/15 bg-white px-5 py-3 text-sm font-semibold text-navy transition-colors hover:border-wood hover:text-wood"
+                className="group flex items-center justify-between rounded-2xl border border-navy/10 bg-white p-6 transition-colors hover:border-wood/60 hover:bg-cream/60"
               >
-                {c.name}
-                <span className="rounded-full bg-cream px-2.5 py-0.5 text-xs font-bold text-navy/60 transition-colors group-hover:bg-wood/15 group-hover:text-wood">
-                  {count}
-                </span>
+                <div>
+                  <h3 className="text-lg font-bold text-navy group-hover:text-navy-600">
+                    {c.name}
+                  </h3>
+                  <p className="mt-1 text-sm text-navy/55">
+                    {count} {count === 1 ? "article" : "articles"}
+                  </p>
+                </div>
+                <ArrowRightIcon className="arrow h-5 w-5 text-wood" />
               </Link>
             );
           })}
@@ -104,7 +121,11 @@ export default function InsightsPage() {
         </div>
       </Section>
 
-      <CTASection title="Ask Woodex." subtitle="Prefer an answer from a designer? Book a consultation or ask on WhatsApp." />
+      <CTASection
+        variant="compact"
+        title="Ask Woodex."
+        subtitle="Prefer an answer from a designer? Book a consultation or ask on WhatsApp."
+      />
     </>
   );
 }

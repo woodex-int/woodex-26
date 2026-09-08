@@ -78,7 +78,12 @@ export default function ProjectsPage() {
         </div>
       </Section>
 
-      <CTASection title="Discuss a similar project." subtitle="Bring a project like yours — or a space unlike any other — and we'll map the route." />
+      <CTASection
+        variant="statement"
+        ghost="BUILD"
+        title="Discuss a similar project."
+        subtitle="Bring a project like yours — or a space unlike any other — and we'll map the route."
+      />
     </>
   );
 }

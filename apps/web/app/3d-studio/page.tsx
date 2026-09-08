@@ -20,13 +20,13 @@ export const metadata: Metadata = {
   alternates: { canonical: "/3d-studio" },
 };
 
-const options = [
-  "Interior stills",
-  "Exterior stills",
-  "Walkthrough animation",
-  "360° views",
-  "Material visualization",
-  "Render-to-BOQ support",
+const outputs = [
+  { title: "Interior stills", body: "Fixed views of a space — materials, light and proportion you can approve." },
+  { title: "Exterior stills", body: "How the facade and outside read, before anything is built." },
+  { title: "Walkthrough animation", body: "Movement and sequence — for circulation, flow and feel." },
+  { title: "360° views", body: "Stand inside the space and turn around — every corner checked." },
+  { title: "Material visualization", body: "Finishes and textures resolved against the design direction." },
+  { title: "Render-to-BOQ support", body: "The approved visual carried into drawings and quantities." },
 ];
 
 const situations = [
@@ -120,17 +120,23 @@ export default function ThreeDStudioPage() {
         </div>
       </Section>
 
-      {/* Options */}
+      {/* What we produce */}
       <Section>
         <Reveal>
           <p className="eyebrow mb-4">What we produce</p>
-          <h2 className="display mb-8 text-3xl md:text-4xl">Stills, walkthroughs and 360°.</h2>
+          <h2 className="display mb-3 text-3xl md:text-4xl">Stills, walkthroughs and 360°.</h2>
+          <p className="mb-8 max-w-2xl text-navy/70">
+            Six output types — each one an approval tool, produced by the in-house team beside
+            the designers.
+          </p>
         </Reveal>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {options.map((o, i) => (
-            <Reveal key={o} delay={i * 60}>
-              <div className="rounded-2xl border border-navy/10 bg-white p-5 font-semibold text-navy">
-                {o}
+          {outputs.map((o, i) => (
+            <Reveal key={o.title} delay={i * 60}>
+              <div className="flex h-full flex-col rounded-2xl border border-navy/10 bg-white p-6 transition-colors hover:border-wood/60">
+                <p className="text-sm font-bold text-wood">{String(i + 1).padStart(2, "0")}</p>
+                <h3 className="mt-3 text-lg font-bold text-navy">{o.title}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-navy/70">{o.body}</p>
               </div>
             </Reveal>
           ))}

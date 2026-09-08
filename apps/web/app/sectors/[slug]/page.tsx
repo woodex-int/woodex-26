@@ -199,9 +199,9 @@ export default async function SectorPage({
       </Section>
 
       <CTASection
+        variant="compact"
         title={`Discuss your ${sector.name.toLowerCase()} space.`}
         subtitle="Book a consultation or start on WhatsApp — a designer maps the route."
-        image={sector.image}
       />
 
       <JsonLd data={faqJsonLd(sector.faqs)} />

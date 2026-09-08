@@ -137,7 +137,12 @@ export default function ProcessPage() {
         </div>
       </Section>
 
-      <CTASection title="Discuss your project." subtitle="Bring the space, the brief or the drawings — we'll map the route." />
+      <CTASection
+        variant="statement"
+        ghost="START"
+        title="Discuss your project."
+        subtitle="Bring the space, the brief or the drawings — we'll map the route, gate by gate."
+      />
 
       <JsonLd data={faqJsonLd(faqs)} />
     </>

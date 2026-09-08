@@ -67,6 +67,7 @@ export default function SectorsPage() {
       </Section>
 
       <CTASection
+        image="/images/project-concrete.jpg"
         title="Select your sector."
         subtitle="Tell us the space and the sector — a designer maps the route, on a call or on WhatsApp."
       />

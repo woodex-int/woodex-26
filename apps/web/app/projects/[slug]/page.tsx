@@ -217,9 +217,9 @@ export default async function ProjectPage({
       )}
 
       <CTASection
+        variant="compact"
         title="Start a similar project."
         subtitle="Book a consultation or start on WhatsApp — a designer, not a form, takes it from there."
-        image={project.image}
       />
 
       <JsonLd data={creativeWorkSchema} />

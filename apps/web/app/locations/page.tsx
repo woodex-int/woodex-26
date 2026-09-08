@@ -59,6 +59,7 @@ export default function LocationsPage() {
       </Section>
 
       <CTASection
+        image="/images/project-facade.jpg"
         title="Find your studio."
         subtitle="Book a consultation or start on WhatsApp — a designer from the nearest studio responds."
       />

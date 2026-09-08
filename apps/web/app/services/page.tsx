@@ -67,17 +67,24 @@ export default function ServicesPage() {
       <Section>
         <Reveal>
           <p className="eyebrow mb-4">Start here</p>
-          <h2 className="display mb-8 text-3xl md:text-4xl">What do you need?</h2>
+          <h2 className="display mb-3 text-3xl md:text-4xl">What do you need?</h2>
+          <p className="mb-8 max-w-2xl text-navy/70">
+            Six starting points. Pick the one that matches where you are — each leads to the
+            service configured for that situation.
+          </p>
         </Reveal>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {routes.map((r, i) => (
             <Reveal key={r.label} delay={i * 60}>
               <Link
                 href={r.href}
-                className="group flex h-full items-center justify-between gap-4 rounded-2xl border border-navy/10 bg-white p-5 transition-colors hover:border-wood/60"
+                className="group flex h-full items-center gap-4 rounded-2xl border border-navy/10 bg-white p-5 transition-colors hover:border-wood/60 hover:bg-cream/60"
               >
-                <span className="font-semibold text-navy group-hover:text-navy-600">{r.label}</span>
-                <ArrowRightIcon className="h-4 w-4 shrink-0 text-wood" />
+                <span className="text-sm font-bold text-wood">{String(i + 1).padStart(2, "0")}</span>
+                <span className="flex-1 font-semibold text-navy group-hover:text-navy-600">
+                  {r.label}
+                </span>
+                <ArrowRightIcon className="arrow h-4 w-4 shrink-0 text-wood" />
               </Link>
             </Reveal>
           ))}
@@ -109,69 +116,71 @@ export default function ServicesPage() {
         </Section>
       ))}
 
-      {/* Comparison matrix */}
+      {/* Coverage */}
       <Section>
         <Reveal>
-          <p className="eyebrow mb-4">Compare</p>
+          <p className="eyebrow mb-4">Coverage</p>
           <h2 className="display mb-3 text-3xl md:text-4xl">What each engagement includes.</h2>
-          <p className="mb-8 max-w-2xl text-navy/70">
-            Included = part of the service · Available = optional add-on · — = not part of this
-            engagement.
-          </p>
-        </Reveal>
-        <Reveal delay={100}>
-          <div className="overflow-x-auto rounded-2xl border border-navy/10">
-            <table className="w-full min-w-[720px] border-collapse bg-white text-left text-sm">
-              <thead>
-                <tr className="border-b border-navy/10 bg-cream">
-                  <th className="px-5 py-4 font-semibold text-navy">Service</th>
-                  <th className="px-4 py-4 font-semibold text-navy">Design</th>
-                  <th className="px-4 py-4 font-semibold text-navy">3D</th>
-                  <th className="px-4 py-4 font-semibold text-navy">BOQ</th>
-                  <th className="px-4 py-4 font-semibold text-navy">Procurement</th>
-                  <th className="px-4 py-4 font-semibold text-navy">Execution</th>
-                  <th className="px-4 py-4 font-semibold text-navy">Joinery</th>
-                </tr>
-              </thead>
-              <tbody>
-                {matrix.map((row) => {
-                  const s = services.find((x) => x.name === row.name);
-                  const href = s
-                    ? s.slug === "3d-studio"
-                      ? "/3d-studio"
-                      : `/services/${s.slug}`
-                    : "/services";
-                  return (
-                    <tr key={row.name} className="border-b border-navy/5 last:border-0">
-                      <td className="px-5 py-3.5">
-                        <Link href={href} className="font-semibold text-navy hover:text-navy-600">
-                          {row.name}
-                        </Link>
-                      </td>
-                      {[
-                        row.design,
-                        row.threeD,
-                        row.boq,
-                        row.procurement,
-                        row.execution,
-                        row.joinery,
-                      ].map((v, i) => (
-                        <td key={i} className="px-4 py-3.5 text-navy/70">
-                          {v === "Included" ? (
-                            <span className="font-semibold text-navy">Included</span>
-                          ) : v === "Available" ? (
-                            <span className="text-navy/60">Available</span>
-                          ) : (
-                            <span className="text-navy/35">—</span>
-                          )}
-                        </td>
-                      ))}
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
+          <div className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-navy/70">
+            <span className="inline-flex items-center gap-2">
+              <span className="h-2.5 w-2.5 rounded-full bg-navy" aria-hidden="true" /> Included
+            </span>
+            <span className="inline-flex items-center gap-2">
+              <span className="h-2.5 w-2.5 rounded-full border border-navy/30" aria-hidden="true" /> Available as add-on
+            </span>
           </div>
+        </Reveal>
+        <div className="space-y-3">
+          {matrix.map((row, i) => {
+            const s = services.find((x) => x.name === row.name);
+            const href = s
+              ? s.slug === "3d-studio"
+                ? "/3d-studio"
+                : `/services/${s.slug}`
+              : "/services";
+            const caps = [
+              { label: "Design", v: row.design },
+              { label: "3D", v: row.threeD },
+              { label: "BOQ", v: row.boq },
+              { label: "Procurement", v: row.procurement },
+              { label: "Execution", v: row.execution },
+              { label: "Joinery", v: row.joinery },
+            ];
+            return (
+              <Reveal key={row.name} delay={i * 40}>
+                <div className="grid gap-4 rounded-2xl border border-navy/10 bg-white p-5 md:grid-cols-[220px_1fr] md:items-center md:gap-6">
+                  <Link href={href} className="font-bold text-navy hover:text-navy-600">
+                    {row.name}
+                  </Link>
+                  <div className="flex flex-wrap gap-2">
+                    {caps.map((c) =>
+                      c.v === "Included" ? (
+                        <span
+                          key={c.label}
+                          className="rounded-full bg-navy px-3 py-1.5 text-xs font-semibold text-white"
+                        >
+                          {c.label}
+                        </span>
+                      ) : c.v === "Available" ? (
+                        <span
+                          key={c.label}
+                          className="rounded-full border border-navy/25 px-3 py-1.5 text-xs font-semibold text-navy/70"
+                        >
+                          {c.label} +
+                        </span>
+                      ) : null,
+                    )}
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+        <Reveal>
+          <p className="mt-5 text-sm text-navy/55">
+            Capabilities not shown for a service are not part of that engagement — they can
+            be brought in through a connected service.
+          </p>
         </Reveal>
       </Section>
 
@@ -188,7 +197,11 @@ export default function ServicesPage() {
         </div>
       </Section>
 
-      <CTASection title="Find the right service." subtitle="Tell us what you have and what you need — we'll map the route, on a call or on WhatsApp." />
+      <CTASection
+        image="/images/hero-2.jpg"
+        title="Find the right service."
+        subtitle="Tell us what you have and what you need — we'll map the route, on a call or on WhatsApp."
+      />
 
       <JsonLd data={faqJsonLd(faqs)} />
     </>

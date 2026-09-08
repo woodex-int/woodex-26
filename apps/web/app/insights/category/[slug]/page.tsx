@@ -99,6 +99,7 @@ export default async function InsightCategoryPage({
       </Section>
 
       <CTASection
+        variant="compact"
         title="Ask Woodex."
         subtitle="Prefer an answer from a designer? Book a consultation or ask on WhatsApp."
       />

@@ -300,9 +300,9 @@ export default async function ServicePage({
       )}
 
       <CTASection
+        variant="compact"
         title={`Discuss your ${service.name.toLowerCase()} project.`}
         subtitle="Book a consultation or start on WhatsApp — a designer, not a form, takes it from there."
-        image={service.image}
       />
 
       <JsonLd data={serviceSchema} />

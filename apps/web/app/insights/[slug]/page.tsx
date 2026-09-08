@@ -202,7 +202,11 @@ export default async function InsightPage({
         </div>
       </Section>
 
-      <CTASection title="Discuss your project." subtitle="Reading is the start — a conversation is the next step." />
+      <CTASection
+        image="/images/project-minimal.jpg"
+        title="Discuss your project."
+        subtitle="Reading is the start — a conversation is the next step."
+      />
 
       <JsonLd data={articleSchema} />
       {insight.faqs.length > 0 && <JsonLd data={faqJsonLd(insight.faqs)} />}

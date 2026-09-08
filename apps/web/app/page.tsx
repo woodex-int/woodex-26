@@ -460,7 +460,11 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <CTASection />
+      <CTASection
+        title="Tell us about your space."
+        subtitle="An empty hall, a floor plan, a brand or a drawing — send it and we'll map the route to a space that can be built."
+        note="One team from first brief to handover: design, 3D, BOQ and execution under one process."
+      />
 
       <JsonLd data={faqJsonLd(homeFaqs)} />
     </>

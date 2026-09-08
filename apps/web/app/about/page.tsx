@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
 import { getProject } from "@/lib/content/projects";
+import { locations } from "@/lib/content/locations";
 import PageHero from "@/components/PageHero";
 import Section from "@/components/Section";
 import Reveal from "@/components/Reveal";
 import CTASection from "@/components/CTASection";
 import { ProjectCard } from "@/components/cards";
 import CTA from "@/components/CTA";
+import { ArrowRightIcon, MapPinIcon } from "@/components/Icons";
 
 export const metadata: Metadata = {
   title: "About",
@@ -120,12 +122,19 @@ export default function AboutPage() {
       <Section className="bg-navy text-white">
         <Reveal>
           <p className="eyebrow mb-4">One process</p>
-          <h2 className="display mb-8 text-3xl md:text-4xl">Capabilities under one roof.</h2>
+          <h2 className="display mb-3 text-3xl md:text-4xl">Capabilities under one roof.</h2>
+          <p className="mb-8 max-w-2xl text-white/70">
+            Design, 3D, documentation and execution run on a single path — so a decision at
+            one stage carries into the next without a hand-off.
+          </p>
         </Reveal>
         <Reveal delay={100}>
-          <ol className="grid gap-3 md:grid-cols-7">
+          <ol className="grid gap-3 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7">
             {site.processPath.map((step, i) => (
-              <li key={step} className="rounded-xl border border-white/10 p-4">
+              <li
+                key={step}
+                className="rounded-xl border border-white/10 bg-white/5 p-4 transition-colors hover:border-wood/60"
+              >
                 <p className="text-sm font-bold text-wood">{String(i + 1).padStart(2, "0")}</p>
                 <p className="mt-1 text-sm font-semibold text-white">{step}</p>
               </li>
@@ -179,12 +188,25 @@ export default function AboutPage() {
           <h2 className="display mb-6 text-3xl md:text-4xl">Studios across Pakistan.</h2>
         </Reveal>
         <div className="grid gap-5 md:grid-cols-3">
-          {site.studios.map((s, i) => (
-            <Reveal key={s} delay={i * 80}>
-              <div className="rounded-2xl border border-navy/10 bg-white p-6">
-                <p className="font-bold text-navy">{s}</p>
-                <p className="mt-1 text-sm text-navy/60">Studio</p>
-              </div>
+          {locations.map((l, i) => (
+            <Reveal key={l.slug} delay={i * 80}>
+              <Link
+                href={`/locations/${l.slug}`}
+                className="group flex h-full flex-col rounded-2xl border border-navy/10 bg-white p-6 transition-colors hover:border-wood/60"
+              >
+                <p className="eyebrow mb-3 !text-[9px]">Studio</p>
+                <div className="flex items-center gap-2">
+                  <MapPinIcon className="h-4 w-4 shrink-0 text-wood" />
+                  <h3 className="text-lg font-bold text-navy group-hover:text-navy-600">
+                    {l.city}
+                  </h3>
+                </div>
+                <p className="mt-2 flex-1 text-sm text-navy/70">{l.studio}</p>
+                <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-wood">
+                  Visit studio
+                  <ArrowRightIcon className="arrow h-4 w-4" />
+                </span>
+              </Link>
             </Reveal>
           ))}
         </div>
@@ -208,7 +230,11 @@ export default function AboutPage() {
         </Section>
       )}
 
-      <CTASection title="Talk to the team." subtitle="Book a consultation or start on WhatsApp — a designer, not a form, takes it from there." />
+      <CTASection
+        variant="compact"
+        title="Talk to the team."
+        subtitle="Book a consultation or start on WhatsApp — a designer, not a form, takes it from there."
+      />
     </>
   );
 }
