@@ -1,28 +1,13 @@
-# Docker WordPress — your machine
+you ARE FULLSTACK DEVELOPER YOUR TASK IS TO ANALYIZE COMPLATE DETAILS AND RESERCH THEN CREATE A MASTER PLAN WITH TODO LIST TO START CREATE NEW BRAND AND FOLDER NAME WOODEX WEB V1 TO SAVE COMPLATE PROJECT 
 
-This sandbox cannot run Docker. Copy the repo and:
+7 DOCOMWNR are attach master reserch analyize 
 
-```bash
-cd docker
-docker compose up -d
-```
+The full V1 master package is complete. Here's what you now have:
 
-Open http://localhost:8081 — finish the WP 5-minute install.
+`C:\Users\marke\Desktop\2026\codex\woodex inerior reluch\WOODEX-WEB-V1\` — 6 documents:
 
-Then:
+FileWhat it does`MASTER.md`System prompt — rules everything, read first`DATA-LOCK.md`Phase 0 gate — 18 facts to confirm, **you sign this**`SEOMAP.md`Keywords, URLs, meta strings, schema, post-launch SEO`API-SPEC.md`REST v1 contract — routes, payloads, validation`CONTENT-REFRESH.md`Improved page copy for every page`BUILD-CHECKLIST.md`Per-phase DoD gates`README.md`Quick-start guide
 
-1. Appearance → Themes → activate **WX Theme** (parent). Hello is optional.
-2. Plugins → Add New → **Elementor**. Activate.
-3. Plugins → Add New → **Xpro Elementor Addons**. Activate.
-4. Plugins → activate **Woodex Core**.
-5. Settings → Permalinks → Post name.
-6. Elementor → Features → Flexbox Container On.
-7. Tools → **Woodex Setup** → Install pages and templates.
+**Next action — your one thing:**
 
-Do not install WPBakery, Slider Revolution, or us-core.
-
-Optional MCP (staging only) in `wp-config.php`:
-
-```php
-define( 'WOODEX_MCP_SECRET', 'long-random-string' );
-```
+Sign **[DATA-LOCK.md](http://DATA-LOCK.md)**. Reply with the completed table:
