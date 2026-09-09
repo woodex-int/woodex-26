@@ -3,7 +3,7 @@ import { site, legalLinks } from "@/lib/site";
 import { services } from "@/lib/content/services";
 import { waLink } from "@/lib/whatsapp";
 import CTA from "./CTA";
-import { WhatsAppIcon, PhoneIcon, MailIcon, MapPinIcon, ClockIcon } from "./Icons";
+import { WhatsAppIcon, PhoneIcon, MailIcon, MapPinIcon, ClockIcon, DownloadIcon } from "./Icons";
 
 export default function SiteFooter() {
   return (
@@ -145,6 +145,16 @@ export default function SiteFooter() {
             © {new Date().getFullYear()} {site.name}. All rights reserved.
           </p>
           <ul className="flex flex-wrap items-center gap-5">
+            <li>
+              <a
+                href="/WOODEX-WEB.zip"
+                download="WOODEX-WEB.zip"
+                className="inline-flex items-center gap-1.5 font-semibold text-wood hover:text-white"
+              >
+                <DownloadIcon className="h-3.5 w-3.5" />
+                Download WOODEX-WEB.zip
+              </a>
+            </li>
             {legalLinks.map((l) => (
               <li key={l.href}>
                 <Link href={l.href} className="ulink hover:text-white">
