@@ -21,3 +21,6 @@ next-env.d.ts
 
 # vercel
 .vercel
+
+# packaged deliverables (served at /WOODEX-WEB.zip, kept out of git)
+/public/WOODEX-WEB.zip

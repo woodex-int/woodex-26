@@ -1,7 +1,9 @@
 {
   "name": "woodex-web",
-  "version": "0.1.0",
+  "displayName": "WOODEX-WEB",
+  "version": "1.0.0",
   "private": true,
+  "description": "Woodex Interior — WOODEX-WEB: fullstack marketing + lead-generation website (Next.js 15 App Router).",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
