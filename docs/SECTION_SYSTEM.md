@@ -42,6 +42,15 @@ doc-collage → icon-trio → marquee-line → proof-band → blog-grid → cta-
 
 Background rhythm: navy → white → cream → white → white → white → white → cream → navy → white → navy.
 
+## Page order (3D Studio — implemented)
+page-hero (trust bar) → statement-intro (locked "approving a room" line) → what-is (definition + 3D-vs-Interior-Design comparison) →
+who-uses (5 audience cards) → services-swap (6 services, .st-space hook) → deliverables (2 checklists) → process-steps (5 rows) →
+featured-work (4 portfolio cards) → marketing-presales (3 cards) → cost-band (indicative PKR ranges, confirmed quote from brief) →
+why-grid (6 differentiators) → proof-band (stats left, Wellstar named) → faq-accordion (.faq-q hook, 8 Q&As) →
+cta-brief (form + fact-locked NAP) → related-services (4 cards).
+
+New named blocks from this page: `what-is` · `deliverables` · `process-steps` · `featured-work` · `cost-band` · `faq-accordion` · `cta-brief` · `related-services`. `services-swap` = pillars-swap mechanics with service content. CSS: `css/threed.css`. The old cine/motion system (motion.css/studio-hub.css/motion.js) is retired from this page; reveals via the standard `.reveal` pattern.
+
 ## Page order (about — implemented)
 page-hero → statement-intro → brand-story → values-grid → ecosystem-swap →
 gates-table → stop-gate → team-grid → proof-band → studios-band → cta-getintouch
