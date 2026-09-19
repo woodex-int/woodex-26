@@ -29,3 +29,7 @@ One master plan per services page, following the 8-part structure:
 Hub (`services.html`) reworks last (wave 5), after sub-pages, so the index reflects the final set.
 Architecture + goal set + pattern vocabulary: [`../SERVICES_ARCHITECTURE.md`](../SERVICES_ARCHITECTURE.md).
 **Blocked on owner answer:** the visual reference for the v2 rebuild (screenshots unreadable — no image capability this session).
+
+## Status
+
+- **office-fit-out.html — v2 BUILT (exemplar). Owner sign-off pending.**

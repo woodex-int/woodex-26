@@ -101,3 +101,5 @@ Every section on every page uses ONE of these named patterns — **but the seque
 | 5 | services.html hub — rework to match the reference system | after sub-pages, so the index reflects final page set |
 
 **Blocked pending owner answer:** the visual reference for "match with reference" (screenshots unreadable — see questions).
+
+> **Build chassis (v2):** service pages link `css/threed.css` (shared Linoxa-/service chassis: ab-hero, ab-gate-rows, faq, td-form, td-card, sec-head) + one per-page CSS (e.g. `css/of.css`) holding this page's unique blocks. Section sequences are unique per page (see each plan Part 2); pattern shapes are shared — the reference-site model. Exemplar: services/office-fit-out.html (14 sections, testimonial omitted per [CONFIRM]).
