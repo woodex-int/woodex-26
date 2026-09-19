@@ -390,3 +390,92 @@
     if ([...$$(".filter-btn")].some((b) => b.dataset.filter === h)) applyFilter(h);
   }
 })();
+
+/* ── NAV UX · active page highlight + hover-intent dropdowns (mega/drop)
+   Adds .is-current to nav / mega / drop / mobile / footer links matching the
+   current URL, opens .has-sub menus with hover intent on fine pointers, and
+   supports first-tap-open / second-tap-navigate on touch. Escape or outside
+   click closes. Purely additive — :hover/:focus-within CSS still works. ── */
+(() => {
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+  const norm = (p) => {
+    p = (p || "").replace(/\/index\.html$/i, "/").replace(/\.html$/i, "");
+    if (p.length > 1) p = p.replace(/\/+$/, "");
+    return p === "/" ? "" : p;
+  };
+  const probe = document.createElement("a");
+  const matches = (href, ancestorOk) => {
+    probe.href = href || "#";
+    const p = norm(probe.pathname);
+    if (!p) return false;
+    const here = norm(location.pathname);
+    return ancestorOk ? (p === here || here.indexOf(p + "/") === 0) : p === here;
+  };
+
+  /* top-level nav + section toggles — highlight on exact match or section */
+  $$(".nav > a, .nav .has-sub > .nav-toggle").forEach((el) => {
+    if (matches(el.getAttribute("href"), true)) el.classList.add("is-current");
+  });
+  /* mega / drop links — exact page only */
+  $$(".mega a, .drop a").forEach((el) => {
+    if (matches(el.getAttribute("href"), false)) el.classList.add("is-current");
+  });
+  /* mobile nav — hub-level links, section match; open accordion button inherits */
+  $$(".mobile-nav a").forEach((el) => {
+    if (matches(el.getAttribute("href"), true)) el.classList.add("is-current");
+  });
+  $$(".mobile-nav .m-acc").forEach((acc) => {
+    const btn = acc.querySelector(":scope > button");
+    if (btn && acc.querySelector(".m-sub a.is-current")) btn.classList.add("is-current");
+  });
+  /* footer links — hub-level, so section match is right */
+  $$(".footer-links a").forEach((el) => {
+    if (matches(el.getAttribute("href"), true)) el.classList.add("is-current");
+  });
+
+  /* dropdown behaviour */
+  const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  const closeAll = () => {
+    $$(".site-header .has-sub.is-open").forEach((o) => {
+      o.classList.remove("is-open");
+      const t = $(".nav-toggle", o);
+      if (t) t.setAttribute("aria-expanded", "false");
+    });
+  };
+  $$(".site-header .has-sub").forEach((item) => {
+    const t = $(".nav-toggle", item);
+    if (!t) return;
+    t.setAttribute("aria-expanded", "false");
+    if (fine) {
+      let openT, closeT;
+      item.addEventListener("mouseenter", () => {
+        clearTimeout(closeT);
+        clearTimeout(openT);
+        openT = setTimeout(() => {
+          $$(".site-header .has-sub.is-open").forEach((o) => { if (o !== item) { o.classList.remove("is-open"); } });
+          item.classList.add("is-open");
+          t.setAttribute("aria-expanded", "true");
+        }, 70);
+      });
+      item.addEventListener("mouseleave", () => {
+        clearTimeout(openT);
+        closeT = setTimeout(() => { item.classList.remove("is-open"); t.setAttribute("aria-expanded", "false"); }, 170);
+      });
+    }
+    t.addEventListener("click", (e) => {
+      if (item.classList.contains("is-open")) return; /* open → navigate */
+      e.preventDefault();
+      $$(".site-header .has-sub.is-open").forEach((o) => { if (o !== item) o.classList.remove("is-open"); });
+      item.classList.add("is-open");
+      t.setAttribute("aria-expanded", "true");
+    });
+  });
+  document.addEventListener("click", (e) => {
+    if (!e.target.closest(".site-header .has-sub")) closeAll();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeAll();
+  });
+})();

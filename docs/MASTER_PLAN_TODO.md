@@ -1,6 +1,7 @@
 # WOODEX-26 · MASTER PLAN — COMPLETE PROJECT EXECUTION
 ### The one TODO list that governs the full rebuild → launch → post-launch
-*Created 2026-09-19 · Supersedes `docker/MASTER TO-DO LIST.md` for execution · Content source: `docker/` corpus (67 briefs)*
+*Created 2026-09-19 · Updated 2026-09-19 (post-projects rebuild + chrome/nav pass) · Supersedes `docker/MASTER TO-DO LIST.md` for execution · Content source: `docker/` corpus (67 briefs)*
+*Companion: `docs/MISSING_PAGES_AUDIT.md` — full page/section audit (24 rebuilt · 42 pending · 4+1 missing · ~28 expansion backlog).***
 
 ---
 
@@ -48,11 +49,22 @@ The corpus contradicts itself on a few facts. This table is the arbiter — fill
 | W6 | Locations (13) | Lahore (full brief) + 11 city desks (Lahore template + city facts) | lahore-location.md |
 | W7 | Insights (6 articles) + Projects case studies | 6 SEO articles (SEOMAP calendar) · case studies from template — **blocked on real project data** | SEOMAP §insights + project-case-study-template.md |
 
+**STATUS SNAPSHOT (2026-09-19):**
+- ✅ **Done (24):** home · about · 3d-studio · insights hub + 11 posts · projects hub + 6 studies + 2 categories
+- 🔨 **In progress:** services hub + 20 service pages (css/services.css written; single-service template + corpus digested; generator next)
+- ✅ **Chrome/nav pass done:** hover-intent mega/dropdowns, tap-open support, Escape/outside-click, `.is-current` active highlighting sitewide, footer "Client stories" link on all 65 pages (js/app.js + css/mega.css, theme untouched)
+- ⏳ **Next:** finish services family → process · contact · start-your-project · faq (conversion core) → locations ×13 → client-stories · woodex-craft · careers → legal ×3 + thank-you + 404 + llms.txt → architecture/renovation/rooms expansion (~28)
+
 **URL structure (static, current conventions):** flat top-level + family folders — `architecture/*.html`, `renovation/*.html`, `fit-out/*.html`, `sectors/*.html`, `residential/*.html`, `locations/*.html` (exists), `insights/*.html` (exists). Clean URLs via `.htaccess` = backend phase.
 
 ---
 
 # THE TODO LIST
+
+## PHASE CHROME — Nav / footer / mega-menu UX ✅ DONE (2026-09-19)
+- [x] Hover-intent open (70 ms) / delayed close (170 ms) on all header dropdowns; first-tap-open → second-tap-navigate on touch; Escape + outside-click close; `aria-expanded` synced (app.js "Nav UX" module — additive, :hover/:focus-within CSS untouched)
+- [x] Active-page highlighting: `.is-current` on top nav, mega items (wood dot marker), drop links, mobile nav, footer links (mega.css states; theme tokens only)
+- [x] Footer linking: "Client stories" → client-stories.html added sitewide (65 files); all nav/footer targets 200 ✓
 
 ## PHASE 0 — Cleanup & Lock ✅ STARTED
 - [x] Delete all old `.py` build-agent scripts (`scripts/` removed — 11 files)
@@ -73,7 +85,7 @@ The corpus contradicts itself on a few facts. This table is the arbiter — fill
 
 ## PHASE 2 — W1 · Core shell (14 pages)
 - [x] **index.html — HOME v3: Linoxa home-two section match (master reference).** Replaces v2. 10 named `sec-*` blocks mirroring the Linoxa home-two reference (see `docs/SECTION_SYSTEM.md`): pillars-swap (4 pillars, interactive image swap on the existing `.st-space` app.js hook) · statement-intro · service-split (Turnkey/Renovation/3D rows) · big-feature (sector fit-outs, Wellstar named) · doc-collage (approved drawings → locked numbers → process) · icon-trio (gate icons) · marquee-line ("Drawn. Then built.") · proof-band (4 locked numbers + float image) · blog-grid (3 real insight posts) · cta-getintouch (WhatsApp + NAP). Hero kept. Placeholder testimonials dropped (reference has none — removes the [CONFIRM] risk until real quotes arrive). home.css `?v=5`.
-- [ ] services.html — hub with the full new service architecture (4 core + suites)
+- [ ] 🔨 **services.html — hub + 20 sub-service pages (IN PROGRESS).** Reality: the uneditable header mega menu links 20 `services/<slug>.html` pages (not the 8-page `/service/` plan) — all 20 URLs stay and get rebuilt on the single-service template. css/services.css?v=1 written; per-service copy digested from the docker briefs (architecture-services · retail/pharmacy/restaurant-fit-out · turnkey-solutions · plan phases 2–4 · sector-* · Residential Interior 7 sub-pages · master-planning · 3d-studio-hub). Pricing stays OUT (fact lock); Service + FAQPage + BreadcrumbList schema with fact-locked provider.
 - [ ] process.html — 7-Gate page rewritten from MASTER/turnkey briefs
 - [x] **3d-studio.html — rebuilt on the section system** (15 named blocks per docs/SECTION_SYSTEM.md): all 14 brief sections carried over with brief-locked copy — page-hero + trust bar, locked statement ("You are not approving a plan. You are approving a room."), what-is + comparison, 5 audiences, 6 services (services-swap on the .st-space hook), deliverables checklists, 5-step process, featured work, marketing/pre-sales, indicative PKR cost rows (confirmed quote from brief), 6 differentiators, proof band (200–500 fact fix; Wellstar named), 8-FAQ accordion (.faq-q hook), 3D brief form (fact-locked NAP), related services. Motion system (motion.css/studio-hub.css/motion.js) retired; css/threed.css?v=1.
 - [x] **about.html — rebuilt on the section system** (11 named blocks per docs/SECTION_SYSTEM.md): page-hero (brief H1/H2) · statement-intro · brand-story (corpus verbatim + stat rail) · values-grid · ecosystem-swap (4 wings, .st-space hook) · gates-table (7 gates, Gate 4 locked) · stop-gate · team-grid (3 × [CONFIRM: name, photo]) · proof-band · studios-band ([CONFIRM: HQ/roadmap]; Lahore hours only) · cta-getintouch (about variant). Head fact-locked (200–500, purged 500+/~20 incl. JSON-LD), AboutPage schema added, dead Tailwind CDN + studio/service-theme/lx links removed, css/about.css?v=1.
@@ -182,4 +194,4 @@ The corpus contradicts itself on a few facts. This table is the arbiter — fill
 
 ## READY TO START
 
-Phase 0 has begun (`.py` deletion done). **Next action on GO:** pull the corpus into the branch, present the FACT GOVERNANCE table for your one-pass sign-off, then build `template-inner.html` and the first architecture pages.
+Phases 0–1 complete; home/about/3d-studio/insights/projects shipped; chrome/nav pass shipped. **Active build: the services family (hub + 20 pages)** — CSS and corpus digest ready, generator next. **Then:** conversion core (process · contact · start-your-project · faq), locations ×13, brand pages, legal + utility, expansion suites per `docs/MISSING_PAGES_AUDIT.md` §4.

@@ -462,3 +462,17 @@
     transform: none;
   }
 }
+
+/* ── Active-page + open states (driven by app.js Nav UX module) ── */
+.site-header .nav > a.is-current { color: #fff; }
+.site-header .nav > a.is-current::after { transform: scaleX(1); transform-origin: left; }
+.site-header .nav .nav-toggle.is-current { color: #fff; }
+.site-header .mega a.is-current { color: #7d5f3a; }
+.site-header .mega a.is-current::before {
+  content: ""; display: inline-block; width: 5px; height: 5px; border-radius: 50%;
+  background: #7d5f3a; margin-right: 8px; vertical-align: 2px;
+}
+.site-header .drop-link.is-current { color: #7d5f3a !important; }
+.mobile-nav a.is-current { color: var(--wood); }
+.mobile-nav .m-acc > button.is-current { color: var(--wood); }
+.footer-links a.is-current { color: var(--wood); }
