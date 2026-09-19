@@ -33,3 +33,7 @@ Architecture + goal set + pattern vocabulary: [`../SERVICES_ARCHITECTURE.md`](..
 ## Status
 
 - **office-fit-out.html — v2 BUILT (exemplar). Owner sign-off pending.**
+
+- **SYSTEM LOCKED (owner, 2026-09-20):** reference = the 3d-studio.html implementation of the Linoxa service-page system; every page matches it section by section (15 slots), full brief-faithful depth, replace page by page.
+- **office-fit-out.html — v2.1 BUILT** on the exact 15-slot system (threed.css + of.css shape overrides). 14-step process, 4-type swap, cost-band no PKR.
+- **pharmacy.html — v2.1 BUILT** on the exact 15-slot system (threed.css + ph.css). 4 pharmacy blocks swap, 3-tier cost no PKR, licensing language only (no DGDA/PBMC), Wellstar named in proof-band.
