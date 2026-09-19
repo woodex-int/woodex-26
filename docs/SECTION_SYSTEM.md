@@ -61,6 +61,19 @@ author card [CONFIRM: name/photo] + start-at-the-gate CTA) → post-questions (3
 New named blocks: `post-hero` · `post-body` (with `.pt-fact` gate-fact box + numbered/`✦`-free list styles) · `post-questions` · `post-related` · `featured-note`.
 Posts live in `insights/` and link `../css/insights.css`; hub links `css/insights.css`. Titles follow SEOMAP §2.8: `{Title} | Woodex Interior — Insights`. JSON-LD: Article + BreadcrumbList (posts), Blog + BreadcrumbList (hub). Content: 280–380 words per note in the studio voice, fact-locked (interior pricing held at "quoted after survey"; 3D indicative ranges only on 3D notes).
 
+## Page order (projects hub — implemented)
+page-hero ("Rooms drawn so they can be built") → named-work (Wellstar band, navy) → folio-grid (6 study cards + 2 category cards) → cta-getintouch ("Every project here started as a survey.")
+
+## Page order (project study — the single template, ×6 + 2 category pages)
+study-hero (full-bleed image + Type/Place/Had/Path meta bar + "Study, not a named case" status) →
+study-overview ("Drawn so it can be built" + drew/detail image pair + status band) →
+study-challenge (01 Requirement) → study-solution (02 3D + deliverables checklist + service CTA) →
+study-gallery (3 images) → study-result (03 BOQ + [CONFIRM: real result/testimonial]) →
+study-related (3 cards + view all) → cta-getintouch ("Want your room drawn like this?").
+
+New named blocks: `study-hero` · `study-overview` · `study-challenge` · `study-solution` · `study-gallery` · `study-result` · `study-related` · `named-work` · `folio-grid` (category pages: page-hero + optional named-work + folio-grid + cta).
+Built per docker/project-case-study-template.md 7-section anatomy; studies stay labelled studies — real client data ([AREA]/[DURATION]/[YEAR]/result/testimonial) = [CONFIRM] until named. Schema: Service + BreadcrumbList with fact-locked provider. CSS: css/projects.css.
+
 ## Page order (about — implemented)
 page-hero → statement-intro → brand-story → values-grid → ecosystem-swap →
 gates-table → stop-gate → team-grid → proof-band → studios-band → cta-getintouch
