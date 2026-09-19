@@ -476,3 +476,8 @@
 .mobile-nav a.is-current { color: var(--wood); }
 .mobile-nav .m-acc > button.is-current { color: var(--wood); }
 .footer-links a.is-current { color: var(--wood); }
+
+/* ── Footer legal links (footer-bottom) ── */
+.footer-bottom p { display: flex; flex-wrap: wrap; gap: 6px; align-items: baseline; }
+.footer-bottom a { color: rgba(255, 255, 255, 0.55); transition: color 0.3s; }
+.footer-bottom a:hover { color: #fff; }

@@ -61,6 +61,10 @@ author card [CONFIRM: name/photo] + start-at-the-gate CTA) → post-questions (3
 New named blocks: `post-hero` · `post-body` (with `.pt-fact` gate-fact box + numbered/`✦`-free list styles) · `post-questions` · `post-related` · `featured-note`.
 Posts live in `insights/` and link `../css/insights.css`; hub links `css/insights.css`. Titles follow SEOMAP §2.8: `{Title} | Woodex Interior — Insights`. JSON-LD: Article + BreadcrumbList (posts), Blog + BreadcrumbList (hub). Content: 280–380 words per note in the studio voice, fact-locked (interior pricing held at "quoted after survey"; 3D indicative ranges only on 3D notes).
 
+## Page order (legal/utility template — privacy · terms · cookies · thank-you · 404)
+lg-hero (page-hero; 404 adds the outlined "404" figure) → lg-body (legal-body prose | next-steps | link-grid) → cta-getintouch.
+thank-you + 404 are noindex; legal pages canonical-only (SEOMAP §2.13). CSS: css/legal.css. Blocks named: `lg-hero` · `legal-body` · `next-steps` · `link-grid`.
+
 ## Page order (projects hub — implemented)
 page-hero ("Rooms drawn so they can be built") → named-work (Wellstar band, navy) → folio-grid (6 study cards + 2 category cards) → cta-getintouch ("Every project here started as a survey.")
 

@@ -53,7 +53,7 @@ The corpus contradicts itself on a few facts. This table is the arbiter — fill
 - ✅ **Done (24):** home · about · 3d-studio · insights hub + 11 posts · projects hub + 6 studies + 2 categories
 - 🔨 **In progress:** services hub + 20 service pages (css/services.css written; single-service template + corpus digested; generator next)
 - ✅ **Chrome/nav pass done:** hover-intent mega/dropdowns, tap-open support, Escape/outside-click, `.is-current` active highlighting sitewide, footer "Client stories" link on all 65 pages (js/app.js + css/mega.css, theme untouched)
-- ⏳ **Next:** finish services family → process · contact · start-your-project · faq (conversion core) → locations ×13 → client-stories · woodex-craft · careers → legal ×3 + thank-you + 404 + llms.txt → architecture/renovation/rooms expansion (~28)
+- ⏳ **Next:** finish services family → process · contact · start-your-project · faq (conversion core) → locations ×13 → client-stories · woodex-craft · careers → architecture/renovation/rooms expansion (~28)
 
 **URL structure (static, current conventions):** flat top-level + family folders — `architecture/*.html`, `renovation/*.html`, `fit-out/*.html`, `sectors/*.html`, `residential/*.html`, `locations/*.html` (exists), `insights/*.html` (exists). Clean URLs via `.htaccess` = backend phase.
 
@@ -90,7 +90,8 @@ The corpus contradicts itself on a few facts. This table is the arbiter — fill
 - [x] **3d-studio.html — rebuilt on the section system** (15 named blocks per docs/SECTION_SYSTEM.md): all 14 brief sections carried over with brief-locked copy — page-hero + trust bar, locked statement ("You are not approving a plan. You are approving a room."), what-is + comparison, 5 audiences, 6 services (services-swap on the .st-space hook), deliverables checklists, 5-step process, featured work, marketing/pre-sales, indicative PKR cost rows (confirmed quote from brief), 6 differentiators, proof band (200–500 fact fix; Wellstar named), 8-FAQ accordion (.faq-q hook), 3D brief form (fact-locked NAP), related services. Motion system (motion.css/studio-hub.css/motion.js) retired; css/threed.css?v=1.
 - [x] **about.html — rebuilt on the section system** (11 named blocks per docs/SECTION_SYSTEM.md): page-hero (brief H1/H2) · statement-intro · brand-story (corpus verbatim + stat rail) · values-grid · ecosystem-swap (4 wings, .st-space hook) · gates-table (7 gates, Gate 4 locked) · stop-gate · team-grid (3 × [CONFIRM: name, photo]) · proof-band · studios-band ([CONFIRM: HQ/roadmap]; Lahore hours only) · cta-getintouch (about variant). Head fact-locked (200–500, purged 500+/~20 incl. JSON-LD), AboutPage schema added, dead Tailwind CDN + studio/service-theme/lx links removed, css/about.css?v=1.
 - [ ] contact.html + start-your-project.html (consultation form per MASTER §6.9, honeypot, WhatsApp routing)
-- [ ] faq.html (12+ Q, 4 groups, FAQPage schema) · thank-you.html · 404.html · legal ×3
+- [x] **thank-you.html · 404.html · legal ×3 (privacy · terms · cookie-policy) — built on the legal/utility template** (lg-hero · legal-body/next-steps/link-grid · cta; css/legal.css; thank-you + 404 noindex; llms.txt shipped; sitemap +68; footer legal links sitewide). `[CONFIRM: owner legal review before launch]`
+- [ ] faq.html (12+ Q, 4 groups, FAQPage schema) — remains
 - [x] **insights.html hub — rebuilt on the section system** (page-hero + featured-note + 11-card blog-grid + cta). SEOMAP §2.8 head (Blog + BreadcrumbList JSON-LD).
 
 **DoD:** every core page live in preview · voice gate pass · unique CTA each · schema valid.

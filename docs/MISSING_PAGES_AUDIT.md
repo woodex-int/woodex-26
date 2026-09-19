@@ -9,12 +9,24 @@ _Working rule: static-now / SEO-first / frontend-to-launch (D1–D5 decisions). 
 
 | Status | Count | Pages |
 |---|---|---|
-| ✅ Rebuilt on the section system | **24** | home, about, 3d-studio, insights hub + 11 posts, projects hub + 6 studies + 2 category pages |
-| 🟡 Old system — rebuild pending | **42** | services hub + 20 service pages, locations hub + 12 city pages, process, contact, faq, careers, client-stories, start-your-project, woodex-craft, 404 |
-| ❌ Missing entirely (planned) | **4 + 1** | privacy-policy, terms, cookie-policy, thank-you (+ llms.txt) |
+| ✅ Rebuilt on the section system | **29** | home, about, 3d-studio, insights hub + 11 posts, projects hub + 6 studies + 2 category pages, privacy-policy, terms, cookie-policy, thank-you, 404 |
+| 🟡 Old system — rebuild pending | **41** | services hub + 20 service pages, locations hub + 12 city pages, process, contact, faq, careers, client-stories, start-your-project, woodex-craft |
+| ❌ Missing entirely (planned) | **0** | ~~privacy-policy, terms, cookie-policy, thank-you, llms.txt~~ — **all built 2026-09-19** on the legal/utility template (css/legal.css); thank-you + 404 noindex; legal pages in sitemap |
 | ➕ Corpus-briefed, not yet built | **~28** | architecture suite (14), renovation suite (8), residential room pages (6), healthcare-fit-out, complete-home-redesign, interior-home-refurbishment |
 
-Total live today: **66 HTML pages** (sitemap.xml lists all 65 indexable — current ✓, regenerate after every launch).
+Total live today: **71 HTML pages** (sitemap.xml lists 68 indexable — thank-you + 404 noindex — current ✓, regenerate after every launch).
+
+### 2.3b Built this pass ✅ (was §2.3 missing)
+| Page | Template | Notes |
+|---|---|---|
+| `privacy-policy.html` | lg-hero · legal-body · cta | canonical only; `[CONFIRM: owner legal review before launch]` |
+| `terms.html` | lg-hero · legal-body · cta | Cost-Lock / BOQ / IP language aligned to corpus (renders delivered to client; named clients only by written agreement) |
+| `cookie-policy.html` | lg-hero · legal-body · cta | honest: no tracking cookies today; update-before-analytics clause |
+| `thank-you.html` | lg-hero · next-steps · cta | noindex; 3-step "what happens next" |
+| `404.html` | lg-hero + outlined 404 · link-grid · cta | noindex; design-led per MASTER §6.11 |
+| `llms.txt` | — | AI-crawler manifest (NAP + page inventory) |
+
+Footer upgraded sitewide: "Privacy · Terms · Cookies" links in footer-bottom on all 70 pages (root + sub-page paths).
 
 ---
 
@@ -106,6 +118,64 @@ _Sector briefs (corporate-offices, F&B, healthcare, retail, software-houses) are
 |---|---|
 | sitemap.xml | ✅ current (65 URLs) — regenerate on every page launch |
 | robots.txt | ✅ present — verify disallow list before backend phase |
-| llms.txt | ❌ missing |
-| Schema per page | ✓ on rebuilt pages (Service/Article/BreadcrumbList/FAQPage, fact-locked provider); re-audit after services/locations rebuilds |
+| llms.txt | ✅ built (NAP + core/service/policy URLs) |
+| Schema per page | ✓ on rebuilt pages (legal/utility pages: WebPage + BreadcrumbList; thank-you/404 noindex) (Service/Article/BreadcrumbList/FAQPage, fact-locked provider); re-audit after services/locations rebuilds |
 | GA4/GTM/Clarity | ⏸ backend/later phase (D4) |
+
+---
+
+## 7 · Per-page rebuild map — every pending page (2026-09-19)
+
+Current word counts measured from `<main>` bodies. Every rebuild replaces the old body with the named template + its docker brief; chrome, URLs and mega-menu slugs stay unchanged.
+
+### Services family (21) — ACTIVE BUILD (css/services.css ready)
+| Page | Now | Rebuild source |
+|---|---|---|
+| services.html (hub) | 393w | MASTER §6.3 + SEOMAP §2.3 — pillar grid + 5-group index + path/Cost-Lock band |
+| services/architecture.html | 603w | architecture-services.md |
+| services/residential.html | 805w | Residential Interior 7 sub-pages.md (hub of the room family) |
+| services/office.html | 605w | plan phase 2.md + sector-corporate-offices.md |
+| services/retail.html | 579w | retail-fit-out.md |
+| services/shops.html | 539w | sector-retail.md (brand outlets + rollout) |
+| services/fit-out.html | 571w | turnkey-solutions.md (fit-out scope) + plan phases 3–4 |
+| services/office-fit-out.html | 482w | plan phase 3.md |
+| services/commercial-fit-out.html | 488w | plan phase 4.md |
+| services/residential-fit-out.html | 458w | turnkey + residential corpus (new-home completion) |
+| services/restaurant.html | 596w | restaurant-fit-out.md |
+| services/cafe.html | 547w | sector-fb.md |
+| services/joinery.html | 628w | Woodex Furniture™ corpus (business model + joinery mentions) |
+| services/renovation.html | 641w | renovation-hub.md |
+| services/turnkey.html | 493w | turnkey-solutions.md |
+| services/space-planning.html | 585w | architecture-services (space-planning scope) + master-planning.md |
+| services/lighting.html | 550w | 3d-studio-hub.md (lighting studies) + lighting corpus mentions |
+| services/drawings.html | 591w | architecture-services.md (working drawings) + front-elevation-design.md |
+| services/pharmacy.html | 652w | pharmacy-fit-out.md (named work: Wellstar DHA Lahore) |
+| services/software-house.html | 523w | sector-software-houses.md |
+| services/visualization.html | 589w | 3d-studio-hub.md (bridge page → 3d-studio.html) |
+
+### Conversion core (4) — after services
+| Page | Now | Rebuild source |
+|---|---|---|
+| process.html | 613w | 7-Gate lifecycle (MASTER §6 + about gates-table as reference) |
+| contact.html | **79w** (thinnest page on the site) | MASTER §6.8 — ContactForm, map embed, ContactPage schema |
+| start-your-project.html | 211w | MASTER §6.9 — ProjectForm (consultation), "before you book / how to prepare" |
+| faq.html | 382w | MASTER §6.10 — 12+ Q in 4 groups + FAQPage schema |
+
+### Locations family (13)
+| Page | Now | Rebuild source |
+|---|---|---|
+| locations.html (hub) | 387w | MASTER §6.7 |
+| locations/lahore.html | 312w | lahore-location.md (flagship — neighborhoods, corridor, LocalBusiness schema) |
+| 11 city desks (karachi, islamabad, rawalpindi, faisalabad, multan, gujranwala, sialkot, bahawalpur, hyderabad, peshawar, quetta) | 264–301w each | Lahore template + city facts only; KHI/ISB `[CONFIRM]` studio status |
+
+### Brand pages (3)
+| Page | Now | Rebuild source |
+|---|---|---|
+| client-stories.html | 396w | Wellstar named-work (fact lock: only named client) + [CONFIRM: further stories] |
+| woodex-craft.html | 462w | Woodex Furniture™ corpus (business model) |
+| careers.html | 302w | no corpus brief — `[CONFIRM: open roles, write with marke]` |
+
+### Section-level gaps still open on rebuilt pages
+- home: FAQ (6) section absent (MASTER §6.1 item 11) — optional add while home is otherwise locked to the Linoxa reference
+- projects: filter chips + Hospitality/Healthcare/Retail categories — blocked on real project inventory (studies stay honest)
+- insights: category archive pages — posts carry group tags instead (acceptable)
