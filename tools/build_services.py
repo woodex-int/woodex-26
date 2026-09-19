@@ -32,7 +32,7 @@ import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from services_data import PAGES, FACT_LOCK  # noqa: E402
+from services_data import PAGES, FACT_LOCK, WHY_WOODEX  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -87,20 +87,31 @@ def s_who(d):
         '          <div class="td-card reveal{dl}><h3>{t}</h3><p>{p}</p></div>'.format(
             dl=' data-delay="%d"' % (i * 50) if i else "", t=c[0], p=c[1])
         for i, c in enumerate(d["cards"]))
+    dfn = d.get("defn") or {}
+    paras = "".join("\n          <p>%s</p>" % p for p in dfn.get("paras", []))
+    media = ""
+    if dfn.get("img"):
+        media = """
+        <div class="td-who-media reveal" data-delay="100">
+          <img src="{img}" alt="{alt}" width="900" height="1125" />
+          <p class="td-media-cap">{cap}</p>
+        </div>""".format(img=dfn["img"], alt=dfn["alt"], cap=dfn["cap"])
     return """
-    <!-- ═══ 02 · WHO IT'S FOR ═══ -->
+    <!-- ═══ 02 · WHO IT'S FOR (definition + audiences) ═══ -->
     <section class="td-who" data-section="who-its-for" aria-labelledby="who-h">
       <div class="container">
-        <div class="sec-head reveal">
-          <p class="eyebrow">02 — Who it's for</p>
-          <h2 id="who-h">Who It's For</h2>
-          <p>{sub}</p>
+        <div class="td-who-def">
+          <div class="reveal">
+            <p class="eyebrow">02 — Who it's for</p>
+            <h2 id="who-h">Who It's For</h2>
+            <p class="td-who-lead">{sub}</p>{paras}
+          </div>{media}
         </div>
         <div class="td-who-grid">
 {cards}
         </div>
       </div>
-    </section>""".format(sub=d["sub"], cards=cards)
+    </section>""".format(sub=d["sub"], paras=paras, media=media, cards=cards)
 
 
 def s_run(d):
@@ -143,23 +154,27 @@ def s_run(d):
 
 
 def s_why(d):
-    cards = "\n".join(
-        '          <div class="td-card reveal{dl}"><h3>{t}</h3><p>{p}</p></div>'.format(
-            dl=' data-delay="%d"' % (i * 50) if i else "", t=c[0], p=c[1])
-        for i, c in enumerate(d["cards"]))
+    # UNIVERSAL — identical four facts on every services page (owner copy)
+    stats = "\n".join(
+        '          <div class="reveal{dl}"><b>{v}</b><span>{l}</span></div>'.format(
+            dl=' data-delay="%d"' % (i * 60) if i else "", v=s[0], l=s[1])
+        for i, s in enumerate(WHY_WOODEX["stats"]))
     return """
-    <!-- ═══ 04 · WHY WOODEX ═══ -->
-    <section class="td-why" data-section="why-woodex" aria-labelledby="why-h">
-      <div class="container">
-        <div class="sec-head reveal">
-          <p class="eyebrow">04 — Why Woodex</p>
-          <h2 id="why-h">Why Woodex</h2>
+    <!-- ═══ 04 · WHY WOODEX (universal — same four facts on every page) ═══ -->
+    <section class="td-proof" data-section="why-woodex" aria-labelledby="why-h">
+      <div class="container td-proof-grid">
+        <div class="td-proof-stats">
+{stats}
         </div>
-        <div class="td-why-grid">
-{cards}
+        <div class="reveal" data-delay="100">
+          <p class="eyebrow">04 — Why Woodex</p>
+          <h2 id="why-h">{h2}</h2>
+          <p>{p}</p>
+          {cta}
         </div>
       </div>
-    </section>""".format(cards=cards)
+    </section>""".format(stats=stats, h2=WHY_WOODEX["h2"], p=WHY_WOODEX["p"],
+                         cta=btn(WHY_WOODEX["cta"], "#brief"))
 
 
 def s_faq(d):
@@ -226,8 +241,8 @@ def s_slide(d):
 
 def s_related(d):
     cards = "\n".join(
-        '          <a class="td-card reveal" data-delay="{dl}" href="{h}"><small>{s}</small><h3>{t}</h3><p>{p}</p><span class="sec-go">Explore {t} {ar}</span></a>'.format(
-            dl=i * 70, s=c[0], t=c[1], p=c[2], h=c[3], ar=ARROW)
+        '          <a class="td-card td-rel-card reveal" data-delay="{dl}" href="{h}"><img src="{img}" alt="{t} — Woodex service" width="800" height="500" /><div class="td-rel-body"><small>{s}</small><h3>{t}</h3><p>{p}</p><span class="sec-go">Explore {t} {ar}</span></div></a>'.format(
+            dl=i * 70, s=c[0], t=c[1], p=c[2], h=c[3], img=c[4], ar=ARROW)
         for i, c in enumerate(d["cards"]))
     return """
     <!-- ═══ 07 · RELATED SERVICES ═══ -->
@@ -371,15 +386,15 @@ def build(slug):
     head = re.sub(r'<link rel="stylesheet" href="(?:\.\./)+css/(?:services|service-theme)\.css\?v=\d" />\n?\s*', "", head)
     if "threed.css" not in head:
         head = head.replace('<link rel="stylesheet" href="%scss/mega.css" />' % data["css_prefix"],
-                            '<link rel="stylesheet" href="%scss/mega.css" />\n  <link rel="stylesheet" href="%scss/threed.css?v=3" />' % (data["css_prefix"], data["css_prefix"]))
+                            '<link rel="stylesheet" href="%scss/mega.css" />\n  <link rel="stylesheet" href="%scss/threed.css?v=4" />' % (data["css_prefix"], data["css_prefix"]))
     else:
-        head = re.sub(r'href="(\.\./|\.\./\.\./)?css/threed\.css\?v=\d+"', 'href="%scss/threed.css?v=3"' % data["css_prefix"], head)
+        head = re.sub(r'href="(\.\./|\.\./\.\./)?css/threed\.css\?v=\d+"', 'href="%scss/threed.css?v=4"' % data["css_prefix"], head)
     if data.get("page_css"):
         base = os.path.basename(data["page_css_file"]).split("?")[0]  # e.g. of.css
         head = re.sub(r'<link rel="stylesheet" href="[^"]*/%s\?v=\d+" />\n?\s*' % base, "", head)  # stale versions
         if data["page_css_file"] not in head:
-            head = head.replace('href="%scss/threed.css?v=3"' % data["css_prefix"],
-                                'href="%scss/threed.css?v=3" />\n  <link rel="stylesheet" href="%s" />' % (data["css_prefix"], data["page_css_file"]))
+            head = head.replace('href="%scss/threed.css?v=4"' % data["css_prefix"],
+                                'href="%scss/threed.css?v=4" />\n  <link rel="stylesheet" href="%s" />' % (data["css_prefix"], data["page_css_file"]))
 
     main = '<main id="main">\n' + "\n".join(fn(data[fn.__name__[2:]]) for fn in SECTIONS) + "\n  </main>"
     head = re.sub(r'<script type="application/ld\+json">.*?</script>', lambda m: build_ld(slug, data), head, flags=re.S)

@@ -124,3 +124,8 @@ Built by `tools/build_services.py` + `tools/services_data.py` (chassis: `css/thr
 Headline voice: Linoxa two-beat statements ("Shell in. Business out."). Eyebrows carry
 the numbered system (01–09). Section list supersedes earlier 15-slot vocabulary for
 services pages; brief content maps into the 9 slots.
+## §2c — v4 refinements (owner, 2026-09-20 later)
+
+- **Why Woodex is UNIVERSAL** — identical on every page, owner copy: 10+ yrs (Founder-led studio, a decade deep) · 200–500 (Projects drawn and built across Pakistan) · In-house (Joinery by Woodex Furniture™ — not outsourced) · Cost-Lock (Fixed-price BOQ before work starts). Rendered as the navy stats band (td-proof).
+- **Section 02 defines the service** — each page's "Who it's for" opens with the brief's definition paragraphs (what the service IS) beside an image, then audience cards.
+- **Images + motion everywhere** — hero settle-in zoom; definition media with hover zoom; related cards redesigned with image tops; slide swaps; staggered reveals on all sections.

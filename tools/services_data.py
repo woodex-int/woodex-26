@@ -17,6 +17,19 @@ FACT_LOCK = {
     ),
 }
 
+# Universal "Why Woodex" — identical on every services page (owner copy, 2026-09-20)
+WHY_WOODEX = {
+    "h2": "Four facts. Every project. Every page.",
+    "p": "10+ years founder-led. 200\u2013500 projects drawn and built across Pakistan. Joinery manufactured in-house through Woodex Furniture\u2122. And the Cost-Lock \u2014 a fixed-price BOQ before any work starts.",
+    "cta": "Start your project",
+    "stats": [
+        ["10+ yrs", "Founder-led studio, a decade deep"],
+        ["200\u2013500", "Projects drawn and built across Pakistan"],
+        ["In-house", "Joinery by Woodex Furniture\u2122 \u2014 not outsourced"],
+        ["Cost-Lock", "Fixed-price BOQ before work starts"],
+    ],
+}
+
 PAGES = {
 
     # ════════════════════════ OFFICE FIT-OUT ════════════════════════
@@ -42,6 +55,15 @@ PAGES = {
 
         "who": {
             "sub": "Woodex Interior provides office fit-out for these client types and project situations.",
+            "defn": {
+                "paras": [
+                    "Office fit-out is the physical process of converting an empty, shell or partially finished commercial space into a fully functional and furnished working environment \u2014 every trade from civil works and partitions to electrical, lighting, flooring, joinery, furniture and final handover.",
+                    "Fit-out follows interior design: the design phase produces the space plan, 3D visuals, working drawings and BOQ; the fit-out executes what the design specifies. Woodex delivers both \u2014 separately, or as one design-and-build contract.",
+                ],
+                "img": "../images/project-urban.jpg",
+                "alt": "Commercial interior under fit-out \u2014 partitions and ceiling systems",
+                "cap": "From shell floor to working office \u2014 every trade under one programme.",
+            },
             "cards": [
                 ["Shell-to-office move-in", "You have taken possession of a new, empty space and need it converted into a complete, operational office before your team moves in."],
                 ["Company relocating", "Your business is growing and you are moving to a bigger floor. You need a professional fit-out delivered on time so operations are not disrupted."],
@@ -115,10 +137,10 @@ PAGES = {
         "related": {
             "hub": "../services.html",
             "cards": [
-                ["Design service", "Office Interior Design", "Space planning, concept, 3D visualization and working drawings — the design phase that precedes your fit-out.", "office.html"],
-                ["Design &amp; build", "Turnkey Design &amp; Build", "Design, build and furnish your office under one contract — first brief to final handover.", "turnkey.html"],
-                ["Larger scopes", "Commercial Fit-Out", "Fit-out for retail, healthcare, hospitality and mixed commercial spaces across Pakistan.", "commercial-fit-out.html"],
-                ["Tech workspaces", "Software House Fit-Out", "Collaborative zones, ergonomic workstations and branded environments for technology teams.", "software-house.html"],
+                ["Design service", "Office Interior Design", "Space planning, concept, 3D visualization and working drawings — the design phase that precedes your fit-out.", "office.html", "../images/project-spatial.jpg"],
+                ["Design &amp; build", "Turnkey Design &amp; Build", "Design, build and furnish your office under one contract — first brief to final handover.", "turnkey.html", "../images/split-night.jpg"],
+                ["Larger scopes", "Commercial Fit-Out", "Fit-out for retail, healthcare, hospitality and mixed commercial spaces across Pakistan.", "commercial-fit-out.html", "../images/project-urban.jpg"],
+                ["Tech workspaces", "Software House Fit-Out", "Collaborative zones, ergonomic workstations and branded environments for technology teams.", "software-house.html", "../images/project-facade.jpg"],
             ],
         },
 
@@ -235,10 +257,10 @@ PAGES = {
         "related": {
             "hub": "../services.html",
             "cards": [
-                ["Retail build", "Retail Shop Fit-Out", "Counters, displays, lighting and customer flow for retail units — the commercial cousin of pharmacy build-outs.", "retail.html"],
-                ["Larger scopes", "Commercial Fit-Out", "Fit-out for offices, healthcare, hospitality and mixed commercial spaces across Pakistan.", "commercial-fit-out.html"],
-                ["Existing pharmacy", "Renovation", "Upgrade an existing pharmacy — counter replacement, finishes refresh, layout adjustments.", "renovation.html"],
-                ["See it first", "3D Studio", "Photorealistic renders of your pharmacy before construction — in-house, 2–5 day turnaround.", "../3d-studio.html"],
+                ["Retail build", "Retail Shop Fit-Out", "Counters, displays, lighting and customer flow for retail units — the commercial cousin of pharmacy build-outs.", "retail.html", "../images/project-minimal.jpg"],
+                ["Larger scopes", "Commercial Fit-Out", "Fit-out for offices, healthcare, hospitality and mixed commercial spaces across Pakistan.", "commercial-fit-out.html", "../images/project-urban.jpg"],
+                ["Existing pharmacy", "Renovation", "Upgrade an existing pharmacy — counter replacement, finishes refresh, layout adjustments.", "renovation.html", "../images/project-concrete.jpg"],
+                ["See it first", "3D Studio", "Photorealistic renders of your pharmacy before construction — in-house, 2–5 day turnaround.", "../3d-studio.html", "../images/studio-hero.jpg"],
             ],
         },
 
@@ -361,10 +383,10 @@ PAGES = {
         "related": {
             "hub": "services.html",
             "cards": [
-                ["Design service", "Residential Interior Design", "Kitchen, bedroom, living room and whole-home design — with 3D included.", "services/residential.html"],
-                ["Design &amp; build", "Turnkey Design &amp; Build", "Design, build and furnish under one contract — 3D approvals before construction.", "services/turnkey.html"],
-                ["Manufacture", "Woodex Craft", "Custom joinery — kitchens, wardrobes, workstations and millwork — made in-house.", "woodex-craft.html"],
-                ["The path", "The 7-Gate Process", "From survey to handover — every gate approved, the price locked at Gate 4.", "process.html"],
+                ["Design service", "Residential Interior Design", "Kitchen, bedroom, living room and whole-home design — with 3D included.", "services/residential.html", "images/project-retreat.jpg"],
+                ["Design &amp; build", "Turnkey Design &amp; Build", "Design, build and furnish under one contract — 3D approvals before construction.", "services/turnkey.html", "images/split-night.jpg"],
+                ["Manufacture", "Woodex Craft", "Custom joinery — kitchens, wardrobes, workstations and millwork — made in-house.", "woodex-craft.html", "images/craft-joinery.jpg"],
+                ["The path", "The 7-Gate Process", "From survey to handover — every gate approved, the price locked at Gate 4.", "process.html", "images/project-facade.jpg"],
             ],
         },
 

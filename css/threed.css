@@ -231,3 +231,33 @@ a.td-card:hover .sec-go svg { transform: translateX(4px); }
   .sv-run-cols { grid-template-columns: 1fr; }
   .td-next .td-compare { grid-template-columns: 1fr; }
 }
+
+/* ════════════════════════════════════════════════════════════
+   SERVICES v4 — definition-rich sections + universal Why Woodex
+   ════════════════════════════════════════════════════════════ */
+
+/* 02 · WHO — definition split (text + media) above audience cards */
+.td-who { padding-top: 110px; }
+.td-who-def { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: start; margin-bottom: 54px; }
+.td-who-def h2 { font-size: clamp(2rem, 3.8vw, 3rem); font-weight: 500; letter-spacing: -0.038em; line-height: 1.06; margin: 10px 0 16px; }
+.td-who-def p { color: var(--muted); line-height: 1.75; max-width: 58ch; margin: 0 0 14px; }
+.td-who-lead { font-size: 1.02rem; color: var(--ink) !important; font-weight: 500; }
+.td-who-media { position: relative; }
+.td-who-media img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 28px; display: block; transition: transform 0.9s var(--ease); }
+.td-who-media:hover img { transform: scale(1.03); }
+
+/* 07 · RELATED — image-top cards */
+.td-related .td-rel-card { padding: 0; overflow: hidden; gap: 0; }
+.td-rel-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; display: block; transition: transform 0.9s var(--ease); }
+a.td-rel-card:hover img { transform: scale(1.05); }
+.td-rel-body { display: flex; flex-direction: column; gap: 9px; padding: 20px 22px 22px; flex: 1; }
+.td-rel-body p { flex: 1; }
+
+/* hero — slow settle-in zoom (page-load animation) */
+.ab-hero-bg img { animation: sv-hero-settle 2.4s var(--ease) both; }
+@keyframes sv-hero-settle { from { transform: scale(1.06); } to { transform: scale(1); } }
+
+@media (max-width: 1180px) {
+  .td-who-def { grid-template-columns: 1fr; gap: 40px; margin-bottom: 44px; }
+  .td-who-media img { aspect-ratio: 16 / 10; }
+}
