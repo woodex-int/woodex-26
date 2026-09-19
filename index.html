@@ -84,7 +84,7 @@
       }
     });
   </script>
-  <link rel="stylesheet" href="css/home.css?v=4" />
+  <link rel="stylesheet" href="css/home.css?v=5" />
   <link rel="stylesheet" href="css/chrome.css" />
   <link rel="stylesheet" href="css/theme.css" />
   <link rel="stylesheet" href="css/qa.css" />
@@ -337,172 +337,255 @@
     </section>
 
 <!-- 2 · STRUCTURAL STATEMENT -->
-    <section class="hm-statement" aria-labelledby="st-h">
+    <!-- ═══════════════════════════════════════════════════════════════
+     SECTION SYSTEM · named blocks (master reference: docs/SECTION_SYSTEM.md)
+     01 hero-rotator (kept) · 02 pillars-swap · 03 statement-intro ·
+     04 service-split · 05 big-feature · 06 doc-collage · 07 icon-trio ·
+     08 marquee-line · 09 proof-band · 10 blog-grid · 11 cta-getintouch
+     ═══════════════════════════════════════════════════════════════ -->
+
+    <!-- ═══ SECTION 02 · PILLARS-SWAP (ref: Linoxa "Partners") ═══ -->
+    <section class="sec-pillars" data-section="pillars-swap" aria-labelledby="pl-h">
+      <div class="container">
+        <div class="sec-pillars-head">
+          <div class="reveal">
+            <p class="eyebrow">Architecture · Interiors · Fit-outs · Furniture</p>
+            <h2 id="pl-h">One studio. Four pillars.</h2>
+          </div>
+          <p class="reveal">Hover a pillar. One standard, one contract — not four vendors.</p>
+        </div>
+        <div class="sec-pillars-grid">
+          <div class="sec-pillars-media reveal">
+            <img id="st-space-img" src="images/project-facade.jpg" alt="Architectural facade at dusk" width="1408" height="768" />
+            <div class="sec-pillars-cap">
+              <small>Pillar 01</small>
+              <strong id="st-space-cap">Architectural Design &amp; Space Planning</strong>
+            </div>
+          </div>
+          <div class="sec-pillar-list" role="list">
+            <button class="st-space is-on" type="button" data-img="images/project-facade.jpg" data-alt="Architectural facade at dusk" data-cap="Architectural Design &amp; Space Planning">
+              <span class="n">01</span>
+              <span><h3>Architectural Design &amp; Space Planning</h3><p>We optimize the spatial envelope for life, productivity, and clarity.</p></span>
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+            <button class="st-space" type="button" data-img="images/studio-kitchen.jpg" data-alt="Interior joinery and kitchen" data-cap="Interior Design">
+              <span class="n">02</span>
+              <span><h3>Interior Design</h3><p>Every surface, material, and proportion approved before construction begins.</p></span>
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+            <button class="st-space" type="button" data-img="images/project-concrete.jpg" data-alt="Turnkey construction in progress" data-cap="Construction Fit-Outs &amp; Turnkey">
+              <span class="n">03</span>
+              <span><h3>Construction Fit-Outs &amp; Turnkey</h3><p>Design moves from paper to wall. Cost-Lock applies at every gate.</p></span>
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+            <button class="st-space" type="button" data-img="images/craft-joinery.jpg" data-alt="Bespoke wood joinery detail" data-cap="Furniture Design &amp; Manufacturing">
+              <span class="n">04</span>
+              <span><h3>Furniture Design &amp; Manufacturing</h3><p>Woodex Furniture™ builds bespoke pieces to your approved plans. One studio, one standard.</p></span>
+              <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 03 · STATEMENT-INTRO (ref: Linoxa intro statement) ═══ -->
+    <section class="sec-statement" data-section="statement-intro" aria-labelledby="stm-h">
       <div class="container">
         <p class="eyebrow reveal">The foundation</p>
-        <h2 id="st-h" class="reveal">Design is not decoration.</h2>
-        <p class="hm-statement-copy reveal">Design is the foundation of a successful project. Every line has a destination. Woodex Interior is one accountable partner — from drawing to delivery.</p>
+        <h2 id="stm-h" class="reveal">One accountable partner, from drawing to delivery.</h2>
+        <p class="sec-statement-copy reveal">Design is the foundation of a successful project. Every line has a destination. Woodex Interior plans, draws, visualizes, budgets and builds — so the finished room is connected to the idea you approved.</p>
       </div>
     </section>
 
-    <!-- 3 · FOUR SERVICE PILLARS -->
-    <section class="hm-pillars" aria-labelledby="pl-h">
+    <!-- ═══ SECTION 04 · SERVICE-SPLIT (ref: Linoxa service rows) ═══ -->
+    <section class="sec-split" data-section="service-split" aria-labelledby="spl-h">
       <div class="container">
-        <div class="hm-head reveal">
-          <p class="eyebrow">What we do</p>
-          <h2 id="pl-h">One studio. Four pillars.</h2>
-          <p>Architecture, interiors, fit-outs and furniture — one standard, one contract. Not four vendors.</p>
+        <div class="sec-head reveal">
+          <p class="eyebrow">What you can buy</p>
+          <h2 id="spl-h">Three ways in. One standard out.</h2>
         </div>
-        <div class="hm-pillar-grid">
-          <a class="hm-pillar reveal" href="services.html">
-            <span class="n">01</span>
-            <h3>Architectural Design &amp; Space Planning</h3>
-            <p>We optimize the spatial envelope for life, productivity, and clarity.</p>
-            <span class="hm-go">Explore <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
-          </a>
-          <a class="hm-pillar reveal" href="services.html" data-delay="60">
-            <span class="n">02</span>
-            <h3>Interior Design</h3>
-            <p>Every surface, material, and proportion approved before construction begins.</p>
-            <span class="hm-go">Explore <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
-          </a>
-          <a class="hm-pillar reveal" href="services.html" data-delay="120">
-            <span class="n">03</span>
-            <h3>Construction Fit-Outs &amp; Turnkey</h3>
-            <p>Design moves from paper to wall. Cost-Lock applies at every gate.</p>
-            <span class="hm-go">Explore <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
-          </a>
-          <a class="hm-pillar reveal" href="woodex-craft.html" data-delay="180">
-            <span class="n">04</span>
-            <h3>Furniture Design &amp; Manufacturing</h3>
-            <p>Woodex Furniture™ builds bespoke pieces to your approved plans. One studio, one standard.</p>
-            <span class="hm-go">Explore <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
-          </a>
+        <div class="sec-split-row reveal">
+          <div class="sec-split-media">
+            <img src="images/split-night.jpg" alt="Turnkey residence glowing at dusk" width="1408" height="768" loading="lazy" />
+          </div>
+          <div>
+            <h3>Turnkey with the cost locked at Gate 4</h3>
+            <p>Plan, 3D, budget, BOQ, build, handover. If the numbers don't work, you walk away with your design files. The build is optional — your design is always yours.</p>
+            <a class="sec-link" href="services.html">Discover more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a>
+          </div>
+        </div>
+        <div class="sec-split-row is-flip reveal">
+          <div class="sec-split-media">
+            <img src="images/project-retreat.jpg" alt="Renovated retreat interior" width="1408" height="768" loading="lazy" />
+          </div>
+          <div>
+            <h3>Renovation that starts with the drawing</h3>
+            <p>We measure what exists, draw what stays, and price what changes. The same gates apply — approve each one, stop after any of them.</p>
+            <a class="sec-link" href="services.html">Discover more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a>
+          </div>
+        </div>
+        <div class="sec-split-row reveal">
+          <div class="sec-split-media">
+            <img src="images/studio-hero.jpg" alt="3D render of an interior" width="1408" height="768" loading="lazy" />
+          </div>
+          <div>
+            <h3>3D before a wall moves</h3>
+            <p>3D-only is a complete engagement. Stills first — the same still can go to BOQ later. You approve the room twice: once on screen, once at handover.</p>
+            <a class="sec-link" href="3d-studio.html">Discover more <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- 4 · COST-LOCK -->
-    <section class="hm-costlock" aria-labelledby="cl-h">
+    <!-- ═══ SECTION 05 · BIG-FEATURE (ref: Linoxa commercial band) ═══ -->
+    <section class="sec-feature" data-section="big-feature" aria-labelledby="ft-h">
       <div class="container">
-        <div class="hm-costlock-grid">
+        <div class="sec-feature-media reveal">
+          <img src="images/studio-pharmacy.jpg" alt="Pharmacy fit-out with retail shelving" width="1408" height="768" loading="lazy" />
+        </div>
+        <div class="sec-feature-head">
           <div class="reveal">
-            <p class="eyebrow">Cost-Lock</p>
-            <h2 id="cl-h">The cost is locked at Gate 4.</h2>
-            <p class="lead">If the numbers don't work, you walk away with your design files. The build is optional. Your design is always yours.</p>
-            <a class="btn btn-light" href="process.html">
-              <span class="btn-label"><span>See the seven gates</span><span>See the seven gates</span></span>
-              <span class="btn-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
-            </a>
+            <p class="eyebrow">Sectors</p>
+            <h2 id="ft-h">Fit-outs for businesses that cannot close</h2>
+            <p>Pharmacies, clinics, retail and restaurants — surveyed, drawn and built around your trading hours. Named client: Wellstar Pharmacy, Cosmetics and Mini Hospital, DHA Lahore.</p>
           </div>
-          <div class="hm-costlock-card reveal" data-delay="100">
-            <b>Gate 4</b>
-            <strong>Plan — budget + BOQ</strong>
-            <p>The approved still becomes a number and a list. From this gate onward the price does not move without your written instruction.</p>
+          <a class="btn reveal" data-delay="80" href="services.html">
+            <span class="btn-label"><span>Explore our services</span><span>Explore our services</span></span>
+            <span class="btn-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          </a>
+        </div>
+        <div class="sec-chips reveal">
+          <a href="services.html">Pharmacy fit-outs <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a>
+          <a href="services.html">Healthcare &amp; clinics <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a>
+          <a href="services.html">Retail &amp; restaurants <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 06 · DOC-COLLAGE (ref: Linoxa "Building documentation") ═══ -->
+    <section class="sec-doc" data-section="doc-collage" aria-labelledby="doc-h">
+      <div class="container sec-doc-grid">
+        <div class="reveal">
+          <p class="eyebrow">Building documentation</p>
+          <h2 id="doc-h">Approved drawings. Locked numbers.</h2>
+          <p>The approved still becomes a bill of quantities and a schedule. From Gate 4 onward the price does not move without your written instruction. A trail, not a WhatsApp scramble.</p>
+          <a class="btn" href="process.html">
+            <span class="btn-label"><span>Learn more</span><span>Learn more</span></span>
+            <span class="btn-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          </a>
+        </div>
+        <div class="sec-doc-collage">
+          <img class="reveal" src="images/project-minimal.jpg" alt="Minimal interior documentation" width="1408" height="768" loading="lazy" />
+          <img class="reveal" data-delay="60" src="images/project-spatial.jpg" alt="Spatial study model" width="1408" height="768" loading="lazy" />
+          <img class="reveal" data-delay="120" src="images/project-urban.jpg" alt="Urban facade study" width="1408" height="768" loading="lazy" />
+          <img class="reveal" data-delay="180" src="images/craft-joinery.jpg" alt="Joinery detail drawing made real" width="1408" height="768" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 07 · ICON-TRIO (ref: Linoxa icon cards) ═══ -->
+    <section class="sec-icons" data-section="icon-trio" aria-labelledby="ic-h">
+      <div class="container">
+        <div class="sec-head reveal">
+          <p class="eyebrow">How engagements begin</p>
+          <h2 id="ic-h">Pick the door that sounds like you.</h2>
+        </div>
+        <div class="sec-icons-grid">
+          <a class="sec-icon-card reveal" href="services.html">
+            <svg aria-hidden="true"><use href="assets/icons.svg#i-design"></use></svg>
+            <h3>Interior Design</h3>
+            <p>Layout, materials, lighting — a room you approve before it exists.</p>
+            <span class="sec-go">Start now <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          </a>
+          <a class="sec-icon-card reveal" data-delay="70" href="start-your-project.html">
+            <svg aria-hidden="true"><use href="assets/icons.svg#i-discover"></use></svg>
+            <h3>Site Survey &amp; Quote</h3>
+            <p>We measure, we listen, we quote after the survey. No placeholder prices.</p>
+            <span class="sec-go">Start now <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          </a>
+          <a class="sec-icon-card reveal" data-delay="140" href="3d-studio.html">
+            <svg aria-hidden="true"><use href="assets/icons.svg#i-visualize"></use></svg>
+            <h3>3D Studio</h3>
+            <p>Stills, walkthroughs, 360s — the room on screen before the first wall.</p>
+            <span class="sec-go">Open 3D Studio <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 08 · MARQUEE-LINE (ref: Linoxa big marquee) ═══ -->
+    <section class="sec-marquee" data-section="marquee-line" aria-label="Woodex Interior — Drawn. Then built.">
+      <div class="marquee-track" aria-hidden="true">
+        <span>Drawn. Then built.</span><i>✦</i><span>Drawn. Then built.</span><i>✦</i><span>Drawn. Then built.</span><i>✦</i><span>Drawn. Then built.</span><i>✦</i><span>Drawn. Then built.</span><i>✦</i><span>Drawn. Then built.</span><i>✦</i>
+      </div>
+      <div class="marquee-track is-rev" aria-hidden="true">
+        <span>Drawn. Then built.</span><i>✦</i><span>Drawn. Then built.</span><i>✦</i><span>Drawn. Then built.</span><i>✦</i><span>Drawn. Then built.</span><i>✦</i><span>Drawn. Then built.</span><i>✦</i><span>Drawn. Then built.</span><i>✦</i>
+      </div>
+    </section>
+
+    <!-- ═══ SECTION 09 · PROOF-BAND (ref: Linoxa about + statement) ═══ -->
+    <section class="sec-proof" data-section="proof-band" aria-labelledby="pr-h">
+      <div class="container sec-proof-grid">
+        <div class="sec-proof-media">
+          <img class="reveal" src="images/project-retreat.jpg" alt="Founder-led studio work" width="1408" height="768" loading="lazy" />
+          <img class="is-float reveal" data-delay="120" src="images/project-concrete.jpg" alt="On-site construction management" width="1408" height="768" loading="lazy" />
+        </div>
+        <div class="reveal" data-delay="80">
+          <p class="eyebrow">Proof, not promises</p>
+          <h2 id="pr-h">Founder-led since day one.</h2>
+          <p>Design, site, joinery and handover — led by the people whose name is on the drawing.</p>
+          <div class="sec-proof-stats">
+            <div><b>200–500</b><span>Projects delivered</span></div>
+            <div><b>10+</b><span>Years founder-led</span></div>
+            <div><b>ISO</b><span>9001-grade process</span></div>
+            <div><b>3</b><span>Studios — Lahore, Karachi, Islamabad</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 5 · SEVEN GATES -->
-    <section class="hm-gates" aria-labelledby="gt-h">
+    <!-- ═══ SECTION 10 · BLOG-GRID (ref: Linoxa blog band) ═══ -->
+    <section class="sec-blog" data-section="blog-grid" aria-labelledby="bg-h">
       <div class="container">
-        <div class="hm-head reveal">
-          <p class="eyebrow">How it goes</p>
-          <h2 id="gt-h">Seven gates. One path.</h2>
-          <p>You approve each gate. You can stop after any of them — 3D-only is a complete job.</p>
+        <div class="sec-blog-head reveal">
+          <div>
+            <p class="eyebrow">Insights</p>
+            <h2 id="bg-h">Thinking before the drawing.</h2>
+          </div>
+          <a class="btn" href="insights.html">
+            <span class="btn-label"><span>View all insights</span><span>View all insights</span></span>
+            <span class="btn-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          </a>
         </div>
-        <ol class="hm-gate-list">
-          <li class="reveal"><b>01</b><span><strong>Discover</strong><small>Site survey, brief, constraints</small></span></li>
-          <li class="reveal" data-delay="50"><b>02</b><span><strong>Design</strong><small>Layout, concept, mood</small></span></li>
-          <li class="reveal" data-delay="100"><b>03</b><span><strong>Visualize</strong><small>3D renders, material boards</small></span></li>
-          <li class="is-lock reveal" data-delay="150"><b>04</b><span><strong>Plan</strong><small>Budget + BOQ — price locked here</small></span></li>
-          <li class="reveal" data-delay="200"><b>05</b><span><strong>Build</strong><small>Construction, on-site management</small></span></li>
-          <li class="reveal" data-delay="250"><b>06</b><span><strong>Install</strong><small>Furniture, finishes, lighting</small></span></li>
-          <li class="reveal" data-delay="300"><b>07</b><span><strong>Deliver</strong><small>Final walk-through, 30-day check</small></span></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- 6 · ENTRY POINT TILES -->
-    <section class="hm-tiles" aria-labelledby="tl-h">
-      <div class="container">
-        <div class="hm-head reveal">
-          <p class="eyebrow">Start here</p>
-          <h2 id="tl-h">Tell us where you are.</h2>
-          <p>Four doors into the same studio. Pick the one that sounds like you.</p>
-        </div>
-        <div class="hm-tile-grid">
-          <a class="hm-tile reveal" href="services.html">
-            <h3>I have an empty space</h3>
-            <p>Start from scratch with architectural design.</p>
-            <span class="hm-go">Start now <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+        <div class="sec-blog-grid">
+          <a class="sec-post reveal" href="insights/design-vs-turnkey.html">
+            <img src="images/project-facade.jpg" alt="Design vs turnkey" width="1408" height="768" loading="lazy" />
+            <h3>Design vs turnkey execution</h3>
+            <p>Design is not decoration. Turnkey is not automatic. Two routes — say which.</p>
+            <span class="sec-go">Read <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
           </a>
-          <a class="hm-tile reveal" href="start-your-project.html" data-delay="60">
-            <h3>I want to renovate</h3>
-            <p>Transform an existing space, room by room.</p>
-            <span class="hm-go">Start now <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          <a class="sec-post reveal" data-delay="70" href="insights/cost.html">
+            <img src="images/project-minimal.jpg" alt="Cost and BOQ" width="1408" height="768" loading="lazy" />
+            <h3>Cost &amp; BOQ</h3>
+            <p>Interior design cost in Pakistan — the BOQ comes after the still.</p>
+            <span class="sec-go">Read <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
           </a>
-          <a class="hm-tile reveal" href="services.html" data-delay="120">
-            <h3>I'm building from scratch</h3>
-            <p>Full end-to-end build with fixed cost.</p>
-            <span class="hm-go">Start now <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
-          </a>
-          <a class="hm-tile is-3d reveal" href="3d-studio.html" data-delay="180">
-            <h3>I want 3D renders first</h3>
-            <p>See your space before a single wall is built.</p>
-            <span class="hm-go">Open 3D Studio <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
+          <a class="sec-post reveal" data-delay="140" href="insights/3d.html">
+            <img src="images/project-urban.jpg" alt="3D notes" width="1408" height="768" loading="lazy" />
+            <h3>3D notes</h3>
+            <p>Stills, walkthrough, 360. A still is a meeting.</p>
+            <span class="sec-go">Read <svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- 7 · PROOF -->
-    <section class="hm-proof" aria-labelledby="pr-h">
-      <div class="container">
-        <div class="hm-head reveal">
-          <p class="eyebrow">Proof</p>
-          <h2 id="pr-h">Proof, not promises.</h2>
-        </div>
-        <div class="hm-proof-grid">
-          <div class="hm-stat reveal"><b>200–500</b><span>Projects delivered — plan, still and site when the brief includes build.</span></div>
-          <div class="hm-stat reveal" data-delay="70"><b>10+</b><span>Years founder-led — design, site, joinery and handover.</span></div>
-          <div class="hm-stat reveal" data-delay="140"><b>ISO</b><span>9001-grade process — a trail, not a WhatsApp scramble.</span></div>
-          <div class="hm-stat reveal" data-delay="210"><b>3</b><span>Studios you can visit — Lahore, Karachi, Islamabad.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 8 · CLIENT WORDS [CONFIRM: replace with real client quotes before launch] -->
-    <section class="hm-quotes" aria-labelledby="q-h">
-      <div class="container">
-        <div class="hm-head reveal">
-          <p class="eyebrow">Clients</p>
-          <h2 id="q-h">What clients say.</h2>
-        </div>
-        <div class="hm-quote-grid">
-          <figure class="hm-quote reveal">
-            <blockquote>Woodex turned our empty apartment into something we didn't think was possible in that budget. The Cost-Lock was real — no surprises at the end.</blockquote>
-            <figcaption>Zara R. — Model Town</figcaption>
-          </figure>
-          <figure class="hm-quote reveal" data-delay="70">
-            <blockquote>We didn't need a contractor and a designer. Woodex was one team. One decision-maker. One standard.</blockquote>
-            <figcaption>Faizan A. — DHA</figcaption>
-          </figure>
-          <figure class="hm-quote reveal" data-delay="140">
-            <blockquote>Approving the 3D render and then seeing the finished room was identical. No other studio has done that for us.</blockquote>
-            <figcaption>Nadia K. — Gulberg</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- 9 · FINAL CTA -->
-    <section class="hm-cta" aria-labelledby="cta-h">
+    <!-- ═══ SECTION 11 · CTA-GETINTOUCH (ref: Linoxa "Stay connected") ═══ -->
+    <section class="sec-cta" data-section="cta-getintouch" aria-labelledby="cta-h">
       <div class="container">
         <h2 id="cta-h" class="reveal">Tell us about your space.</h2>
-        <p class="lead reveal">Message on WhatsApp or send the brief — we will respond with a thoughtful first step.</p>
-        <div class="hm-cta-actions reveal" data-delay="80">
+        <p class="sec-cta-lead reveal">Message on WhatsApp or send the brief — we will respond with a thoughtful first step.</p>
+        <div class="sec-cta-actions reveal" data-delay="80">
           <a class="btn btn-light" href="https://wa.me/923224000768?text=Hello%20Woodex%20%E2%80%94%20I%20have%20a%20space%20in%20mind." target="_blank" rel="noopener">
             <span class="btn-label"><span>Message on WhatsApp</span><span>Message on WhatsApp</span></span>
             <span class="btn-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
@@ -512,7 +595,7 @@
             <span class="btn-icon"><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg><svg viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5"/></svg></span>
           </a>
         </div>
-        <p class="hm-cta-nap reveal" data-delay="140">LG 90 Link Road, Model Town, Lahore · 10:00 – 8:30 · studio@woodex.interior</p>
+        <p class="sec-cta-nap reveal" data-delay="140">LG 90 Link Road, Model Town, Lahore · 10:00 – 8:30 · studio@woodex.interior</p>
       </div>
     </section>
       </main>
