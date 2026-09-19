@@ -293,7 +293,7 @@
 .st-space .n {
   font-family: var(--font-d);
   font-size: 0.88rem;
-  color: var(--wood);
+  color: #7d5f3a; /* wood-deep — AA on white (was #b8956a, 2.8:1) */
   letter-spacing: 0.06em;
 }
 .st-space h3 {

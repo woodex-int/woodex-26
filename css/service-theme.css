@@ -408,3 +408,6 @@
   .sv-routes, .sv-day, .sv-mosaic, .sv-proof, .sv-check, .sv-faq { padding: 80px 0; }
   .sv-ind img, .sv-check img, .sv-proof img { height: 320px; }
 }
+
+/* sp-band contact labels: h3 (was h4) to keep heading order h2→h3; rendered identical */
+.sp-meta h3 { color: #fff; font-size: .82rem; font-weight: 560; margin-bottom: 4px; }

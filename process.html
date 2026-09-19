@@ -45,7 +45,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
+    window.tailwind && (tailwind.config = {
       theme: {
         extend: {
           colors: {
@@ -59,14 +59,14 @@
           fontFamily: { sans: ['"Plus Jakarta Sans"', "sans-serif"] }
         }
       }
-    };
+    });
   </script>
   <link rel="stylesheet" href="css/theme.css" />
   <link rel="stylesheet" href="css/qa.css" />
   <link rel="stylesheet" href="css/mega.css" />
   <link rel="stylesheet" href="css/studio.css" />
   <link rel="stylesheet" href="css/service-theme.css" />
-  <link rel="stylesheet" href="css/blog-two.css" />
+  <link rel="stylesheet" href="css/blog-two.css?v=3" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -289,7 +289,7 @@
         <span>Discover</span><span>Design</span><span>Visualize</span><span>Plan + BOQ</span><span>Build</span><span>Install</span><span>Deliver</span>
       </div>
     </div>
-    <section class="bg-cream py-24">
+    <section class="bg-cream py-24" id="money">
       <div class="max-w-[1240px] mx-auto px-8">
         <p class="text-muted text-sm mb-3" data-anim="fade">Seven gates. Two places money is written.</p>
         <h2 class="text-4xl md:text-5xl font-medium tracking-tight max-w-xl mb-6" data-anim="up">Budget and BOQ live inside Plan and Build</h2>
@@ -332,7 +332,7 @@
     </article></div>
       </div>
     </section>
-    <section class="bg-navy text-white py-24">
+    <section class="bg-navy text-white py-24" id="visualize">
       <div class="max-w-[1240px] mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
         <div data-anim="left">
           <p class="text-white/50 text-sm mb-3">Where 3D sits</p>
@@ -344,24 +344,31 @@
       </div>
     </section>
     
-    <section class="wx-have" aria-labelledby="have-h">
-      <header><p class="eyebrow">What you walk in with</p><h2 id="have-h">Where you are in the gates</h2></header>
-      <ul class="wx-have-list"><li><h3>Nothing yet</h3><p>A space and a sentence. Discover is the first conversation — not a moodboard.</p></li><li><h3>A plan or still</h3><p>You may already be at Visualize. We do not rewind you into a brochure.</p></li><li><h3>Drawings from elsewhere</h3><p>Review first. Then Plan and Build — or a refusal.</p></li><li><h3>A date without a BOQ</h3><p>Dates without quantities are theatre. Money is written twice: Plan and Build.</p></li></ul>
-    </section>
-    <section class="wx-out" aria-labelledby="out-h">
+    <section class="wx-gates" id="gates" aria-labelledby="out-h">
       <header><p class="eyebrow">Named outputs</p><h2 id="out-h">What the seven gates actually are</h2></header>
-      <ul class="wx-out-list"><li><h3>Discover → Design</h3><p>What you have, then a direction you can refuse — before 3D spend.</p></li><li><h3>Visualize</h3><p>Stills first. 3D-only is complete. One revision cycle.</p></li><li><h3>Plan (budget + BOQ)</h3><p>The still turned into a number and a list.</p></li><li><h3>Build → Install → Deliver</h3><p>Optional. You can stop after the still.</p></li></ul>
+      <div class="wx-gates-grid">
+        <div class="wx-gates-col">
+          <p class="wx-gates-k">What you walk in with</p>
+          <h3 id="have-h">Where you are in the gates</h3>
+          <ul class="wx-have-list"><li><h3>Nothing yet</h3><p>A space and a sentence. Discover is the first conversation — not a moodboard.</p></li><li><h3>A plan or still</h3><p>You may already be at Visualize. We do not rewind you into a brochure.</p></li><li><h3>Drawings from elsewhere</h3><p>Review first. Then Plan and Build — or a refusal.</p></li><li><h3>A date without a BOQ</h3><p>Dates without quantities are theatre. Money is written twice: Plan and Build.</p></li></ul>
+        </div>
+        <div class="wx-gates-col">
+          <p class="wx-gates-k">What you walk out with</p>
+          <h3>The gates, in order</h3>
+          <ul class="wx-out-list"><li><h3>Discover → Design</h3><p>What you have, then a direction you can refuse — before 3D spend.</p></li><li><h3>Visualize</h3><p>Stills first. 3D-only is complete. One revision cycle.</p></li><li><h3>Plan (budget + BOQ)</h3><p>The still turned into a number and a list.</p></li><li><h3>Build → Install → Deliver</h3><p>Optional. You can stop after the still.</p></li></ul>
+        </div>
+      </div>
     </section>
-    <section class="wx-ask" aria-labelledby="ask-h">
+    <section class="wx-ask" id="answers" aria-labelledby="ask-h">
       <header><p class="eyebrow">Direct answers</p><h2 id="ask-h">Questions the process page must answer</h2></header>
       <dl class="wx-ask-list"><dt>Is every job turnkey?</dt><dd>No. Turnkey is a route. You can stop after 3D. We do not promise unlimited free design.</dd><dt>When is money written?</dt><dd>After you approve the room. Budget and BOQ live inside Plan and Build — not as extra marketing steps.</dd><dt>Do you invent a layout in 3D?</dt><dd>No. Design, then visualize. We do not call an invented layout ‘design’.</dd></dl>
     </section>
-    <section class="wx-geo" aria-labelledby="geo-h">
+    <section class="wx-geo" id="studios" aria-labelledby="geo-h">
       <header><p class="eyebrow">Studios · Pakistan</p><h2 id="geo-h">The path travels. The desk does not franchise.</h2></header>
       <address>Woodex Interior · LG 90 Link Road, Model Town, Lahore · 10:00 – 8:30<br />Gates are the same in Gulberg, Clifton and F-7. The site is wherever the building is.</address>
       <ul class="wx-geo-cities"><li><small>Studio</small><a href="locations/lahore.html">Lahore — Gulberg III</a></li><li><small>Studio</small><a href="locations/karachi.html">Karachi — Clifton</a></li><li><small>Studio</small><a href="locations/islamabad.html">Islamabad — F-7</a></li></ul>
     </section>
-    <section class="wx-eeat" aria-labelledby="eeat-h">
+    <section class="wx-eeat" id="proof" aria-labelledby="eeat-h">
       <header><p class="eyebrow">Why this page is not a catalogue</p><h2 id="eeat-h">Proof that belongs here</h2></header>
       <ul class="wx-eeat-list"><li><b>7 gates</b><span>Named. You approve each one.</span></li><li><b>Stop allowed</b><span>3D-only is a complete job.</span></li><li><b>ISO 9001</b><span>A trail, not a WhatsApp scramble.</span></li><li><b>No fake rate</b><span>We do not publish a square-foot number.</span></li></ul>
     </section>
@@ -424,8 +431,53 @@
   </footer>
   <div class="lb" id="lightbox" hidden>
     <button class="lb-x" type="button" aria-label="Close">×</button>
-    <img alt="" />
+    <img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" />
   </div>
+  <nav class="wxr" aria-label="Chapters">
+    <a href="#money"><span>Money</span><i></i></a>
+    <a href="#visualize"><span>Visualize</span><i></i></a>
+    <a href="#gates"><span>Gates</span><i></i></a>
+    <a href="#answers"><span>Answers</span><i></i></a>
+    <a href="#studios"><span>Studios</span><i></i></a>
+    <a href="#proof"><span>Proof</span><i></i></a>
+  </nav>
   <script src="js/app.js"></script>
+  <script>
+  (function () {
+    var rail = document.querySelector(".wxr"); if (!rail) return;
+    var links = [].slice.call(rail.querySelectorAll("a"));
+    var targets = links.map(function (a) { return document.querySelector(a.getAttribute("href")); });
+    var reduce = matchMedia("(prefers-reduced-motion: reduce)");
+    links.forEach(function (a, i) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        var t = targets[i];
+        if (t) t.scrollIntoView({ behavior: reduce.matches ? "auto" : "smooth", block: "start" });
+      });
+    });
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) links.forEach(function (a) { a.classList.toggle("is-on", a.getAttribute("href") === "#" + en.target.id); });
+        });
+      }, { rootMargin: "-45% 0px -45% 0px" });
+      targets.forEach(function (t) { if (t) io.observe(t); });
+    }
+    var sections = [].slice.call(document.querySelectorAll("main > section"));
+    var ticking = false;
+    function tone() {
+      var mid = innerHeight / 2, dark = false;
+      for (var i = 0; i < sections.length; i++) {
+        var r = sections[i].getBoundingClientRect();
+        if (r.top <= mid && r.bottom > mid && /cine-hero|bg-navy|wx-ask|wx-eeat|(^|\s)cta(\s|$)/.test(sections[i].className)) { dark = true; break; }
+      }
+      rail.classList.toggle("wxr-dark", dark);
+    }
+    addEventListener("scroll", function () {
+      if (!ticking) { ticking = true; requestAnimationFrame(function () { tone(); ticking = false; }); }
+    }, { passive: true });
+    tone();
+  })();
+  </script>
 </body>
 </html>

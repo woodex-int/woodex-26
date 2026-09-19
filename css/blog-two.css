@@ -54,10 +54,10 @@
 .b2-item h2 a:hover { color: var(--wood); }
 .b2-item .gate {
   display: block;
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--wood);
+  color: #7d5f3a; /* wood-deep — AA on white/cream */
   margin-bottom: 6px;
 }
 @media (max-width: 820px) {
@@ -72,17 +72,17 @@
 }
 
 /* AEO / GEO / E-E-A-T blocks — semantic, unique per page */
-.wx-have, .wx-out, .wx-ask, .wx-geo, .wx-note, .wx-eeat {
+.wx-have, .wx-out, .wx-gates, .wx-ask, .wx-geo, .wx-note, .wx-eeat {
   padding: 96px 0;
   background: #fff;
   scroll-margin-top: 96px;
 }
-.wx-have header, .wx-out header, .wx-ask header,
+.wx-have header, .wx-out header, .wx-gates header, .wx-ask header,
 .wx-geo header, .wx-note header, .wx-eeat header {
   width: min(var(--container), calc(100% - 64px));
   margin: 0 auto 28px;
 }
-.wx-have h2, .wx-out h2, .wx-ask h2,
+.wx-have h2, .wx-out h2, .wx-gates h2, .wx-ask h2,
 .wx-geo h2, .wx-note h2, .wx-eeat h2 {
   font-size: clamp(1.8rem, 3.2vw, 2.7rem);
   font-weight: 500;
@@ -152,11 +152,12 @@
   display: block;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  font-size: 0.68rem;
-  color: var(--wood);
+  font-size: 0.7rem;
+  color: #7d5f3a; /* wood-deep — AA on cream */
   margin-bottom: 6px;
 }
-.wx-geo-cities a:hover { color: var(--wood); }
+.wx-geo-cities a { display: inline-block; padding: 5px 0; } /* lift tap target to ≥29px */
+.wx-geo-cities a:hover { color: #7d5f3a; }
 
 .wx-note { background: #fff; padding-top: 40px; padding-bottom: 40px; }
 .wx-note-row {
@@ -172,10 +173,10 @@
 }
 .wx-note-row header { min-width: 0; }
 .wx-note .gate {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--wood);
+  color: #7d5f3a; /* wood-deep — AA on white/cream */
   margin: 0 0 8px;
 }
 .wx-note-row h2 { max-width: 20ch; margin: 0; font-size: clamp(1.4rem, 2.4vw, 2rem); }
@@ -222,3 +223,39 @@
     width: calc(100% - 36px);
   }
 }
+
+/* ---------- The gates — one section, two parallel columns ----------
+   Merged from the former wx-have + wx-out sections (entry states | named
+   gates) so the back half reads as one move, not two equal bands. */
+.wx-gates-grid {
+  width: min(var(--container), calc(100% - 64px));
+  margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 56px;
+}
+.wx-gates-k { font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: #7d5f3a; font-weight: 600; margin: 0 0 6px; }
+.wx-gates-col > h3 { font-size: clamp(1.3rem, 2vw, 1.6rem); font-weight: 500; letter-spacing: -0.02em; margin: 0 0 14px; }
+.wx-gates-col .wx-have-list, .wx-gates-col .wx-out-list { grid-template-columns: 1fr; }
+.wx-gates-col .wx-have-list li, .wx-gates-col .wx-out-list li { padding: 22px 0; }
+.wx-gates-col .wx-have-list li:nth-child(odd), .wx-gates-col .wx-out-list li:nth-child(odd) { padding-right: 0; }
+@media (max-width: 860px) {
+  .wx-gates-grid { grid-template-columns: 1fr; gap: 40px; }
+}
+
+/* ---------- Chapter rail (content pages ≥1340px) ---------- */
+#money, #visualize { scroll-margin-top: 96px; }
+.wxr {
+  position: fixed; right: 22px; top: 50%; transform: translateY(-50%);
+  z-index: 60; display: flex; flex-direction: column; gap: 14px;
+}
+.wxr a { display: flex; align-items: center; justify-content: flex-end; gap: 10px; color: var(--ink); text-decoration: none; }
+.wxr a i { width: 6px; height: 6px; border-radius: 50%; background: currentColor; display: block; transition: transform 0.3s ease, background 0.3s; }
+.wxr a span {
+  font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600;
+  opacity: 0; transform: translateX(6px); transition: opacity 0.3s ease, transform 0.3s ease; white-space: nowrap;
+}
+.wxr a:hover span { opacity: 0.75; transform: none; }
+.wxr a.is-on i { background: #7d5f3a; transform: scale(1.6); }
+.wxr a.is-on span { opacity: 1; transform: none; }
+.wxr.wxr-dark { color: #fff; }
+.wxr.wxr-dark a.is-on i { background: var(--wood); }
+@media (max-width: 1340px) { .wxr { display: none; } }
