@@ -9,12 +9,12 @@ _Working rule: static-now / SEO-first / frontend-to-launch (D1–D5 decisions). 
 
 | Status | Count | Pages |
 |---|---|---|
-| ✅ Rebuilt on the section system | **29** | home, about, 3d-studio, insights hub + 11 posts, projects hub + 6 studies + 2 category pages, privacy-policy, terms, cookie-policy, thank-you, 404 |
-| 🟡 Old system — rebuild pending | **41** | services hub + 20 service pages, locations hub + 12 city pages, process, contact, faq, careers, client-stories, start-your-project, woodex-craft |
+| ✅ Rebuilt on the section system | **50** | home, about, 3d-studio, insights hub + 11 posts, projects hub + 6 studies + 2 category pages, **services hub + 20 service pages**, privacy-policy, terms, cookie-policy, thank-you, 404 |
+| 🟡 Old system — rebuild pending | **20** | locations hub + 12 city pages, process, contact, faq, careers, client-stories, start-your-project, woodex-craft |
 | ❌ Missing entirely (planned) | **0** | ~~privacy-policy, terms, cookie-policy, thank-you, llms.txt~~ — **all built 2026-09-19** on the legal/utility template (css/legal.css); thank-you + 404 noindex; legal pages in sitemap |
 | ➕ Corpus-briefed, not yet built | **~28** | architecture suite (14), renovation suite (8), residential room pages (6), healthcare-fit-out, complete-home-redesign, interior-home-refurbishment |
 
-Total live today: **71 HTML pages** (sitemap.xml lists 68 indexable — thank-you + 404 noindex — current ✓, regenerate after every launch).
+Total live today: **71 HTML pages** — all families now on the section system except locations ×13 + conversion/brand ×7 (sitemap lists 68 indexable — thank-you + 404 noindex — current ✓, regenerate after every launch).
 
 ### 2.3b Built this pass ✅ (was §2.3 missing)
 | Page | Template | Notes |
@@ -128,7 +128,7 @@ _Sector briefs (corporate-offices, F&B, healthcare, retail, software-houses) are
 
 Current word counts measured from `<main>` bodies. Every rebuild replaces the old body with the named template + its docker brief; chrome, URLs and mega-menu slugs stay unchanged.
 
-### Services family (21) — ACTIVE BUILD (css/services.css ready)
+### Services family (21) — ✅ REBUILT 2026-09-20 (per docs/SERVICES_MASTER_PLAN.md; unique CTA + FAQ trio per page)
 | Page | Now | Rebuild source |
 |---|---|---|
 | services.html (hub) | 393w | MASTER §6.3 + SEOMAP §2.3 — pillar grid + 5-group index + path/Cost-Lock band |

@@ -61,6 +61,12 @@ author card [CONFIRM: name/photo] + start-at-the-gate CTA) → post-questions (3
 New named blocks: `post-hero` · `post-body` (with `.pt-fact` gate-fact box + numbered/`✦`-free list styles) · `post-questions` · `post-related` · `featured-note`.
 Posts live in `insights/` and link `../css/insights.css`; hub links `css/insights.css`. Titles follow SEOMAP §2.8: `{Title} | Woodex Interior — Insights`. JSON-LD: Article + BreadcrumbList (posts), Blog + BreadcrumbList (hub). Content: 280–380 words per note in the studio voice, fact-locked (interior pricing held at "quoted after survey"; 3D indicative ranges only on 3D notes).
 
+## Page order (services hub — implemented)
+page-hero ("One partner. From concept to completion.") → pillar-grid (4 pillars) → service-index (5 groups, all 20 services) → path-band (Requirement→Drawings→3D→BOQ→Build + Cost-Lock) → cta-getintouch. CSS: css/services.css. Blocks: `pillar-grid` · `service-index` · `path-band`.
+
+## Page order (single-service template — ×20, implemented)
+page-hero + meta (Who for / Timeline / Path chips) → covers ("What it covers" + checks + image + studio bridge note) → who-for (3 cards) → process (numbered run) → proof-band (stats + Cost-Lock note; Wellstar named on pharmacy) → faq-accordion (3 per page, FAQPage schema) → related-services (3 siblings + view all) → cta-getintouch (**unique CTA per page** — see docs/SERVICES_MASTER_PLAN.md §6). Unique CTAs + per-page FAQ trios + linking map per the master plan; pricing held off all pages (owner decision 2026-09-20).
+
 ## Page order (legal/utility template — privacy · terms · cookies · thank-you · 404)
 lg-hero (page-hero; 404 adds the outlined "404" figure) → lg-body (legal-body prose | next-steps | link-grid) → cta-getintouch.
 thank-you + 404 are noindex; legal pages canonical-only (SEOMAP §2.13). CSS: css/legal.css. Blocks named: `lg-hero` · `legal-body` · `next-steps` · `link-grid`.

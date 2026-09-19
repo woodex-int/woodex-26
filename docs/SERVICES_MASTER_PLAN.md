@@ -124,9 +124,9 @@ Per page: dek ≤ 30 words, one idea; covers-intro ≤ 60 words in active voice;
 
 After services → step-by-step: **process → contact → start-your-project → faq** (conversion core) → **locations ×13** → **client-stories · woodex-craft · careers** → expansion suites (§4 of MISSING_PAGES_AUDIT).
 
-## 10 · OPEN DECISIONS — answer before the build starts
+## 10 · DECISIONS — ANSWERED 2026-09-20 (owner)
 
-1. **Home page** — locked as master reference, or rework first? (options in chat)
-2. **Pricing** — keep HOLD, or publish the corpus PKR anchors with `[CONFIRM]`?
-3. **"Blog must match reference"** — insights already rebuilt in the reference pattern; rework them too, or does this mean the services family should match the same reference system?
-4. **Founder / warranty facts** from the business model (name Imtiaz Ahmad, since 2016, 12-month warranty) — unlock for about/services copy, or stay `[CONFIRM]`?
+1. **Home page** → **KEEP AS-IS** — home remains the locked master reference; services build starts immediately.
+2. **Pricing** → **HOLD** — no PKR on service pages; "fixed quote after a free survey" + Cost-Lock language only.
+3. **Blog/insights** → **insights single-post (article) template needs a polish pass** — richer article template, better typography/blocks. Queued as its own task after the services family.
+4. **Founder / warranty** → **STAY `[CONFIRM]`** — name, year and warranty remain placeholders until explicitly released.
