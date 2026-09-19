@@ -1,0 +1,156 @@
+/* ============================================================
+   ABOUT v2 — SECTION SYSTEM (named blocks · docs/SECTION_SYSTEM.md)
+   01 page-hero · 02 statement-intro · 03 brand-story · 04 values-grid ·
+   05 ecosystem-swap · 06 gates-table · 07 stop-gate · 08 team-grid ·
+   09 proof-band · 10 studios-band · 11 cta-getintouch
+   Same pattern names as home (sec-*); theme tokens only.
+   ============================================================ */
+
+/* shared head */
+.sec-head { max-width: 720px; margin-bottom: 48px; }
+.sec-head h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; letter-spacing: -0.038em; line-height: 1.06; margin: 10px 0 0; }
+
+/* 01 · PAGE-HERO (trust hero, 520px) */
+.ab-hero { position: relative; min-height: 520px; display: flex; align-items: flex-end; background: var(--navy); color: #fff; padding: 150px 0 64px; overflow: hidden; }
+.ab-hero-bg { position: absolute; inset: 0; }
+.ab-hero-bg img { width: 100%; height: 100%; object-fit: cover; }
+.ab-hero-shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12, 22, 40, 0.55), rgba(12, 22, 40, 0.82)); }
+.ab-hero-inner { position: relative; }
+.ab-crumbs { font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255, 255, 255, 0.55); margin-bottom: 26px; }
+.ab-crumbs a { color: rgba(255, 255, 255, 0.75); text-decoration: none; transition: color 0.3s; }
+.ab-crumbs a:hover { color: #fff; }
+.ab-hero .eyebrow { color: var(--wood); }
+.ab-hero h1 { color: #fff; font-size: clamp(2.6rem, 6vw, 4.6rem); font-weight: 500; letter-spacing: -0.04em; line-height: 1.02; margin: 10px 0 16px; max-width: 16ch; }
+.ab-hero h1 span { display: block; font-size: 0.42em; letter-spacing: -0.02em; color: rgba(255, 255, 255, 0.65); font-weight: 450; margin-top: 8px; }
+.ab-hero-lead { color: rgba(255, 255, 255, 0.78); max-width: 52ch; font-size: 1.08rem; line-height: 1.65; margin: 0 0 30px; }
+.ab-hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* 02 · STATEMENT-INTRO (shared pattern with home) */
+.sec-statement { background: var(--cream); padding: 110px 0 90px; text-align: center; }
+.sec-statement .eyebrow { color: #7d5f3a; }
+.sec-statement h2 { font-size: clamp(2.4rem, 5vw, 3.9rem); font-weight: 500; letter-spacing: -0.04em; line-height: 1.04; max-width: 22ch; margin: 10px auto 22px; }
+.sec-statement-copy { max-width: 58ch; margin: 0 auto; color: var(--muted); font-size: 1.06rem; line-height: 1.7; }
+
+/* 03 · BRAND-STORY (+ stats rail) */
+.ab-story { background: #fff; padding: 110px 0; }
+.ab-story-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 72px; align-items: center; }
+.ab-story h2 { font-size: clamp(2rem, 3.8vw, 3rem); font-weight: 500; letter-spacing: -0.038em; line-height: 1.06; margin: 10px 0 18px; max-width: 16ch; }
+.ab-story p { color: var(--muted); line-height: 1.75; max-width: 56ch; margin: 0 0 14px; }
+.ab-story strong { color: var(--ink); font-weight: 560; }
+.ab-story-stats { display: flex; flex-direction: column; gap: 14px; }
+.ab-story-stats div { border-left: 2px solid var(--wood); padding: 18px 0 18px 26px; }
+.ab-story-stats b { display: block; font-size: clamp(1.9rem, 3vw, 2.6rem); font-weight: 500; letter-spacing: -0.03em; color: var(--ink); line-height: 1.05; font-variant-numeric: tabular-nums; }
+.ab-story-stats span { color: var(--muted); font-size: 0.9rem; line-height: 1.5; display: block; margin-top: 4px; max-width: 30ch; }
+
+/* 04 · VALUES-GRID */
+.ab-values { background: #fff; padding: 0 0 110px; }
+.ab-values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.ab-value { background: var(--cream); border-radius: 24px; padding: 34px 30px; }
+.ab-value .n { font-size: 0.78rem; letter-spacing: 0.18em; color: #7d5f3a; font-weight: 600; }
+.ab-value h3 { font-size: 1.3rem; font-weight: 560; letter-spacing: -0.015em; margin: 12px 0 8px; }
+.ab-value p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; margin: 0; }
+
+/* 05 · ECOSYSTEM-SWAP (shared pillars-swap pattern · JS hook .st-space) */
+.ab-eco { background: #fff; padding: 0 0 110px; }
+.sec-pillars-head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: 40px; }
+.sec-pillars-head h2 { font-size: clamp(2rem, 3.6vw, 3rem); max-width: 14ch; margin-top: 10px; }
+.sec-pillars-head > p { color: var(--muted); max-width: 42ch; }
+.sec-pillars-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: stretch; }
+.sec-pillars-media { position: relative; border-radius: 28px; overflow: hidden; min-height: 520px; background: var(--navy); }
+.sec-pillars-media img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; transition: opacity 0.45s var(--ease), transform 1.1s var(--ease); }
+.sec-pillars-cap { position: absolute; left: 22px; right: 22px; bottom: 22px; background: rgba(12, 22, 40, 0.76); backdrop-filter: blur(12px); color: #fff; border-radius: 16px; padding: 16px 18px; }
+.sec-pillars-cap small { letter-spacing: 0.16em; text-transform: uppercase; font-size: 0.66rem; opacity: 0.62; }
+.sec-pillars-cap strong { display: block; font-weight: 560; font-size: 1.05rem; margin-top: 4px; }
+.sec-pillar-list { display: flex; flex-direction: column; }
+.st-space { display: flex; align-items: center; gap: 18px; text-align: left; background: none; border: 0; border-bottom: 1px solid var(--line); padding: 24px 6px; cursor: pointer; transition: padding-left 0.35s var(--ease), background 0.35s; }
+.st-space:first-child { border-top: 1px solid var(--line); }
+.st-space .n { font-size: 0.78rem; letter-spacing: 0.14em; color: #7d5f3a; font-weight: 600; }
+.st-space h3 { font-size: 1.08rem; font-weight: 560; letter-spacing: -0.01em; margin: 0 0 4px; color: var(--ink); }
+.st-space p { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.5; }
+.st-space svg { width: 15px; height: 15px; flex: 0 0 auto; color: var(--ink); opacity: 0.35; transition: transform 0.35s var(--ease), opacity 0.35s; margin-left: auto; }
+.st-space:hover, .st-space.is-on { padding-left: 14px; }
+.st-space.is-on svg { opacity: 1; transform: translateX(2px); color: #7d5f3a; }
+
+/* 06 · GATES-TABLE (expanded lifecycle) */
+.ab-gates { background: var(--cream); padding: 100px 0 110px; }
+.ab-gate-rows { list-style: none; margin: 0; padding: 0; }
+.ab-gate-rows li { display: grid; grid-template-columns: 64px 1fr auto; gap: 26px; align-items: center; padding: 22px 18px; border-bottom: 1px solid var(--line); background: transparent; transition: background 0.35s; }
+.ab-gate-rows li:first-child { border-top: 1px solid var(--line); }
+.ab-gate-rows li:hover { background: rgba(255, 255, 255, 0.6); }
+.ab-gate-rows b { font-size: 0.82rem; letter-spacing: 0.16em; color: #7d5f3a; font-weight: 600; }
+.ab-gate-rows h3 { font-size: 1.06rem; font-weight: 560; margin: 0 0 2px; color: var(--ink); }
+.ab-gate-rows p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+.ab-gate-rows li > span { font-size: 0.8rem; letter-spacing: 0.06em; font-weight: 600; color: var(--muted); white-space: nowrap; }
+.ab-gate-rows li.is-lock { background: rgba(184, 149, 106, 0.14); }
+.ab-gate-rows li.is-lock > span { color: #6d4f30; }
+
+/* 07 · STOP-GATE (privilege statement) */
+.ab-stopgate { background: var(--navy); color: #fff; padding: 110px 0; text-align: center; }
+.ab-stopgate .eyebrow { color: rgba(255, 255, 255, 0.5); }
+.ab-stopgate h2 { color: #fff; font-size: clamp(2.2rem, 4.6vw, 3.6rem); font-weight: 500; letter-spacing: -0.04em; line-height: 1.04; margin: 10px auto 20px; max-width: 18ch; }
+.ab-stopgate-copy { color: rgba(255, 255, 255, 0.72); max-width: 56ch; margin: 0 auto; font-size: 1.08rem; line-height: 1.7; }
+
+/* 08 · TEAM-GRID ([CONFIRM] placeholders — never invent names/photos) */
+.ab-team { background: #fff; padding: 110px 0; }
+.ab-team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.ab-member { border: 1px solid var(--line); border-radius: 24px; padding: 34px 30px; transition: transform 0.5s var(--ease), box-shadow 0.5s; }
+.ab-member:hover { transform: translateY(-6px); box-shadow: 0 24px 48px -24px rgba(12, 22, 40, 0.2); }
+.ab-member-mark { width: 54px; height: 54px; border-radius: 16px; background: var(--navy); display: grid; place-items: center; margin-bottom: 20px; }
+.ab-member-mark svg { width: 24px; height: 24px; color: var(--wood); }
+.ab-member h3 { font-size: 1.2rem; font-weight: 560; letter-spacing: -0.015em; margin: 0 0 6px; }
+.ab-member-confirm { font-size: 0.78rem; letter-spacing: 0.08em; color: #7d5f3a; font-weight: 600; margin: 0 0 10px; }
+.ab-member p:last-child { color: var(--muted); font-size: 0.94rem; line-height: 1.6; margin: 0; }
+
+/* 09 · PROOF-BAND (shared pattern with home) */
+.ab-proof { background: var(--navy); color: #fff; padding: 110px 0; }
+.ab-proof .eyebrow { color: rgba(255, 255, 255, 0.5); }
+.sec-proof-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 72px; align-items: center; }
+.sec-proof-media { position: relative; }
+.sec-proof-media img:first-child { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 28px; display: block; }
+.sec-proof-media img.is-float { position: absolute; right: -34px; bottom: -44px; width: 44%; aspect-ratio: 1; object-fit: cover; border-radius: 22px; border: 6px solid var(--navy); }
+.ab-proof h2 { color: #fff; font-size: clamp(2rem, 3.8vw, 3rem); font-weight: 500; letter-spacing: -0.038em; line-height: 1.06; margin: 10px 0 12px; }
+.ab-proof-lead { color: rgba(255, 255, 255, 0.7); line-height: 1.65; max-width: 44ch; margin: 0 0 30px; }
+.sec-proof-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 22px 30px; }
+.sec-proof-stats b { display: block; font-size: clamp(1.7rem, 2.8vw, 2.4rem); font-weight: 500; letter-spacing: -0.03em; color: var(--wood); line-height: 1.1; font-variant-numeric: tabular-nums; }
+.sec-proof-stats span { color: rgba(255, 255, 255, 0.66); font-size: 0.86rem; line-height: 1.5; display: block; margin-top: 4px; max-width: 22ch; }
+
+/* 10 · STUDIOS-BAND */
+.ab-studios { background: #fff; padding: 110px 0; }
+.ab-studios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.ab-studio { background: var(--cream); border-radius: 24px; padding: 34px 30px; }
+.ab-studio h3 { font-size: 1.3rem; font-weight: 560; letter-spacing: -0.015em; margin: 0 0 8px; }
+.ab-studio p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; margin: 0 0 12px; }
+.ab-studio span { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: #7d5f3a; font-weight: 600; }
+
+/* 11 · CTA-GETINTOUCH (shared pattern with home) */
+.sec-cta { background: var(--navy); color: #fff; padding: 120px 0; text-align: center; }
+.sec-cta h2 { color: #fff; font-size: clamp(2.2rem, 4.6vw, 3.6rem); font-weight: 500; letter-spacing: -0.04em; margin: 0 0 16px; }
+.sec-cta-lead { color: rgba(255, 255, 255, 0.7); max-width: 52ch; margin: 0 auto 36px; line-height: 1.65; }
+.sec-cta-actions { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; margin-bottom: 34px; }
+.sec-cta-nap { color: rgba(255, 255, 255, 0.5); font-size: 0.88rem; letter-spacing: 0.02em; }
+
+/* Ghost button variant — page-scoped, built on the theme .btn internals */
+.btn-ghost-light { --btn-bg: transparent; --btn-fg: #fff; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.4); }
+.btn-ghost-light .btn-icon { background: rgba(255, 255, 255, 0.12); color: #fff; }
+.btn-ghost-light:hover { box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.85); }
+
+/* Responsive */
+@media (max-width: 1180px) {
+  .ab-story-grid { grid-template-columns: 1fr; gap: 48px; }
+  .sec-pillars-grid { grid-template-columns: 1fr; }
+  .sec-pillars-media { min-height: 420px; }
+  .sec-proof-grid { grid-template-columns: 1fr; gap: 56px; }
+  .sec-proof-media img.is-float { right: 10px; bottom: -30px; }
+  .ab-values-grid, .ab-team-grid, .ab-studios-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+  .ab-hero { min-height: 460px; padding-top: 120px; padding-bottom: 52px; }
+  .sec-statement, .ab-story, .ab-values, .ab-eco, .ab-gates, .ab-stopgate, .ab-team, .ab-proof, .ab-studios, .sec-cta { padding-top: 72px; padding-bottom: 72px; }
+  .ab-story-grid { gap: 36px; }
+  .ab-values-grid, .ab-team-grid, .ab-studios-grid, .sec-proof-stats { grid-template-columns: 1fr; }
+  .ab-gate-rows li { grid-template-columns: 44px 1fr; row-gap: 4px; }
+  .ab-gate-rows li > span { grid-column: 2; white-space: normal; }
+  .sec-proof-media img.is-float { display: none; }
+  .ab-hero-actions, .sec-cta-actions { flex-direction: column; align-items: stretch; }
+  .sec-pillars-head { grid-template-columns: 1fr; gap: 18px; }
+}

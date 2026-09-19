@@ -76,7 +76,7 @@ The corpus contradicts itself on a few facts. This table is the arbiter — fill
 - [ ] services.html — hub with the full new service architecture (4 core + suites)
 - [ ] process.html — 7-Gate page rewritten from MASTER/turnkey briefs
 - [ ] 3d-studio.html — **rebuild** per 3d-studio-hub.md 14 sections (new copy; keep the motion system)
-- [ ] about.html — CONTENT-REFRESH About sections; founder/team = `[CONFIRM]` placeholders
+- [x] **about.html — rebuilt on the section system** (11 named blocks per docs/SECTION_SYSTEM.md): page-hero (brief H1/H2) · statement-intro · brand-story (corpus verbatim + stat rail) · values-grid · ecosystem-swap (4 wings, .st-space hook) · gates-table (7 gates, Gate 4 locked) · stop-gate · team-grid (3 × [CONFIRM: name, photo]) · proof-band · studios-band ([CONFIRM: HQ/roadmap]; Lahore hours only) · cta-getintouch (about variant). Head fact-locked (200–500, purged 500+/~20 incl. JSON-LD), AboutPage schema added, dead Tailwind CDN + studio/service-theme/lx links removed, css/about.css?v=1.
 - [ ] contact.html + start-your-project.html (consultation form per MASTER §6.9, honeypot, WhatsApp routing)
 - [ ] faq.html (12+ Q, 4 groups, FAQPage schema) · thank-you.html · 404.html · legal ×3
 - [ ] locations.html hub · projects.html hub · insights.html hub (new listing copy)

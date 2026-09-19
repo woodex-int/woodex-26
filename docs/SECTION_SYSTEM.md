@@ -27,12 +27,27 @@ master reference implementation. Each block carries a banner comment and a
 | 09 | `proof-band` | About + statement with float image | Founder-led story + 4 locked numbers (200–500 / 10+ / ISO / 3 studios). Navy. Numbers only from fact lock — never invent. | about, process, locations |
 | 10 | `blog-grid` | Blog band (H2 + View all + 3 cards) | Insights cards — real posts only, real titles, real links. | insights, category hubs |
 | 11 | `cta-getintouch` | "Stay connected with us" | "Tell us about your space." + WhatsApp (+92 322 4000768) + Start your project + NAP line (LG 90 Link Road, Model Town, Lahore · 10:00–8:30 · studio@woodex.interior). Copy varies per page; facts don't. | every page (unique CTA copy) |
+| 12 | `page-hero` | Linoxa short hero (520px) | Inner-page trust hero: breadcrumbs, eyebrow, H1 (brief-locked), lead, 2 CTAs over image + shade. | about ✓ · every inner page |
+| 13 | `brand-story` | Linoxa statement + stats | Story copy verbatim from corpus + stat rail (fact-locked numbers, wood rule accents). | about ✓ · craft |
+| 14 | `values-grid` | Linoxa "Designing identity" list | 3 value pillars — Quality / Determination / Expertise (corpus copy verbatim). | about ✓ |
+| 15 | `ecosystem-swap` | pillars-swap mechanics, wings content | 4 wings (Design / Construction / Furniture™ / 3D Studio) interactive image swap on the `.st-space` app.js hook. | about ✓ |
+| 16 | `gates-table` | expanded lifecycle rows | 7 gates as rows: number · name+description · your approval. Gate 4 wood-marked "price locked". | about ✓ · turnkey |
+| 17 | `stop-gate` | typographic statement band (navy) | "Your renders belong to you…" privilege statement (corpus verbatim). | about ✓ · 3d-studio |
+| 18 | `team-grid` | icon-trio mechanics | Role cards with [CONFIRM: name, photo] — never invented names or faces. | about ✓ · careers |
+| 19 | `studios-band` | Linoxa location cards | 3 studio cards (Lahore-Gulberg III + NAP · Karachi-Clifton · Islamabad-F-7) + [CONFIRM: HQ/roadmap status]. Lahore hours only — KHI/ISB hours not fact-locked. | about ✓ · locations |
 
 ## Page order (home = master)
 hero-rotator → pillars-swap → statement-intro → service-split → big-feature →
 doc-collage → icon-trio → marquee-line → proof-band → blog-grid → cta-getintouch
 
 Background rhythm: navy → white → cream → white → white → white → white → cream → navy → white → navy.
+
+## Page order (about — implemented)
+page-hero → statement-intro → brand-story → values-grid → ecosystem-swap →
+gates-table → stop-gate → team-grid → proof-band → studios-band → cta-getintouch
+
+Background rhythm: navy → cream → white → white → white → cream → navy → white → navy → white → navy.
+CSS: `css/about.css` (same sec-* names, page-scoped). Page loads theme/qa/mega + about.css only.
 
 ## Build order for remaining pages
 1. `template-inner.html` — page-hero + statement-intro + service-split + proof-band + cta-getintouch as the inner-page rail.
