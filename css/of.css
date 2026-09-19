@@ -1,28 +1,5 @@
-/* ============================================================
-   OFFICE FIT-OUT v2.1 — shape overrides on the shared chassis
-   (css/threed.css = the Linoxa service-page system, same as
-   3d-studio.html). Only grid-shape tweaks live here; every
-   section is the chassis pattern itself.
-   15-slot system: page-hero · statement-intro · what-is ·
-   who-uses · services-swap (4 fit-out types) · deliverables ·
-   process-steps (14) · featured-work · materials · cost-band ·
-   why-grid · proof-band · faq-accordion · cta-brief · related.
-   ============================================================ */
-
-/* who-uses: 6 audience cards → 3 columns */
-.td-who-grid { grid-template-columns: repeat(3, 1fr); }
-
-/* deliverables: 3 trade checklists → 3 columns */
-.td-deliver-grid { grid-template-columns: repeat(3, 1fr); }
-
-/* process: 14 gate rows → two columns */
-.of-process-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; }
-
-@media (max-width: 1180px) {
-  .td-who-grid { grid-template-columns: 1fr 1fr; }
-  .td-deliver-grid { grid-template-columns: 1fr; }
-  .of-process-cols { grid-template-columns: 1fr; }
-}
-@media (max-width: 680px) {
-  .td-who-grid { grid-template-columns: 1fr; }
-}
+/* OFFICE FIT-OUT v3 — shape overrides on the shared chassis
+   (css/threed.css). Canonical 9-section system. */
+.td-who-grid { grid-template-columns: repeat(3, 1fr); }  /* 6 audience cards */
+@media (max-width: 1180px) { .td-who-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 680px) { .td-who-grid { grid-template-columns: 1fr; } }

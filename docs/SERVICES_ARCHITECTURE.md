@@ -103,3 +103,24 @@ Every section on every page uses ONE of these named patterns — **but the seque
 **Blocked pending owner answer:** the visual reference for "match with reference" (screenshots unreadable — see questions).
 
 > **Build chassis (v2):** service pages link `css/threed.css` (shared Linoxa-/service chassis: ab-hero, ab-gate-rows, faq, td-form, td-card, sec-head) + one per-page CSS (e.g. `css/of.css`) holding this page's unique blocks. Section sequences are unique per page (see each plan Part 2); pattern shapes are shared — the reference-site model. Exemplar: services/office-fit-out.html (14 sections, testimonial omitted per [CONFIRM]).
+
+## §2b — v3 CANONICAL SECTION SYSTEM (owner-locked 2026-09-20)
+
+Every services page — same section names, same order, unique content per page.
+Built by `tools/build_services.py` + `tools/services_data.py` (chassis: `css/threed.css?v=3`).
+
+| # | Section | data-section | Pattern | Content |
+|---|---------|--------------|---------|---------|
+| 1 | Hero | `hero` | ab-hero | per-page image, keyword H1, CTAs, 4 trust chips |
+| 2 | Who it's for | `who-its-for` | td-who | audiences (3–6 cards) |
+| 3 | The run | `the-run` | td-process | delivery steps (5–14; 2-col over ~10) |
+| 4 | Why Woodex | `why-woodex` | td-why | differentiators (4–6 cards) |
+| 5 | FAQ | `faq` | td-faq | accordion, 6–8 Q&As, schema-matched |
+| 6 | Slide | `slide` | td-services | interactive swap (.st-space), per-page items |
+| 7 | Related services | `related-services` | td-related | 4 cards + hub line |
+| 8 | Next to this scope | `next-to-scope` | td-next | 3-way adjacent-scope compare + links |
+| 9 | Statement + CTA | `statement-cta` | td-brief | two-beat statement (e.g. "Shell in. Business out."), line, form |
+
+Headline voice: Linoxa two-beat statements ("Shell in. Business out."). Eyebrows carry
+the numbered system (01–09). Section list supersedes earlier 15-slot vocabulary for
+services pages; brief content maps into the 9 slots.

@@ -1,34 +1,6 @@
-/* ============================================================
-   PHARMACY FIT-OUT v2 — shape overrides on the shared chassis
-   (css/threed.css = the Linoxa service-page system, same as
-   3d-studio.html). Only grid-shape tweaks live here.
-   15-slot system: page-hero · statement-intro · what-is (3-way
-   compare) · who-uses (4) · services-swap (4 pharmacy blocks) ·
-   deliverables (2 clinical checklists) · process (6 steps) ·
-   featured-work · clinical materials · cost-band (3 spec tiers,
-   no PKR) · why-grid (4) · proof-band (Wellstar named) ·
-   faq-accordion · cta-brief · related.
-   ============================================================ */
-
-/* who-uses: 4 audience cards → 2 × 2 */
-.td-who-grid { grid-template-columns: repeat(2, 1fr); }
-
-/* why-grid: 4 differentiators → 2 × 2 */
-.td-why-grid { grid-template-columns: repeat(2, 1fr); }
-
-/* what-is compare: 3-way (fit-out vs renovation vs healthcare) */
-.td-compare { grid-template-columns: repeat(3, 1fr); }
-
-@media (max-width: 1180px) {
-  .td-who-grid { grid-template-columns: 1fr 1fr; }
-  .td-why-grid { grid-template-columns: 1fr 1fr; }
-  .td-compare { grid-template-columns: 1fr; }
-}
-@media (max-width: 680px) {
-  .td-who-grid, .td-why-grid { grid-template-columns: 1fr; }
-}
-
-/* trust checklist inside navy brief band */
-.td-brief .td-checks { margin: 0 0 26px; }
-.td-brief .td-checks li { color: rgba(255, 255, 255, 0.78); }
-.td-brief .td-checks svg { color: var(--wood); }
+/* PHARMACY v3 — shape overrides on the shared chassis
+   (css/threed.css). Canonical 9-section system. */
+.td-who-grid { grid-template-columns: repeat(2, 1fr); }  /* 4 audience cards */
+.td-why-grid { grid-template-columns: repeat(2, 1fr); }  /* 4 differentiators */
+@media (max-width: 1180px) { .td-why-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 680px) { .td-who-grid, .td-why-grid { grid-template-columns: 1fr; } }

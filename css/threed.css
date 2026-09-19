@@ -205,3 +205,29 @@ a.td-card:hover .sec-go svg { transform: translateX(4px); }
   .ab-hero-actions { flex-direction: column; align-items: stretch; }
   .sec-pillars-head { grid-template-columns: 1fr; gap: 18px; }
 }
+
+/* ════════════════════════════════════════════════════════════
+   SERVICES v3 CANONICAL SYSTEM (owner-locked 2026-09-20) —
+   1 hero · 2 who-its-for · 3 the-run · 4 why-woodex · 5 faq ·
+   6 slide · 7 related-services · 8 next-to-scope · 9 statement-cta
+   ════════════════════════════════════════════════════════════ */
+
+/* 03 · THE-RUN — two-column variant for long runs (14 steps) */
+.sv-run-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; }
+
+/* 08 · NEXT-TO-SCOPE — adjacent scopes, 3-way compare */
+.td-next { background: var(--cream); padding: 110px 0; }
+.td-next .td-compare { grid-template-columns: repeat(3, 1fr); margin: 0; }
+.td-next .td-compare-col { background: #fff; }
+.td-next .td-compare-note { display: block; margin-top: 24px; }
+
+/* 09 · STATEMENT-CTA — trust checklist on navy */
+.td-brief .td-checks { margin: 0 0 26px; }
+.td-brief .td-checks li { color: rgba(255, 255, 255, 0.78); }
+.td-brief .td-checks svg { color: var(--wood); }
+.td-brief h2 { font-size: clamp(2.2rem, 4.2vw, 3.4rem); }
+
+@media (max-width: 1180px) {
+  .sv-run-cols { grid-template-columns: 1fr; }
+  .td-next .td-compare { grid-template-columns: 1fr; }
+}
