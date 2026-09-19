@@ -79,7 +79,7 @@ The corpus contradicts itself on a few facts. This table is the arbiter — fill
 - [x] **about.html — rebuilt on the section system** (11 named blocks per docs/SECTION_SYSTEM.md): page-hero (brief H1/H2) · statement-intro · brand-story (corpus verbatim + stat rail) · values-grid · ecosystem-swap (4 wings, .st-space hook) · gates-table (7 gates, Gate 4 locked) · stop-gate · team-grid (3 × [CONFIRM: name, photo]) · proof-band · studios-band ([CONFIRM: HQ/roadmap]; Lahore hours only) · cta-getintouch (about variant). Head fact-locked (200–500, purged 500+/~20 incl. JSON-LD), AboutPage schema added, dead Tailwind CDN + studio/service-theme/lx links removed, css/about.css?v=1.
 - [ ] contact.html + start-your-project.html (consultation form per MASTER §6.9, honeypot, WhatsApp routing)
 - [ ] faq.html (12+ Q, 4 groups, FAQPage schema) · thank-you.html · 404.html · legal ×3
-- [ ] locations.html hub · projects.html hub · insights.html hub (new listing copy)
+- [x] **insights.html hub — rebuilt on the section system** (page-hero + featured-note + 11-card blog-grid + cta). SEOMAP §2.8 head (Blog + BreadcrumbList JSON-LD). [ ] locations.html hub · projects.html hub remain.
 
 **DoD:** every core page live in preview · voice gate pass · unique CTA each · schema valid.
 
@@ -113,6 +113,7 @@ The corpus contradicts itself on a few facts. This table is the arbiter — fill
 **DoD:** 9 pages · room pages cross-link horizontally per the map.
 
 ## PHASE 7 — W6/W7 · Locations + Insights + Projects
+- [x] **Insights: single-page template + all 11 posts rebuilt** (5 named blocks each: post-hero / post-body / post-questions / post-related / cta-getintouch; css/insights.css?v=1). Content expanded 57–235 → ~280–380 words per note, studio voice, fact-locked. Titles → SEOMAP pattern `{Title} | Woodex Interior — Insights`; Article JSON-LD regenerated with real dates. Author = "Woodex Studio" with [CONFIRM: author name + photo].
 - [ ] locations/lahore.html from lahore-location.md (full local-SEO treatment, LocalBusiness schema)
 - [ ] 11 city pages rebuilt from the Lahore template (city facts only — no invented details)
 - [ ] 6 insight articles from the SEOMAP calendar (titles locked there)

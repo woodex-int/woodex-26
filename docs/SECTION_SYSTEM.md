@@ -51,6 +51,16 @@ cta-brief (form + fact-locked NAP) → related-services (4 cards).
 
 New named blocks from this page: `what-is` · `deliverables` · `process-steps` · `featured-work` · `cost-band` · `faq-accordion` · `cta-brief` · `related-services`. `services-swap` = pillars-swap mechanics with service content. CSS: `css/threed.css`. The old cine/motion system (motion.css/studio-hub.css/motion.js) is retired from this page; reveals via the standard `.reveal` pattern.
 
+## Page order (insights hub — implemented)
+page-hero → featured-note (newest post, large card) → blog-grid (all notes) → cta-getintouch ("Reading is the cheap gate.")
+
+## Page order (insight post — the single-page template, ×11 implemented)
+post-hero (crumbs · gate tag · H1 · dek · date/read-time/studio meta) → post-body (prose + sticky side rail:
+author card [CONFIRM: name/photo] + start-at-the-gate CTA) → post-questions (3 internal links) → post-related (3 cards) → cta-getintouch (post variant).
+
+New named blocks: `post-hero` · `post-body` (with `.pt-fact` gate-fact box + numbered/`✦`-free list styles) · `post-questions` · `post-related` · `featured-note`.
+Posts live in `insights/` and link `../css/insights.css`; hub links `css/insights.css`. Titles follow SEOMAP §2.8: `{Title} | Woodex Interior — Insights`. JSON-LD: Article + BreadcrumbList (posts), Blog + BreadcrumbList (hub). Content: 280–380 words per note in the studio voice, fact-locked (interior pricing held at "quoted after survey"; 3D indicative ranges only on 3D notes).
+
 ## Page order (about — implemented)
 page-hero → statement-intro → brand-story → values-grid → ecosystem-swap →
 gates-table → stop-gate → team-grid → proof-band → studios-band → cta-getintouch
