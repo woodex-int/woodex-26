@@ -39,3 +39,9 @@ Architecture + goal set + pattern vocabulary: [`../SERVICES_ARCHITECTURE.md`](..
 - **Canonical 9-section system owner-locked** (hero / Who it's for / The run / Why Woodex / FAQ / slide / Related services / Next to this scope / "Shell in. Business out." statement). Supersedes the 15-slot layout.
 - **New generator:** `tools/build_services.py` + `tools/services_data.py` (old /tmp .py approach retired).
 - **Built on v3:** office-fit-out · pharmacy · 3d-studio (improved to the same system). Remaining 17 pages: add data to services_data.py, run generator, pagecheck, commit.
+
+## v5 — 3D Studio complete rebuild (owner, 2026-09-24)
+
+- Owner chose **full 14-section brief structure** for 3d-studio (docker/3d-studio-hub.md): hero · what-is · who · services(slide,6) · delivers · process(5) · featured-work · marketing · cost(Cost-Lock, NO PKR) · why-woodex(universal 4 facts) · FAQ · cta-brief · related. Testimonial omitted (no verified quote). Brief's old NAP/prices replaced per fact lock.
+- 3d-studio removed from tools/services_data.py (no longer a 9-section page); office-fit-out + pharmacy remain on the 9-section system pending owner direction on upgrading them to full-14.
+- Live URL kept: /3d-studio.html + woodex.interior (brief's /3d-visualization/ + woodex.com.pk is outdated).
