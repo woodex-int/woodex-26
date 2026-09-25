@@ -138,3 +138,12 @@
   .pt-meta { gap: 14px; }
   .in-feature-copy { padding: 30px 26px; }
 }
+
+
+/* ── Article inline figure (polish pass v2) ── */
+.pt-fig { margin: 36px 0 8px; }
+.pt-fig img { width: 100%; aspect-ratio: 21 / 10; object-fit: cover; border-radius: 22px; display: block; transition: transform 0.9s var(--ease); }
+.pt-fig:hover img { transform: scale(1.02); }
+.pt-fig figcaption { font-size: 0.84rem; color: var(--muted); margin-top: 10px; letter-spacing: 0.02em; }
+.pt-fig figcaption b { color: #7d5f3a; font-weight: 600; text-transform: uppercase; font-size: 0.72rem; letter-spacing: 0.14em; margin-right: 8px; }
+@media (max-width: 680px) { .pt-fig { margin: 28px 0 4px; } .pt-fig img { border-radius: 16px; } }
